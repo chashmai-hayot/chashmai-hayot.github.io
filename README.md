@@ -1,16 +1,17 @@
-## Hi there 👋
+## Hi # Public Organization "Chashmai Hayot" — Official Website
 
-<!--
-**chashmai-hayot/chashmai-hayot** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Digital platform for the Khujand-based NGO focused on social protection, women's rights, and safe migration.
 
-Here are some ideas to get you started:
+### 🛠 Technology Stack
+- **Architecture:** Clean HTML5 / CSS3 / JavaScript (Vanilla)
+- **Design:** Glassmorphism & High-tech Minimalist
+- **Localization:** 10-language dynamic i18n system (EN, TG, RU, UZ, etc.)
+- **Compliance:** Built-in Privacy Policy and Terms of Use
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+### 🚀 Key Features
+- Dynamic language switching without page reload.
+- Accessibility-first UI (High Contrast & Font Resizing).
+- Fully responsive design for all devices.
+
+**Developed by:** Hasan Group  
+**Lead Developer:** Hasan Abdulloev 
