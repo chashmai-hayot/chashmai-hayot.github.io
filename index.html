@@ -1,0 +1,4283 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="ОО «Чашмаи Хаёт» — Общественная организация Таджикистан. Защита прав женщин, безопасная миграция, противодействие торговле людьми. Худжанд, с 1998 года.">
+  <meta property="og:title" content="ОО «Чашмаи Хаёт» | Родник жизни — NGO Tajikistan">
+  <meta property="og:description"
+    content="Public organisation protecting women's rights, safe migration and combating trafficking in persons in Tajikistan since 1998.">
+  <meta property="og:type" content="website">
+  <title>ОО «Чашмаи Хаёт» | Родник жизни · NGO Tajikistan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0a2342;
+      --navy2: #0d2d58;
+      --teal: #0e7490;
+      --teal2: #0891b2;
+      --aqua: #06b6d4;
+      --gold: #d4a017;
+      --gold2: #f0c040;
+      --cream: #faf8f5;
+      --white: #ffffff;
+      --gray: #64748b;
+      --gray2: #94a3b8;
+      --dark: #1e293b;
+      --border: rgba(14, 116, 144, .15);
+      --sh1: 0 4px 24px rgba(10, 35, 66, .08);
+      --sh2: 0 12px 48px rgba(10, 35, 66, .14);
+      --sh3: 0 24px 80px rgba(10, 35, 66, .2);
+      --r: 16px;
+      --r2: 24px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      font-size: 16px
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--dark);
+      background: var(--cream);
+      overflow-x: hidden;
+      line-height: 1.7
+    }
+
+    img {
+      max-width: 100%;
+      display: block
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: all .3s ease
+    }
+
+    ul {
+      list-style: none
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 28px
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0)
+    }
+
+    /* ══════════════════════════════════════════
+   ACCESSIBILITY BAR
+══════════════════════════════════════════ */
+    #a11y-bar {
+      background: var(--navy);
+      color: rgba(255, 255, 255, .75);
+      font-size: 12px;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    #a11y-bar .inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .a11y-contact {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap
+    }
+
+    .a11y-contact a {
+      color: rgba(255, 255, 255, .7);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 500;
+      transition: .3s
+    }
+
+    .a11y-contact a:hover {
+      color: var(--aqua)
+    }
+
+    .a11y-contact i {
+      color: var(--aqua);
+      font-size: 10px
+    }
+
+    .a11y-right {
+      display: flex;
+      align-items: center;
+      gap: 16px
+    }
+
+    .font-btns {
+      display: flex;
+      gap: 4px
+    }
+
+    .font-btns button {
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .15);
+      color: rgba(255, 255, 255, .7);
+      padding: 2px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 11px;
+      transition: .3s;
+    }
+
+    .font-btns button:hover {
+      background: var(--aqua);
+      color: #fff;
+      border-color: var(--aqua)
+    }
+
+    #contrast-btn {
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .15);
+      color: rgba(255, 255, 255, .7);
+      padding: 3px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 11px;
+      font-family: inherit;
+      transition: .3s;
+    }
+
+    #contrast-btn:hover {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold)
+    }
+
+    /* ══════════════════════════════════════════
+   LANGUAGE SELECTOR
+══════════════════════════════════════════ */
+    #lang-bar {
+      background: rgba(255, 255, 255, .97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1001;
+    }
+
+    .lang-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .lang-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 1.5px
+    }
+
+    .lang-flags {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap
+    }
+
+    .lang-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 50px;
+      border: 1.5px solid transparent;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gray);
+      cursor: pointer;
+      transition: all .25s;
+      background: none;
+      font-family: inherit;
+      white-space: nowrap;
+    }
+
+    .lang-btn:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+      background: rgba(14, 116, 144, .05)
+    }
+
+    .lang-btn.active {
+      border-color: var(--teal);
+      color: var(--teal);
+      background: rgba(14, 116, 144, .08)
+    }
+
+    .lang-flag {
+      font-size: 16px;
+      line-height: 1
+    }
+
+    .lang-searching {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--teal)
+    }
+
+    .lang-spinner {
+      width: 14px;
+      height: 14px;
+      border: 2px solid rgba(14, 116, 144, .2);
+      border-top-color: var(--teal);
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
+    /* ══════════════════════════════════════════
+   HEADER
+══════════════════════════════════════════ */
+    #header {
+      position: sticky;
+      top: 41px;
+      z-index: 1000;
+      padding: 14px 0;
+      transition: all .4s ease;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+    }
+
+    #header.scrolled {
+      box-shadow: var(--sh2);
+      background: rgba(10, 35, 66, .97);
+      backdrop-filter: blur(20px);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px
+    }
+
+    .logo-emblem {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--aqua), var(--teal));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      color: #fff;
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(6, 182, 212, .4);
+      position: relative;
+    }
+
+    .logo-emblem::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      border: 2px solid rgba(6, 182, 212, .3);
+      animation: emblem-pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes emblem-pulse {
+
+      0%,
+      100% {
+        opacity: .5;
+        transform: scale(1)
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.05)
+      }
+    }
+
+    .logo-text-block {
+      display: flex;
+      flex-direction: column
+    }
+
+    .logo-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: -.3px
+    }
+
+    .logo-tagline {
+      font-size: 10px;
+      color: rgba(255, 255, 255, .6);
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .nav-a {
+      color: rgba(255, 255, 255, .8);
+      font-size: 12.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      padding: 7px 12px;
+      border-radius: 8px;
+      transition: all .25s;
+      white-space: nowrap;
+    }
+
+    .nav-a:hover,
+    .nav-a.active {
+      color: #fff;
+      background: rgba(255, 255, 255, .1)
+    }
+
+    .nav-cta {
+      padding: 9px 22px;
+      border-radius: 50px;
+      background: linear-gradient(135deg, var(--aqua), var(--teal));
+      color: #fff !important;
+      font-weight: 700;
+      font-size: 12.5px;
+      letter-spacing: .5px;
+      box-shadow: 0 4px 16px rgba(6, 182, 212, .35);
+      margin-left: 8px;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(6, 182, 212, .5)
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      z-index: 1001
+    }
+
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: .4s
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px)
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px)
+    }
+
+    /* MOBILE MENU */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: min(320px, 85vw);
+      height: 100vh;
+      background: var(--navy);
+      z-index: 1100;
+      transition: .5s cubic-bezier(.77, 0, .18, 1);
+      padding: 80px 32px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow: -20px 0 60px rgba(0, 0, 0, .3);
+      overflow-y: auto;
+    }
+
+    .mobile-menu.open {
+      right: 0
+    }
+
+    .mobile-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: rgba(255, 255, 255, .1);
+      border: none;
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: .3s;
+    }
+
+    .mobile-close:hover {
+      background: var(--teal)
+    }
+
+    .mob-a {
+      color: rgba(255, 255, 255, .8);
+      font-size: 15px;
+      font-weight: 600;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .06);
+      display: block;
+      transition: .3s;
+    }
+
+    .mob-a:hover {
+      color: var(--aqua);
+      padding-left: 8px
+    }
+
+    .mob-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .6);
+      z-index: 1099;
+      opacity: 0;
+      visibility: hidden;
+      transition: .4s;
+    }
+
+    .mob-overlay.open {
+      opacity: 1;
+      visibility: visible
+    }
+
+    /* ══════════════════════════════════════════
+   HERO
+══════════════════════════════════════════ */
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(160deg, var(--navy) 0%, #0d3461 45%, #0a4a6e 100%);
+      padding: 80px 0;
+    }
+
+    .hero-bg-pattern {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .hero-bg-pattern::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -15%;
+      width: 70vw;
+      height: 70vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(6, 182, 212, .18) 0%, transparent 70%);
+      animation: bgFloat 20s ease-in-out infinite alternate;
+    }
+
+    .hero-bg-pattern::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: -10%;
+      width: 50vw;
+      height: 50vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212, 160, 23, .1) 0%, transparent 70%);
+      animation: bgFloat 25s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes bgFloat {
+      0% {
+        transform: translate(0, 0) scale(1)
+      }
+
+      100% {
+        transform: translate(40px, 30px) scale(1.1)
+      }
+    }
+
+    .hero-grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 80px;
+      align-items: center
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(6, 182, 212, .12);
+      border: 1px solid rgba(6, 182, 212, .3);
+      padding: 8px 20px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--aqua);
+      animation: dotPulse 2s infinite
+    }
+
+    @keyframes dotPulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(6, 182, 212, .6)
+      }
+
+      50% {
+        box-shadow: 0 0 0 6px rgba(6, 182, 212, 0)
+      }
+    }
+
+    .hero-badge span {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--aqua);
+      letter-spacing: 2px;
+      text-transform: uppercase
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(40px, 5vw, 68px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 .accent {
+      background: linear-gradient(135deg, var(--gold2), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline;
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      color: rgba(255, 255, 255, .72);
+      margin-bottom: 44px;
+      max-width: 520px;
+      font-weight: 400;
+      line-height: 1.8
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap
+    }
+
+    .btn-hero-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 32px;
+      border-radius: 50px;
+      background: linear-gradient(135deg, var(--aqua), var(--teal));
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: .5px;
+      box-shadow: 0 8px 28px rgba(6, 182, 212, .45);
+      transition: all .35s;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .btn-hero-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 40px rgba(6, 182, 212, .6);
+      color: #fff
+    }
+
+    .btn-hero-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 30px;
+      border-radius: 50px;
+      border: 2px solid rgba(255, 255, 255, .3);
+      color: #fff;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all .35s;
+      background: transparent;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .btn-hero-outline:hover {
+      border-color: #fff;
+      background: rgba(255, 255, 255, .08);
+      transform: translateY(-3px)
+    }
+
+    .hero-right {
+      position: relative
+    }
+
+    .hero-visual {
+      background:
+        linear-gradient(160deg, rgba(6, 182, 212, .25), rgba(10, 35, 66, .6)),
+        url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80') center/cover;
+      border-radius: var(--r2);
+      height: 480px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--sh3);
+    }
+
+    .hero-visual-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10, 35, 66, .8) 0%, transparent 50%);
+    }
+
+    .hero-visual-text {
+      position: absolute;
+      bottom: 28px;
+      left: 28px;
+      right: 28px;
+      color: #fff;
+    }
+
+    .hero-visual-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 6px
+    }
+
+    .hero-visual-text p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, .75)
+    }
+
+    .hero-stat-cards {
+      position: absolute;
+      top: 28px;
+      right: -20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .hsc {
+      background: rgba(255, 255, 255, .97);
+      backdrop-filter: blur(20px);
+      border-radius: 14px;
+      padding: 16px 20px;
+      box-shadow: var(--sh2);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 180px;
+      animation: hscFloat 5s ease-in-out infinite;
+    }
+
+    .hsc:nth-child(2) {
+      animation-delay: -2s
+    }
+
+    .hsc-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0
+    }
+
+    .hsc-icon.aqua {
+      background: rgba(6, 182, 212, .12);
+      color: var(--teal)
+    }
+
+    .hsc-icon.gold {
+      background: rgba(212, 160, 23, .12);
+      color: var(--gold)
+    }
+
+    .hsc-num {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1;
+      font-family: 'DM Sans', sans-serif
+    }
+
+    .hsc-lbl {
+      font-size: 11px;
+      color: var(--gray);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .5px
+    }
+
+    @keyframes hscFloat {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-8px)
+      }
+    }
+
+    /* ══════════════════════════════════════════
+   STATS BAR
+══════════════════════════════════════════ */
+    .stats-bar {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 0
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr)
+    }
+
+    .stat-cell {
+      padding: 44px 20px;
+      text-align: center;
+      position: relative;
+      transition: .3s;
+    }
+
+    .stat-cell:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 25%;
+      height: 50%;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .stat-cell:hover {
+      background: rgba(6, 182, 212, .03)
+    }
+
+    .stat-icon {
+      font-size: 28px;
+      color: var(--aqua);
+      margin-bottom: 14px
+    }
+
+    .stat-num {
+      font-size: 52px;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1;
+      font-family: 'DM Sans', sans-serif;
+      display: block;
+    }
+
+    .stat-lbl {
+      font-size: 13px;
+      color: var(--gray);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      margin-top: 6px;
+      display: block
+    }
+
+    /* ══════════════════════════════════════════
+   SECTIONS SHARED
+══════════════════════════════════════════ */
+    section {
+      padding: 100px 0
+    }
+
+    .sec-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 14px;
+    }
+
+    .sec-label::before {
+      content: '';
+      width: 20px;
+      height: 2px;
+      background: var(--aqua);
+      border-radius: 2px
+    }
+
+    .sec-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 3.5vw, 46px);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .sec-desc {
+      font-size: 16px;
+      color: var(--gray);
+      max-width: 560px;
+      line-height: 1.8
+    }
+
+    .sec-divider {
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--aqua), var(--teal));
+      border-radius: 3px;
+      margin-bottom: 20px
+    }
+
+    /* ══════════════════════════════════════════
+   ABOUT
+══════════════════════════════════════════ */
+    .about {
+      background: #fff
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center
+    }
+
+    .about-visual {
+      position: relative
+    }
+
+    .about-img {
+      border-radius: var(--r2);
+      height: 500px;
+      background: url('https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80') center/cover;
+      box-shadow: var(--sh2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10, 35, 66, .6) 0%, transparent 50%);
+      border-radius: var(--r2);
+    }
+
+    .about-year-badge {
+      position: absolute;
+      bottom: -24px;
+      left: -24px;
+      background: linear-gradient(135deg, var(--navy), var(--navy2));
+      color: #fff;
+      border-radius: 20px;
+      padding: 28px 32px;
+      box-shadow: var(--sh2);
+      min-width: 180px;
+      text-align: center;
+      border: 3px solid #fff;
+    }
+
+    .about-year-badge .y-num {
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--aqua);
+      line-height: 1;
+      display: block
+    }
+
+    .about-year-badge .y-lbl {
+      font-size: 12px;
+      color: rgba(255, 255, 255, .7);
+      font-weight: 600;
+      margin-top: 4px
+    }
+
+    .about-cert {
+      position: absolute;
+      top: -16px;
+      right: -16px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 16px 20px;
+      box-shadow: var(--sh2);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .about-cert i {
+      font-size: 22px;
+      color: var(--gold)
+    }
+
+    .about-cert-text {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--navy)
+    }
+
+    .about-cert-sub {
+      font-size: 11px;
+      color: var(--gray);
+      margin-top: 2px
+    }
+
+    .about-lead {
+      font-size: 17px;
+      color: var(--navy);
+      font-weight: 500;
+      line-height: 1.7;
+      padding: 20px 24px;
+      background: rgba(6, 182, 212, .06);
+      border-left: 4px solid var(--aqua);
+      border-radius: 0 12px 12px 0;
+      margin-bottom: 24px;
+    }
+
+    .about-body {
+      font-size: 15px;
+      color: var(--gray);
+      line-height: 1.8;
+      margin-bottom: 16px
+    }
+
+    .reg-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(10, 35, 66, .05);
+      border: 1px solid rgba(10, 35, 66, .1);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-top: 8px;
+    }
+
+    .reg-badge i {
+      color: var(--teal);
+      font-size: 12px
+    }
+
+    .partner-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 28px
+    }
+
+    .ptag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 100px;
+      border: 1.5px solid var(--border);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--navy);
+      background: #fff;
+      transition: .3s;
+      cursor: default;
+    }
+
+    .ptag:hover {
+      border-color: var(--aqua);
+      color: var(--teal);
+      background: rgba(6, 182, 212, .05)
+    }
+
+    .ptag i {
+      color: var(--aqua);
+      font-size: 10px
+    }
+
+    /* ══════════════════════════════════════════
+   DIRECTIONS
+══════════════════════════════════════════ */
+    .directions {
+      background: var(--cream)
+    }
+
+    .dir-hd {
+      text-align: center;
+      margin-bottom: 64px
+    }
+
+    .dir-hd .sec-desc {
+      margin: 0 auto
+    }
+
+    .dir-hd .sec-divider {
+      margin: 0 auto 20px
+    }
+
+    .dir-hd .sec-label {
+      justify-content: center
+    }
+
+    .dir-hd .sec-label::before {
+      display: none
+    }
+
+    .dir-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px
+    }
+
+    .dir-card {
+      background: #fff;
+      border-radius: var(--r2);
+      padding: 40px 32px;
+      box-shadow: var(--sh1);
+      border: 1.5px solid transparent;
+      transition: all .4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dir-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--aqua), var(--teal));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .4s;
+    }
+
+    .dir-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--sh2);
+      border-color: rgba(6, 182, 212, .2)
+    }
+
+    .dir-card:hover::before {
+      transform: scaleX(1)
+    }
+
+    .dir-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      background: rgba(6, 182, 212, .1);
+      color: var(--teal);
+      transition: .4s;
+    }
+
+    .dir-card:hover .dir-icon {
+      background: linear-gradient(135deg, var(--aqua), var(--teal));
+      color: #fff
+    }
+
+    .dir-card h3 {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+      line-height: 1.3
+    }
+
+    .dir-card p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.75
+    }
+
+    .dir-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    .dir-more i {
+      transition: .3s
+    }
+
+    .dir-card:hover .dir-more i {
+      transform: translateX(4px)
+    }
+
+    /* ══════════════════════════════════════════
+   IMPACT
+══════════════════════════════════════════ */
+    .impact {
+      background: linear-gradient(160deg, var(--navy) 0%, #0d3d6e 100%);
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+    }
+
+    .impact::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 75% 30%, rgba(6, 182, 212, .15) 0%, transparent 60%);
+    }
+
+    .impact-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center
+    }
+
+    .impact .sec-title {
+      color: #fff
+    }
+
+    .impact .sec-desc {
+      color: rgba(255, 255, 255, .7);
+      max-width: 100%
+    }
+
+    .impact .sec-label {
+      color: var(--gold2)
+    }
+
+    .impact .sec-label::before {
+      background: var(--gold)
+    }
+
+    .impact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 28px
+    }
+
+    .impact-li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, .82);
+      line-height: 1.6;
+    }
+
+    .impact-li i {
+      color: var(--aqua);
+      flex-shrink: 0;
+      margin-top: 3px
+    }
+
+    .impact-nums {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px
+    }
+
+    .in-card {
+      background: rgba(255, 255, 255, .07);
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: var(--r);
+      padding: 32px 24px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      transition: .35s;
+    }
+
+    .in-card:hover {
+      background: rgba(255, 255, 255, .12);
+      transform: translateY(-6px)
+    }
+
+    .in-card:nth-child(even) {
+      margin-top: 28px
+    }
+
+    .in-num {
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--aqua);
+      line-height: 1;
+      display: block;
+      margin-bottom: 8px
+    }
+
+    .in-lbl {
+      font-size: 12px;
+      color: rgba(255, 255, 255, .6);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .8px
+    }
+
+    /* ══════════════════════════════════════════
+   TIMELINE
+══════════════════════════════════════════ */
+    .timeline-sec {
+      background: #fff
+    }
+
+    .tl-hd {
+      text-align: center;
+      margin-bottom: 72px
+    }
+
+    .tl-hd .sec-label {
+      justify-content: center
+    }
+
+    .tl-hd .sec-label::before {
+      display: none
+    }
+
+    .tl-hd .sec-divider {
+      margin: 0 auto 20px
+    }
+
+    .tl-wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      position: relative
+    }
+
+    .tl-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--aqua), var(--navy));
+      transform: translateX(-50%);
+    }
+
+    .tl-row {
+      display: flex;
+      gap: 0;
+      margin-bottom: 48px;
+      align-items: flex-start;
+    }
+
+    .tl-row:nth-child(even) {
+      flex-direction: row-reverse
+    }
+
+    .tl-content-wrap {
+      width: 50%;
+      padding: 0 50px 0 0
+    }
+
+    .tl-row:nth-child(even) .tl-content-wrap {
+      padding: 0 0 0 50px
+    }
+
+    .tl-dot-wrap {
+      width: 0;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .tl-dot {
+      position: absolute;
+      left: -10px;
+      top: 20px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--aqua);
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 3px rgba(6, 182, 212, .3);
+      z-index: 2;
+    }
+
+    .tl-row:nth-child(even) .tl-dot {
+      left: -10px
+    }
+
+    .tl-card {
+      background: var(--cream);
+      border-radius: var(--r);
+      padding: 24px 28px;
+      border-left: 4px solid var(--aqua);
+      box-shadow: var(--sh1);
+      transition: .3s;
+    }
+
+    .tl-row:nth-child(even) .tl-card {
+      border-left: none;
+      border-right: 4px solid var(--gold)
+    }
+
+    .tl-card:hover {
+      box-shadow: var(--sh2);
+      transform: scale(1.02)
+    }
+
+    .tl-year {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--teal);
+      text-transform: uppercase;
+      margin-bottom: 6px
+    }
+
+    .tl-row:nth-child(even) .tl-year {
+      color: var(--gold)
+    }
+
+    .tl-card h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px
+    }
+
+    .tl-card p {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.7
+    }
+
+    /* ══════════════════════════════════════════
+   TEAM
+══════════════════════════════════════════ */
+    .team {
+      background: var(--cream)
+    }
+
+    .team-hd {
+      text-align: center;
+      margin-bottom: 64px
+    }
+
+    .team-hd .sec-label {
+      justify-content: center
+    }
+
+    .team-hd .sec-label::before {
+      display: none
+    }
+
+    .team-hd .sec-divider {
+      margin: 0 auto 20px
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px
+    }
+
+    .team-card {
+      background: #fff;
+      border-radius: var(--r2);
+      overflow: hidden;
+      box-shadow: var(--sh1);
+      transition: .4s;
+      text-align: center;
+    }
+
+    .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--sh2)
+    }
+
+    .team-top {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--navy), var(--teal));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .team-top::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 120%, rgba(6, 182, 212, .3), transparent 60%);
+    }
+
+    .team-initials {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .15);
+      border: 2px solid rgba(255, 255, 255, .4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: 900;
+      color: #fff;
+      position: relative;
+      z-index: 2;
+      letter-spacing: -1px;
+    }
+
+    .team-body {
+      padding: 22px 18px 26px
+    }
+
+    .team-body h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px
+    }
+
+    .team-role {
+      font-size: 12px;
+      color: var(--teal);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .5px
+    }
+
+    .team-body p {
+      font-size: 13px;
+      color: var(--gray);
+      margin-top: 10px;
+      line-height: 1.6
+    }
+
+    .team-rep {
+      background: #fff;
+      border-radius: var(--r);
+      padding: 24px 28px;
+      box-shadow: var(--sh1);
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .team-rep-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, var(--aqua), var(--teal));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: #fff;
+    }
+
+    .team-rep-text h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 3px
+    }
+
+    .team-rep-text p {
+      font-size: 13px;
+      color: var(--gray)
+    }
+
+    /* ══════════════════════════════════════════
+   PUBLICATIONS
+══════════════════════════════════════════ */
+    .publications {
+      background: #fff
+    }
+
+    .pub-hd {
+      text-align: center;
+      margin-bottom: 64px
+    }
+
+    .pub-hd .sec-label {
+      justify-content: center
+    }
+
+    .pub-hd .sec-label::before {
+      display: none
+    }
+
+    .pub-hd .sec-divider {
+      margin: 0 auto 20px
+    }
+
+    .pub-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px
+    }
+
+    .pub-card {
+      background: var(--cream);
+      border-radius: var(--r);
+      overflow: hidden;
+      box-shadow: var(--sh1);
+      border: 1.5px solid var(--border);
+      transition: .35s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pub-card:hover {
+      box-shadow: var(--sh2);
+      transform: translateY(-6px);
+      border-color: rgba(6, 182, 212, .25)
+    }
+
+    .pub-strip {
+      height: 5px;
+      background: linear-gradient(90deg, var(--aqua), var(--teal))
+    }
+
+    .pub-card:nth-child(2) .pub-strip {
+      background: linear-gradient(90deg, var(--gold), var(--gold2))
+    }
+
+    .pub-card:nth-child(3) .pub-strip {
+      background: linear-gradient(90deg, #6366f1, #8b5cf6)
+    }
+
+    .pub-card:nth-child(4) .pub-strip {
+      background: linear-gradient(90deg, #ef4444, #f97316)
+    }
+
+    .pub-card:nth-child(5) .pub-strip {
+      background: linear-gradient(90deg, #10b981, #34d399)
+    }
+
+    .pub-card:nth-child(6) .pub-strip {
+      background: linear-gradient(90deg, var(--gold), var(--gold2))
+    }
+
+    .pub-body {
+      padding: 24px;
+      flex: 1
+    }
+
+    .pub-year {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--teal);
+      text-transform: uppercase;
+      margin-bottom: 8px
+    }
+
+    .pub-body h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+      line-height: 1.4
+    }
+
+    .pub-body p {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.7
+    }
+
+    .pub-foot {
+      padding: 14px 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .pub-foot i {
+      color: var(--teal);
+      font-size: 13px
+    }
+
+    .pub-foot span {
+      font-size: 12px;
+      color: var(--gray);
+      font-weight: 600
+    }
+
+    /* ══════════════════════════════════════════
+   PARTNERS
+══════════════════════════════════════════ */
+    .partners-sec {
+      background: var(--cream);
+      padding: 70px 0
+    }
+
+    .partners-hd {
+      text-align: center;
+      margin-bottom: 48px
+    }
+
+    .partners-hd h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px
+    }
+
+    .partners-hd p {
+      font-size: 15px;
+      color: var(--gray)
+    }
+
+    .partners-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px
+    }
+
+    .pg {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 50px;
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+      transition: .3s;
+      box-shadow: var(--sh1);
+    }
+
+    .pg i {
+      color: var(--aqua);
+      font-size: 12px
+    }
+
+    .pg:hover {
+      border-color: var(--aqua);
+      color: var(--teal);
+      transform: translateY(-3px);
+      box-shadow: var(--sh2)
+    }
+
+    .assoc-sec {
+      margin-top: 48px;
+      background: #fff;
+      border-radius: var(--r2);
+      padding: 32px 36px;
+      box-shadow: var(--sh1)
+    }
+
+    .assoc-sec h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px
+    }
+
+    .assoc-sec h4 i {
+      color: var(--teal)
+    }
+
+    .assoc-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px
+    }
+
+    .atag {
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--teal);
+      background: rgba(6, 182, 212, .07);
+      border: 1px solid rgba(6, 182, 212, .2);
+    }
+
+    /* ══════════════════════════════════════════
+   6-WAY PLAN
+══════════════════════════════════════════ */
+    .plan-sec {
+      background: linear-gradient(135deg, var(--navy) 0%, #0c3a6b 100%);
+      color: #fff;
+      padding: 80px 0;
+    }
+
+    .plan-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start
+    }
+
+    .plan-sec .sec-title {
+      color: #fff
+    }
+
+    .plan-sec .sec-desc {
+      color: rgba(255, 255, 255, .7)
+    }
+
+    .plan-sec .sec-label {
+      color: var(--gold2)
+    }
+
+    .plan-sec .sec-label::before {
+      background: var(--gold)
+    }
+
+    .plan-body {
+      font-size: 14px;
+      color: rgba(255, 255, 255, .75);
+      line-height: 1.8;
+      margin-top: 16px
+    }
+
+    .plan-orgs {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 32px
+    }
+
+    .plan-org {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: 12px;
+      padding: 16px 20px;
+      transition: .3s;
+    }
+
+    .plan-org:hover {
+      background: rgba(255, 255, 255, .1)
+    }
+
+    .plan-org-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--aqua);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 900;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .plan-org-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, .9);
+      line-height: 1.5
+    }
+
+    .plan-badge {
+      margin-top: 24px;
+      background: rgba(6, 182, 212, .15);
+      border: 1px solid rgba(6, 182, 212, .3);
+      border-radius: 12px;
+      padding: 16px 20px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, .85);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .plan-badge i {
+      color: var(--aqua);
+      font-size: 18px;
+      flex-shrink: 0
+    }
+
+    /* ══════════════════════════════════════════
+   FAQ
+══════════════════════════════════════════ */
+    .faq-sec {
+      background: var(--cream)
+    }
+
+    .faq-hd {
+      text-align: center;
+      margin-bottom: 64px
+    }
+
+    .faq-hd .sec-label {
+      justify-content: center
+    }
+
+    .faq-hd .sec-label::before {
+      display: none
+    }
+
+    .faq-hd .sec-divider {
+      margin: 0 auto 20px
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px
+    }
+
+    .faq-item {
+      background: #fff;
+      border-radius: var(--r);
+      box-shadow: var(--sh1);
+      overflow: hidden;
+      border: 1.5px solid var(--border)
+    }
+
+    .faq-q {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .faq-q:hover {
+      background: rgba(6, 182, 212, .03)
+    }
+
+    .faq-q-text {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy)
+    }
+
+    .faq-chevron {
+      color: var(--teal);
+      transition: .35s;
+      flex-shrink: 0
+    }
+
+    .faq-item.open .faq-chevron {
+      transform: rotate(180deg)
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: all .4s ease;
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.8;
+    }
+
+    .faq-item.open .faq-a {
+      max-height: 300px
+    }
+
+    .faq-a-inner {
+      padding: 0 24px 20px
+    }
+
+    .hotline-card {
+      background: linear-gradient(135deg, var(--navy), var(--teal));
+      border-radius: var(--r2);
+      padding: 40px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 48px;
+      box-shadow: var(--sh3);
+    }
+
+    .hotline-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, .15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      flex-shrink: 0
+    }
+
+    .hotline-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 6px
+    }
+
+    .hotline-text p {
+      font-size: 14px;
+      color: rgba(255, 255, 255, .75);
+      margin-bottom: 12px
+    }
+
+    .hotline-nums {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap
+    }
+
+    .hotline-nums a {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .hotline-nums a:hover {
+      color: var(--aqua)
+    }
+
+    /* ══════════════════════════════════════════
+   CONTACT
+══════════════════════════════════════════ */
+    .contact-sec {
+      background: #fff
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 72px;
+      align-items: start
+    }
+
+    .contact-info h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px
+    }
+
+    .contact-info p {
+      font-size: 15px;
+      color: var(--gray);
+      margin-bottom: 36px
+    }
+
+    .c-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 20px
+    }
+
+    .c-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px
+    }
+
+    .c-ico-wrap {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      flex-shrink: 0;
+      background: rgba(6, 182, 212, .1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: var(--teal);
+    }
+
+    .c-row-text h5 {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray2);
+      margin-bottom: 4px
+    }
+
+    .c-row-text p,
+    .c-row-text a {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--navy)
+    }
+
+    .c-row-text a:hover {
+      color: var(--teal)
+    }
+
+    .map-embed {
+      border-radius: var(--r);
+      overflow: hidden;
+      margin-top: 28px;
+      box-shadow: var(--sh1);
+      border: 1.5px solid var(--border);
+      height: 200px;
+    }
+
+    .map-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: none
+    }
+
+    .contact-form-box {
+      background: var(--navy);
+      border-radius: var(--r2);
+      padding: 48px 44px;
+      box-shadow: var(--sh3);
+    }
+
+    .contact-form-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px
+    }
+
+    .contact-form-box p {
+      font-size: 14px;
+      color: rgba(255, 255, 255, .6);
+      margin-bottom: 32px
+    }
+
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px
+    }
+
+    .fld {
+      margin-bottom: 16px
+    }
+
+    .fld label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .5);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: .5px
+    }
+
+    .fld input,
+    .fld select,
+    .fld textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 10px;
+      border: 1.5px solid rgba(255, 255, 255, .15);
+      background: rgba(255, 255, 255, .07);
+      color: #fff;
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+      transition: .3s;
+    }
+
+    .fld input::placeholder,
+    .fld textarea::placeholder {
+      color: rgba(255, 255, 255, .35)
+    }
+
+    .fld input:focus,
+    .fld select:focus,
+    .fld textarea:focus {
+      border-color: var(--aqua);
+      background: rgba(255, 255, 255, .1);
+      box-shadow: 0 0 0 4px rgba(6, 182, 212, .12);
+    }
+
+    .fld select option {
+      color: var(--navy);
+      background: #fff
+    }
+
+    .fld textarea {
+      height: 120px;
+      resize: vertical
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--aqua), var(--teal));
+      color: #fff;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: .5px;
+      transition: .35s;
+      box-shadow: 0 8px 24px rgba(6, 182, 212, .4);
+      margin-top: 4px;
+    }
+
+    .form-submit:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 36px rgba(6, 182, 212, .55)
+    }
+
+    .form-note {
+      font-size: 11px;
+      color: rgba(255, 255, 255, .35);
+      text-align: center;
+      margin-top: 12px
+    }
+
+    /* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+    footer {
+      background: var(--navy);
+      color: rgba(255, 255, 255, .6);
+      padding: 72px 0 36px
+    }
+
+    footer::before {
+      content: '';
+      display: block;
+      height: 4px;
+      width: 100%;
+      background: linear-gradient(90deg, var(--aqua), var(--gold), var(--teal2));
+      margin-bottom: 72px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px;
+      margin-bottom: 56px
+    }
+
+    .footer-brand .fl-logo {
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .footer-brand .fl-logo-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff
+    }
+
+    .footer-brand .fl-logo-sub {
+      font-size: 10px;
+      color: rgba(255, 255, 255, .5);
+      letter-spacing: 2px;
+      text-transform: uppercase
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, .5)
+    }
+
+    .footer-reg {
+      font-size: 11px;
+      color: rgba(255, 255, 255, .3);
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .footer-reg i {
+      color: var(--aqua);
+      font-size: 10px
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px
+    }
+
+    .soc-a {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .07);
+      border: 1px solid rgba(255, 255, 255, .1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, .6);
+      font-size: 14px;
+      transition: .35s;
+    }
+
+    .soc-a:hover {
+      background: var(--aqua);
+      border-color: var(--aqua);
+      color: #fff;
+      transform: translateY(-4px)
+    }
+
+    .footer-col h5 {
+      font-size: 12px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 22px
+    }
+
+    .fl {
+      display: flex;
+      flex-direction: column;
+      gap: 10px
+    }
+
+    .fl a {
+      font-size: 13px;
+      color: rgba(255, 255, 255, .55);
+      transition: .3s;
+      display: flex;
+      align-items: center;
+      gap: 7px
+    }
+
+    .fl a i {
+      font-size: 9px;
+      color: var(--aqua)
+    }
+
+    .fl a:hover {
+      color: #fff;
+      transform: translateX(5px)
+    }
+
+    .nl-form {
+      display: flex;
+      border-radius: 50px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .15);
+      margin-top: 16px
+    }
+
+    .nl-input {
+      flex: 1;
+      padding: 12px 18px;
+      border: none;
+      background: rgba(255, 255, 255, .07);
+      color: #fff;
+      font-family: inherit;
+      font-size: 13px;
+      outline: none;
+    }
+
+    .nl-input::placeholder {
+      color: rgba(255, 255, 255, .35)
+    }
+
+    .nl-btn {
+      padding: 12px 18px;
+      border: none;
+      background: var(--aqua);
+      color: #fff;
+      cursor: pointer;
+      font-size: 15px;
+      transition: .3s
+    }
+
+    .nl-btn:hover {
+      background: var(--teal2)
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, .07);
+      padding-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px
+    }
+
+    .footer-bottom span {
+      font-size: 12px
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 16px
+    }
+
+    .footer-legal a {
+      font-size: 12px;
+      color: rgba(255, 255, 255, .4)
+    }
+
+    .footer-legal a:hover {
+      color: var(--aqua)
+    }
+
+    /* ══════════════════════════════════════════
+   UTILS: BACK TO TOP, COOKIE
+══════════════════════════════════════════ */
+    #btt {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 900;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: none;
+      background: linear-gradient(135deg, var(--aqua), var(--teal));
+      color: #fff;
+      font-size: 17px;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(6, 182, 212, .45);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: .4s;
+    }
+
+    #btt.show {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    #btt:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(6, 182, 212, .55)
+    }
+
+    #cookie {
+      position: fixed;
+      bottom: -220px;
+      left: 20px;
+      right: auto;
+      width: min(460px, calc(100vw-40px));
+      background: rgba(10, 35, 66, .97);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: 20px;
+      padding: 24px 28px;
+      z-index: 9000;
+      color: #fff;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .4);
+      transition: .5s;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    #cookie.show {
+      bottom: 20px
+    }
+
+    #cookie p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, .75);
+      line-height: 1.6
+    }
+
+    #cookie p a {
+      color: var(--aqua);
+      text-decoration: underline
+    }
+
+    .cookie-row {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end
+    }
+
+    .ck-btn {
+      padding: 9px 20px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 13px;
+      transition: .3s
+    }
+
+    .ck-ok {
+      background: linear-gradient(135deg, var(--aqua), var(--teal));
+      color: #fff
+    }
+
+    .ck-no {
+      background: rgba(255, 255, 255, .1);
+      color: rgba(255, 255, 255, .7)
+    }
+
+    .ck-ok:hover {
+      transform: scale(1.04)
+    }
+
+    /* ══════════════════════════════════════════
+   HIGH CONTRAST MODE
+══════════════════════════════════════════ */
+    body.hc {
+      background: #000 !important;
+      color: #fff !important;
+      filter: contrast(1.4);
+    }
+
+    body.hc * {
+      background-color: inherit;
+      color: inherit
+    }
+
+    /* ══════════════════════════════════════════
+   TRANSLATION NOTICE BANNER
+══════════════════════════════════════════ */
+    #trans-notice {
+      display: none;
+      background: rgba(6, 182, 212, .12);
+      border-bottom: 1px solid rgba(6, 182, 212, .2);
+      padding: 8px 0;
+    }
+
+    #trans-notice .inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--teal);
+    }
+
+    #trans-notice.show {
+      display: block
+    }
+
+    #trans-notice i {
+      font-size: 14px
+    }
+
+    /* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+    @media(max-width:1100px) {
+      .hero-inner {
+        grid-template-columns: 1fr
+      }
+
+      .hero-right {
+        display: none
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 60px
+      }
+
+      .impact-inner {
+        grid-template-columns: 1fr;
+        gap: 56px
+      }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 56px
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px
+      }
+
+      .plan-inner {
+        grid-template-columns: 1fr;
+        gap: 48px
+      }
+
+      .dir-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media(max-width:768px) {
+      section {
+        padding: 72px 0
+      }
+
+      .container {
+        padding: 0 20px
+      }
+
+      .hero h1 {
+        font-size: 36px
+      }
+
+      .hero-sub {
+        font-size: 16px
+      }
+
+      .sec-title {
+        font-size: 28px
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .stat-cell:not(:last-child)::after {
+        display: none
+      }
+
+      .stat-cell {
+        padding: 32px 12px
+      }
+
+      .stat-num {
+        font-size: 38px
+      }
+
+      .dir-grid {
+        grid-template-columns: 1fr
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .pub-grid {
+        grid-template-columns: 1fr
+      }
+
+      .faq-grid {
+        grid-template-columns: 1fr
+      }
+
+      .in-card:nth-child(even) {
+        margin-top: 0
+      }
+
+      .contact-form-box {
+        padding: 32px 24px
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center
+      }
+
+      .nav-links {
+        display: none
+      }
+
+      .hamburger {
+        display: flex
+      }
+
+      .tl-line {
+        left: 20px
+      }
+
+      .tl-row,
+      .tl-row:nth-child(even) {
+        flex-direction: column
+      }
+
+      .tl-content-wrap,
+      .tl-row:nth-child(even) .tl-content-wrap {
+        width: 100%;
+        padding: 0 0 0 52px
+      }
+
+      .tl-dot-wrap {
+        width: auto;
+        position: absolute;
+        left: 10px
+      }
+
+      .tl-row {
+        position: relative;
+        padding-left: 0
+      }
+
+      .impact-nums {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .hotline-card {
+        flex-direction: column;
+        text-align: center
+      }
+
+      .form-row-2 {
+        grid-template-columns: 1fr
+      }
+
+      .about-cert {
+        top: 12px;
+        right: 12px
+      }
+
+      .hero-badge-text {
+        display: none
+      }
+
+      .a11y-bar .inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px
+      }
+
+      .lang-inner {
+        gap: 8px
+      }
+
+      .lang-label {
+        display: none
+      }
+    }
+
+    @media(max-width:480px) {
+      .hero h1 {
+        font-size: 30px
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr
+      }
+
+      .impact-nums {
+        grid-template-columns: 1fr
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important
+      }
+    }
+
+    /* ══════ LEGAL MODALS ══════ */
+    .legal-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(4, 15, 26, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .legal-modal.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .legal-content {
+      background: var(--surface);
+      width: 90%;
+      max-width: 600px;
+      max-height: 85vh;
+      border-radius: 20px;
+      padding: 40px;
+      overflow-y: auto;
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transform: translateY(20px) scale(0.95);
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .legal-modal.show .legal-content {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border: none;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .modal-close:hover {
+      background: var(--danger);
+    }
+
+    .legal-content h3 {
+      font-size: 24px;
+      margin-bottom: 24px;
+      padding-right: 40px;
+      color: white;
+    }
+
+    .legal-content p {
+      color: var(--gray);
+      line-height: 1.7;
+      margin-bottom: 16px;
+      font-size: 15px;
+    }
+
+    .legal-content p strong {
+      color: white;
+    }
+
+    .legal-content::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .legal-content::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .legal-content::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══════ ACCESSIBILITY + INFO BAR ══════ -->
+  <div id="a11y-bar" role="complementary" aria-label="Контактная информация и настройки">
+    <div class="inner">
+      <div class="a11y-contact">
+        <a href="tel:+992928253266" aria-label="Телефон 1"><i class="fas fa-phone-alt"></i>+992 92 825 32 66</a>
+        <a href="tel:+992921179991" aria-label="Телефон 2"><i class="fas fa-phone-alt"></i>+992 92 117 99 91</a>
+        <a href="mailto:rboboeva@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i>rboboeva@gmail.com</a>
+      </div>
+      <div class="a11y-right">
+        <div class="font-btns" role="group" aria-label="Размер текста">
+          <button onclick="changeFontSize(-1)" aria-label="Уменьшить текст">A-</button>
+          <button onclick="changeFontSize(0)" aria-label="Обычный текст">A</button>
+          <button onclick="changeFontSize(1)" aria-label="Увеличить текст">A+</button>
+        </div>
+        <button id="contrast-btn" onclick="toggleContrast()" aria-label="Контрастный режим">⬛ Контраст</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ TRANSLATION NOTICE ══════ -->
+  <div id="trans-notice" role="status">
+    <div class="inner">
+      <span class="lang-spinner" id="trans-spinner"></span>
+      <i class="fas fa-language"></i>
+      <span id="trans-notice-text">Переводим страницу...</span>
+    </div>
+  </div>
+
+  <!-- ══════ LANGUAGE BAR ══════ -->
+  <div id="lang-bar" role="navigation" aria-label="Выбор языка">
+    <div class="lang-inner">
+      <span class="lang-label" data-i18n="lang_label" data-key="lang_label">🌐 Язык / Language</span>
+      <div class="lang-flags" role="group" aria-label="Доступные языки">
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')" aria-pressed="false"><span
+            class="lang-flag">🇬🇧</span> English</button>
+        <button class="lang-btn" data-lang="tg" onclick="setLang('tg')" aria-pressed="false"><span
+            class="lang-flag">🇹🇯</span> Тоҷикӣ</button>
+        <button class="lang-btn active" data-lang="ru" onclick="setLang('ru')" aria-pressed="true"><span
+            class="lang-flag">🇷🇺</span> Русский</button>
+        <button class="lang-btn" data-lang="uz" onclick="setLang('uz')" aria-pressed="false"><span
+            class="lang-flag">🇺🇿</span> O'zbekcha</button>
+        <button class="lang-btn" data-lang="fr" onclick="setLang('fr')" aria-pressed="false"><span
+            class="lang-flag">🇫🇷</span> Français</button>
+        <button class="lang-btn" data-lang="de" onclick="setLang('de')" aria-pressed="false"><span
+            class="lang-flag">🇩🇪</span> Deutsch</button>
+        <button class="lang-btn" data-lang="ar" onclick="setLang('ar')" aria-pressed="false"><span
+            class="lang-flag">🇸🇦</span> العربية</button>
+        <button class="lang-btn" data-lang="zh" onclick="setLang('zh')" aria-pressed="false"><span
+            class="lang-flag">🇨🇳</span> 中文</button>
+        <button class="lang-btn" data-lang="es" onclick="setLang('es')" aria-pressed="false"><span
+            class="lang-flag">🇪🇸</span> Español</button>
+        <button class="lang-btn" data-lang="fa" onclick="setLang('fa')" aria-pressed="false"><span
+            class="lang-flag">🇮🇷</span> فارسی</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ HEADER ══════ -->
+  <header id="header" role="banner">
+    <div class="container">
+      <nav class="navbar" role="navigation" aria-label="Главное меню">
+        <a href="#home" class="logo" aria-label="Чашмаи Хаёт — на главную">
+          <div class="logo-emblem" aria-hidden="true"><i class="fas fa-hand-holding-droplet"></i></div>
+          <div class="logo-text-block">
+            <span class="logo-name" data-i18n="logo_name">Чашмаи Хаёт</span>
+            <span class="logo-tagline" data-i18n="logo_tag">Родник жизни · НПО Таджикистан</span>
+          </div>
+        </a>
+        <ul class="nav-links" role="list">
+          <li><a href="#about" class="nav-a" data-i18n="nav_about">О нас</a></li>
+          <li><a href="#directions" class="nav-a" data-i18n="nav_dir">Направления</a></li>
+          <li><a href="#impact" class="nav-a" data-i18n="nav_impact">Результаты</a></li>
+          <li><a href="#timeline" class="nav-a" data-i18n="nav_history">История</a></li>
+          <li><a href="#team" class="nav-a" data-i18n="nav_team">Команда</a></li>
+          <li><a href="#publications" class="nav-a" data-i18n="nav_pub">Публикации</a></li>
+          <li><a href="#contact" class="nav-a nav-cta" data-i18n="nav_contact">Контакты</a></li>
+        </ul>
+        <button class="hamburger" id="hbg" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mob-overlay" id="mobOverlay" onclick="closeMob()" aria-hidden="true"></div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Мобильное меню" role="dialog" aria-modal="true">
+    <button class="mobile-close" onclick="closeMob()" aria-label="Закрыть меню"><i class="fas fa-times"></i></button>
+    <a href="#about" class="mob-a" data-i18n="nav_about" onclick="closeMob()">О нас</a>
+    <a href="#directions" class="mob-a" data-i18n="nav_dir" onclick="closeMob()">Направления</a>
+    <a href="#impact" class="mob-a" data-i18n="nav_impact" onclick="closeMob()">Результаты</a>
+    <a href="#timeline" class="mob-a" data-i18n="nav_history" onclick="closeMob()">История</a>
+    <a href="#team" class="mob-a" data-i18n="nav_team" onclick="closeMob()">Команда</a>
+    <a href="#publications" class="mob-a" data-i18n="nav_pub" onclick="closeMob()">Публикации</a>
+    <a href="#contact" class="mob-a" data-i18n="nav_contact" onclick="closeMob()">Контакты</a>
+    <div style="margin-top:24px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08)">
+      <a href="tel:+992928253266" class="mob-a" style="color:var(--aqua)"><i class="fas fa-phone-alt"
+          style="margin-right:8px"></i>+992 92 825 32 66</a>
+      <a href="mailto:rboboeva@gmail.com" class="mob-a" style="color:var(--aqua);font-size:13px"><i
+          class="fas fa-envelope" style="margin-right:8px"></i>rboboeva@gmail.com</a>
+    </div>
+  </nav>
+
+  <!-- ══════ HERO ══════ -->
+  <section class="hero" id="home" aria-labelledby="hero-title">
+    <div class="hero-bg-pattern" aria-hidden="true"></div>
+    <div class="hero-grid-lines" aria-hidden="true"></div>
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <div class="hero-badge" aria-label="С 1998 года">
+            <div class="hero-badge-dot" aria-hidden="true"></div>
+            <span data-i18n="hero_since">С 1998 года · Худжанд, Таджикистан</span>
+          </div>
+          <h1 id="hero-title">
+            <span data-i18n="hero_h1a">Защищаем права,</span><br>
+            <span data-i18n="hero_h1b">строим</span>
+            <span class="accent" data-i18n="hero_h1c"> справедливое</span><br>
+            <span data-i18n="hero_h1d">общество</span>
+          </h1>
+          <p class="hero-sub" data-i18n="hero_sub">Общественная организация «Чашмаи Хаёт» — защита прав женщин,
+            безопасная миграция и противодействие торговле людьми в Таджикистане.</p>
+          <div class="hero-btns">
+            <button class="btn-hero-primary"
+              onclick="document.getElementById('directions').scrollIntoView({behavior:'smooth'})"
+              data-i18n="btn_directions">
+              <i class="fas fa-compass" aria-hidden="true"></i> Наши направления
+            </button>
+            <button class="btn-hero-outline"
+              onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
+              data-i18n="btn_contact_us">
+              <i class="fas fa-envelope" aria-hidden="true"></i> Написать нам
+            </button>
+          </div>
+        </div>
+        <div class="hero-right" aria-hidden="true">
+          <div class="hero-visual">
+            <div class="hero-visual-overlay"></div>
+            <div class="hero-visual-text">
+              <h3 data-i18n="hero_vis_h">Согдийская область</h3>
+              <p data-i18n="hero_vis_p">Работаем в 18+ городах и районах</p>
+            </div>
+            <div class="hero-stat-cards">
+              <div class="hsc">
+                <div class="hsc-icon aqua"><i class="fas fa-users"></i></div>
+                <div>
+                  <div class="hsc-num">50 000+</div>
+                  <div class="hsc-lbl" data-i18n="hsc1">Охвачено людей</div>
+                </div>
+              </div>
+              <div class="hsc">
+                <div class="hsc-icon gold"><i class="fas fa-handshake"></i></div>
+                <div>
+                  <div class="hsc-num">20+</div>
+                  <div class="hsc-lbl" data-i18n="hsc2">Партнёров</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ STATS BAR ══════ -->
+  <div class="stats-bar" role="region" aria-label="Ключевые показатели">
+    <div class="stats-grid">
+      <div class="stat-cell">
+        <div class="stat-icon" aria-hidden="true"><i class="fas fa-calendar-check"></i></div>
+        <span class="stat-num count" data-target="27" aria-label="27 лет работы">0</span>
+        <span class="stat-lbl" data-i18n="stat1">Лет работы</span>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-icon" aria-hidden="true"><i class="fas fa-project-diagram"></i></div>
+        <span class="stat-num count" data-target="60" aria-label="60 проектов">0</span>
+        <span class="stat-lbl" data-i18n="stat2">Проектов</span>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+        <span class="stat-num count" data-target="18" aria-label="18 районов">0</span>
+        <span class="stat-lbl" data-i18n="stat3">Районов охвата</span>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-icon" aria-hidden="true"><i class="fas fa-book-open"></i></div>
+        <span class="stat-num count" data-target="8" aria-label="8 публикаций">0</span>
+        <span class="stat-lbl" data-i18n="stat4">Публикаций</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ ABOUT ══════ -->
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="about-img" role="img" aria-label="Деятельность организации Чашмаи Хаёт"></div>
+          <div class="about-year-badge" aria-label="Основана в 1998 году">
+            <span class="y-num">1998</span>
+            <span class="y-lbl" data-i18n="founded">год основания</span>
+          </div>
+          <div class="about-cert">
+            <i class="fas fa-award" aria-hidden="true"></i>
+            <div>
+              <div class="about-cert-text" data-i18n="cert_title">Сертифицирована</div>
+              <div class="about-cert-sub" data-i18n="cert_sub">Фонд Ага Хана, 2009</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-text">
+          <div class="sec-label" data-i18n="label_about">О нас</div>
+          <div class="sec-divider"></div>
+          <h2 class="sec-title" id="about-title" data-i18n="about_title">Кто мы и ради чего работаем</h2>
+          <p class="about-lead" data-i18n="about_lead">ОО «Чашмаи Хаёт» — общественная, неправительственная организация,
+            объединяющая женщин для повышения их роли в социальной, экономической и политической жизни Таджикистана.</p>
+          <p class="about-body" data-i18n="about_p1">Образована <strong>19 мая 1998 года</strong>, зарегистрирована в
+            Управлении юстиции Согдийской области под № 80. Перерегистрирована 30 октября 2007 года под № 004-2075 «А».
+          </p>
+          <p class="about-body" data-i18n="about_p2">Члены ОО активно участвуют в разработке и реализации программ,
+            основанных на решениях Пекинской Всемирной конференции по положению женщин.</p>
+          <div class="reg-badge"><i class="fas fa-shield-alt"></i> <span data-i18n="reg">Рег. № 004-2075 «А» ·
+              Управление юстиции Согдийской области</span></div>
+          <div class="partner-tags">
+            <span class="ptag"><i class="fas fa-check"></i> ООН Женщины</span>
+            <span class="ptag"><i class="fas fa-check"></i> МОМ</span>
+            <span class="ptag"><i class="fas fa-check"></i> ОБСЕ</span>
+            <span class="ptag"><i class="fas fa-check"></i> ЮНИФЕМ</span>
+            <span class="ptag"><i class="fas fa-check"></i> ПРООН</span>
+            <span class="ptag"><i class="fas fa-check"></i> Европейский союз</span>
+            <span class="ptag"><i class="fas fa-check"></i> Фонд Ага Хана</span>
+            <span class="ptag"><i class="fas fa-check"></i> Правительство РТ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ DIRECTIONS ══════ -->
+  <section class="directions" id="directions" aria-labelledby="dir-title">
+    <div class="container">
+      <div class="dir-hd">
+        <div class="sec-label" data-i18n="label_dir">Наша работа</div>
+        <div class="sec-divider"></div>
+        <h2 class="sec-title" id="dir-title" data-i18n="dir_title">Основные направления деятельности</h2>
+        <p class="sec-desc" data-i18n="dir_desc">Мы работаем по ключевым направлениям, влияющим на жизнь женщин, семей и
+          уязвимых групп населения.</p>
+      </div>
+      <div class="dir-grid">
+        <div class="dir-card">
+          <div class="dir-icon"><i class="fas fa-venus" aria-hidden="true"></i></div>
+          <h3 data-i18n="d1_h">Права женщин</h3>
+          <p data-i18n="d1_p">Повышение правовой грамотности, защита имущественных прав, содействие участию женщин в
+            общественно-политической жизни, гендерное равенство.</p>
+          <span class="dir-more" data-i18n="more">Подробнее <i class="fas fa-arrow-right"></i></span>
+        </div>
+        <div class="dir-card">
+          <div class="dir-icon"><i class="fas fa-plane-departure" aria-hidden="true"></i></div>
+          <h3 data-i18n="d2_h">Безопасная миграция</h3>
+          <p data-i18n="d2_p">Информирование о правах мигрантов, «горячая линия», реинтеграционная помощь уязвимым
+            мигрантам и членам их семей (2002–2024 гг.).</p>
+          <span class="dir-more" data-i18n="more">Подробнее <i class="fas fa-arrow-right"></i></span>
+        </div>
+        <div class="dir-card">
+          <div class="dir-icon"><i class="fas fa-ban" aria-hidden="true"></i></div>
+          <h3 data-i18n="d3_h">Противодействие торговле людьми</h3>
+          <p data-i18n="d3_p">Профилактика ТЛ, медицинская, психологическая и юридическая помощь жертвам, мобильные
+            театры, молодёжные лагеря «Молодёжь против ТЛ!».</p>
+          <span class="dir-more" data-i18n="more">Подробнее <i class="fas fa-arrow-right"></i></span>
+        </div>
+        <div class="dir-card">
+          <div class="dir-icon"><i class="fas fa-heartbeat" aria-hidden="true"></i></div>
+          <h3 data-i18n="d4_h">Здоровье и ВИЧ/СПИД</h3>
+          <p data-i18n="d4_p">Профилактика ВИЧ/СПИДа среди трудовых мигрантов и членов их семей, информирование по
+            вопросам репродуктивного здоровья населения.</p>
+          <span class="dir-more" data-i18n="more">Подробнее <i class="fas fa-arrow-right"></i></span>
+        </div>
+        <div class="dir-card">
+          <div class="dir-icon"><i class="fas fa-home" aria-hidden="true"></i></div>
+          <h3 data-i18n="d5_h">Семья и молодёжь</h3>
+          <p data-i18n="d5_p">Укрепление института семьи, лидерские тренинги, летние лагеря «Изучаем демократию», проект
+            «Кошонаи саодат» (Очаг счастья) 2013–2021 гг.</p>
+          <span class="dir-more" data-i18n="more">Подробнее <i class="fas fa-arrow-right"></i></span>
+        </div>
+        <div class="dir-card">
+          <div class="dir-icon"><i class="fas fa-balance-scale" aria-hidden="true"></i></div>
+          <h3 data-i18n="d6_h">Юридическая и психологическая помощь</h3>
+          <p data-i18n="d6_p">Бесплатная юридическая и психологическая помощь населению с 1998 года. Поддержка жертв
+            домашнего насилия и торговли людьми.</p>
+          <span class="dir-more" data-i18n="more">Подробнее <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ IMPACT ══════ -->
+  <section class="impact" id="impact" aria-labelledby="impact-title">
+    <div class="container">
+      <div class="impact-inner">
+        <div>
+          <div class="sec-label" data-i18n="label_impact">Наши результаты</div>
+          <div class="sec-divider"></div>
+          <h2 class="sec-title" id="impact-title" data-i18n="impact_title">27 лет реального изменения жизней</h2>
+          <p class="sec-desc" data-i18n="impact_desc">За годы работы ОО «Чашмаи Хаёт» реализовала десятки проектов,
+            охватила тысячи людей и создала устойчивые сети поддержки по всему Таджикистану.</p>
+          <ul class="impact-list" role="list">
+            <li class="impact-li"><i class="fas fa-check-circle" aria-hidden="true"></i><span data-i18n="il1">Более 50
+                семинаров совместно с Миссией ОБСЕ по правам женщин (1999–2001)</span></li>
+            <li class="impact-li"><i class="fas fa-check-circle" aria-hidden="true"></i><span data-i18n="il2">13
+                молодёжных лагерей по демократии и профилактике ТЛ (2001–2007)</span></li>
+            <li class="impact-li"><i class="fas fa-check-circle" aria-hidden="true"></i><span data-i18n="il3">«Горячая
+                линия» МОМ по профилактике торговли людьми (2002–2009)</span></li>
+            <li class="impact-li"><i class="fas fa-check-circle" aria-hidden="true"></i><span data-i18n="il4">3 новые
+                НПО основаны при поддержке организации в Согдийской области (2008)</span></li>
+            <li class="impact-li"><i class="fas fa-check-circle" aria-hidden="true"></i><span
+                data-i18n="il5">Реинтеграционная помощь уязвимым мигрантам (МОМ, 2017–2024)</span></li>
+            <li class="impact-li"><i class="fas fa-check-circle" aria-hidden="true"></i><span
+                data-i18n="il6">Шестисторонний план партнёрства с государственными органами (2023–2025)</span></li>
+          </ul>
+        </div>
+        <div class="impact-nums" aria-label="Ключевые цифры">
+          <div class="in-card">
+            <span class="in-num count" data-target="50" aria-label="50 семинаров">0</span>
+            <span class="in-lbl" data-i18n="in1">Семинаров ОБСЕ</span>
+          </div>
+          <div class="in-card">
+            <span class="in-num count" data-target="13" aria-label="13 лагерей">0</span>
+            <span class="in-lbl" data-i18n="in2">Молодёжных лагерей</span>
+          </div>
+          <div class="in-card">
+            <span class="in-num count" data-target="18" aria-label="18 районов">0</span>
+            <span class="in-lbl" data-i18n="in3">Районов охвата</span>
+          </div>
+          <div class="in-card">
+            <span class="in-num count" data-target="6" aria-label="6 партнёров">0</span>
+            <span class="in-lbl" data-i18n="in4">Гос. партнёров</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ TIMELINE ══════ -->
+  <section class="timeline-sec" id="timeline" aria-labelledby="tl-title">
+    <div class="container">
+      <div class="tl-hd">
+        <div class="sec-label" data-i18n="label_hist">История</div>
+        <div class="sec-divider"></div>
+        <h2 class="sec-title" id="tl-title" data-i18n="tl_title">Путь от основания до сегодня</h2>
+      </div>
+      <div class="tl-wrap" role="list">
+        <div class="tl-line" aria-hidden="true"></div>
+        <div class="tl-row" role="listitem">
+          <div class="tl-content-wrap">
+            <div class="tl-card">
+              <div class="tl-year">1998</div>
+              <h4 data-i18n="tl1h">Основание организации</h4>
+              <p data-i18n="tl1p">19 мая 1998 года зарегистрирована в Управлении юстиции Согдийской области. Первые
+                конференции о роли женщин при поддержке ТФ ИОО.</p>
+            </div>
+          </div>
+          <div class="tl-dot-wrap">
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-content-wrap"></div>
+        </div>
+        <div class="tl-row" role="listitem">
+          <div class="tl-content-wrap"></div>
+          <div class="tl-dot-wrap">
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-content-wrap">
+            <div class="tl-card">
+              <div class="tl-year">1999–2001</div>
+              <h4 data-i18n="tl2h">Партнёрство с ОБСЕ и ЮНИФЕМ</h4>
+              <p data-i18n="tl2p">Более 50 семинаров по правам женщин совместно с Миссией ОБСЕ. Зональные семинары о
+                демократии в 17 городах и районах.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tl-row" role="listitem">
+          <div class="tl-content-wrap">
+            <div class="tl-card">
+              <div class="tl-year">2002–2009</div>
+              <h4 data-i18n="tl3h">Горячая линия МОМ</h4>
+              <p data-i18n="tl3p">Запуск службы «горячей линии» по профилактике торговли людьми совместно с МОМ.
+                Ежегодные акции «Стоп трафик!» и мобильные театры.</p>
+            </div>
+          </div>
+          <div class="tl-dot-wrap">
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-content-wrap"></div>
+        </div>
+        <div class="tl-row" role="listitem">
+          <div class="tl-content-wrap"></div>
+          <div class="tl-dot-wrap">
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-content-wrap">
+            <div class="tl-card">
+              <div class="tl-year">2005–2014</div>
+              <h4 data-i18n="tl4h">Профилактика ВИЧ/СПИД</h4>
+              <p data-i18n="tl4p">Проект МОМ «Мобилизация общин в целях профилактики ВИЧ/СПИД среди трудовых мигрантов»
+                в Б. Гафуровском и Айнинском районах.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tl-row" role="listitem">
+          <div class="tl-content-wrap">
+            <div class="tl-card">
+              <div class="tl-year">2008</div>
+              <h4 data-i18n="tl5h">Сети женщин-лидеров</h4>
+              <p data-i18n="tl5p">Проект ПРООН: созданы и зарегистрированы три новые организации — ОО «Гурдофарид», ОО
+                «Нахли умед», ОО «Фарахбахш».</p>
+            </div>
+          </div>
+          <div class="tl-dot-wrap">
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-content-wrap"></div>
+        </div>
+        <div class="tl-row" role="listitem">
+          <div class="tl-content-wrap"></div>
+          <div class="tl-dot-wrap">
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-content-wrap">
+            <div class="tl-card">
+              <div class="tl-year">2013–2021</div>
+              <h4 data-i18n="tl6h">Кошонаи саодат</h4>
+              <p data-i18n="tl6p">Совместно с Комитетом по делам женщин и семьи Согдийской области реализован
+                многолетний проект поддержки семьи. Городские и региональные конкурсы.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tl-row" role="listitem">
+          <div class="tl-content-wrap">
+            <div class="tl-card">
+              <div class="tl-year">2019–2021</div>
+              <h4 data-i18n="tl7h">Медиапроекты по миграции</h4>
+              <p data-i18n="tl7p">Проект «Права и Достоинства в Центральной Азии». ТВ и радиопередачи по безопасной
+                миграции. Партнёрство с ТРРК «Тироз» и Европейским союзом.</p>
+            </div>
+          </div>
+          <div class="tl-dot-wrap">
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-content-wrap"></div>
+        </div>
+        <div class="tl-row" role="listitem">
+          <div class="tl-content-wrap"></div>
+          <div class="tl-dot-wrap">
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-content-wrap">
+            <div class="tl-card">
+              <div class="tl-year">2023–2025</div>
+              <h4 data-i18n="tl8h">Шестисторонний план</h4>
+              <p data-i18n="tl8p">Подписан план согласованных мероприятий с 5 государственными и общественными
+                организациями. Сейчас разрабатывается план на 2026–2030 годы с расширением партнёров.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ TEAM ══════ -->
+  <section class="team" id="team" aria-labelledby="team-title">
+    <div class="container">
+      <div class="team-hd">
+        <div class="sec-label" data-i18n="label_team">Команда</div>
+        <div class="sec-divider"></div>
+        <h2 class="sec-title" id="team-title" data-i18n="team_title">Люди, стоящие за нашей работой</h2>
+      </div>
+      <div class="team-grid">
+        <article class="team-card">
+          <div class="team-top">
+            <div class="team-initials" aria-hidden="true">РБ</div>
+          </div>
+          <div class="team-body">
+            <h4 data-i18n="t1n">Рахимова Биходжал</h4>
+            <div class="team-role" data-i18n="t1r">Председатель правления</div>
+            <p data-i18n="t1d">Руководит стратегическим развитием и координирует работу с государственными структурами.
+            </p>
+          </div>
+        </article>
+        <article class="team-card">
+          <div class="team-top" style="background:linear-gradient(135deg,#0d3d6e,var(--teal))">
+            <div class="team-initials">БР</div>
+          </div>
+          <div class="team-body">
+            <h4 data-i18n="t2n">Бобоева Рафоат</h4>
+            <div class="team-role" data-i18n="t2r">Учредитель, консультант</div>
+            <p data-i18n="t2d">Один из основателей организации. Эксперт по правам женщин и гендерному равенству с 1998
+              года.</p>
+          </div>
+        </article>
+        <article class="team-card">
+          <div class="team-top" style="background:linear-gradient(135deg,var(--teal),#0e7490)">
+            <div class="team-initials">РМ</div>
+          </div>
+          <div class="team-body">
+            <h4 data-i18n="t3n">Рахимова Мархабо</h4>
+            <div class="team-role" data-i18n="t3r">Исполнительный директор</div>
+            <p data-i18n="t3d">Управляет операционной деятельностью и взаимодействием с международными партнёрами.</p>
+          </div>
+        </article>
+        <article class="team-card">
+          <div class="team-top" style="background:linear-gradient(135deg,#164e63,#0e7490)">
+            <div class="team-initials">СН</div>
+          </div>
+          <div class="team-body">
+            <h4 data-i18n="t4n">Садыкова Наргиза</h4>
+            <div class="team-role" data-i18n="t4r">Главный бухгалтер</div>
+            <p data-i18n="t4d">Отвечает за финансовое управление, отчётность и соответствие стандартам грантовой
+              отчётности.</p>
+          </div>
+        </article>
+      </div>
+      <div class="team-rep">
+        <div class="team-rep-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
+        <div class="team-rep-text">
+          <h4 data-i18n="rep_name">Шарифова Низоматмо — Представитель в Зарафшанской долине</h4>
+          <p data-i18n="rep_desc">Кухистони Мастчох, Айни, Пенджикентский район</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ PUBLICATIONS ══════ -->
+  <section class="publications" id="publications" aria-labelledby="pub-title">
+    <div class="container">
+      <div class="pub-hd">
+        <div class="sec-label" data-i18n="label_pub">Публикации</div>
+        <div class="sec-divider"></div>
+        <h2 class="sec-title" id="pub-title" data-i18n="pub_title">Наши издания и материалы</h2>
+        <p class="sec-desc" data-i18n="pub_desc">Практические руководства, исследования и правовые материалы на русском
+          и таджикском языках.</p>
+      </div>
+      <div class="pub-grid">
+        <article class="pub-card">
+          <div class="pub-strip"></div>
+          <div class="pub-body">
+            <div class="pub-year">2000 · Худжанд</div>
+            <h4 data-i18n="p1h">Женщины Центральной Азии за мир и стабильность</h4>
+            <p data-i18n="p1d">Сборник материалов форума женских НПО стран Центральной Азии.</p>
+          </div>
+          <div class="pub-foot"><i class="fas fa-book"></i><span data-i18n="p1t">Сборник</span></div>
+        </article>
+        <article class="pub-card">
+          <div class="pub-strip"></div>
+          <div class="pub-body">
+            <div class="pub-year">2001 · Худжанд</div>
+            <h4 data-i18n="p2h">Семья в новом тысячелетии</h4>
+            <p data-i18n="p2d">Материалы тренингов по семейным ценностям и правам женщин в 18 городах и районах.</p>
+          </div>
+          <div class="pub-foot"><i class="fas fa-book-open"></i><span data-i18n="p2t">Методическое пособие</span></div>
+        </article>
+        <article class="pub-card">
+          <div class="pub-strip"></div>
+          <div class="pub-body">
+            <div class="pub-year">2002 · Худжанд</div>
+            <h4 data-i18n="p3h">Права женщин и семьи в Республике Таджикистан</h4>
+            <p data-i18n="p3d">Правовые нормы защиты женщины и семьи на таджикском и русском языках.</p>
+          </div>
+          <div class="pub-foot"><i class="fas fa-gavel"></i><span data-i18n="p3t">Правовой справочник</span></div>
+        </article>
+        <article class="pub-card">
+          <div class="pub-strip"></div>
+          <div class="pub-body">
+            <div class="pub-year">2002 · Худжанд</div>
+            <h4 data-i18n="p4h">Права женщин в международных законодательных документах</h4>
+            <p data-i18n="p4d">Обзор международного права в области прав женщин.</p>
+          </div>
+          <div class="pub-foot"><i class="fas fa-globe"></i><span data-i18n="p4t">Справочник</span></div>
+        </article>
+        <article class="pub-card">
+          <div class="pub-strip"></div>
+          <div class="pub-body">
+            <div class="pub-year">2003 · Худжанд</div>
+            <h4 data-i18n="p5h">Проблемы торговли людьми и закон</h4>
+            <p data-i18n="p5d">Правовые механизмы противодействия торговле людьми. Практическое руководство.</p>
+          </div>
+          <div class="pub-foot"><i class="fas fa-shield-alt"></i><span data-i18n="p5t">Правовое руководство</span></div>
+        </article>
+        <article class="pub-card">
+          <div class="pub-strip"></div>
+          <div class="pub-body">
+            <div class="pub-year">2014 · Худжанд</div>
+            <h4 data-i18n="p6h">Кошонаи саодат (Очаг счастья)</h4>
+            <p data-i18n="p6d">Руководство для комитетов по делам женщин, органов ЗАГС и молодых семей по укреплению
+              семьи.</p>
+          </div>
+          <div class="pub-foot"><i class="fas fa-home"></i><span data-i18n="p6t">Практическое руководство</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ PARTNERS ══════ -->
+  <div class="partners-sec" role="region" aria-labelledby="partners-title">
+    <div class="container">
+      <div class="partners-hd">
+        <h3 id="partners-title" data-i18n="partners_title">Наши партнёры и доноры</h3>
+        <p data-i18n="partners_desc">Организации, с которыми мы работаем для достижения общих целей</p>
+      </div>
+      <div class="partners-grid">
+        <div class="pg"><i class="fas fa-globe"></i>МОМ</div>
+        <div class="pg"><i class="fas fa-globe"></i>ОБСЕ</div>
+        <div class="pg"><i class="fas fa-globe"></i>ООН Женщины</div>
+        <div class="pg"><i class="fas fa-globe"></i>ЮНИФЕМ</div>
+        <div class="pg"><i class="fas fa-globe"></i>ПРООН</div>
+        <div class="pg"><i class="fas fa-globe"></i>Европейский союз</div>
+        <div class="pg"><i class="fas fa-star"></i>Фонд Ага Хана</div>
+        <div class="pg"><i class="fas fa-flag"></i>Хукумат Согдийской обл.</div>
+        <div class="pg"><i class="fas fa-flag"></i>Комитет по делам женщин РТ</div>
+        <div class="pg"><i class="fas fa-flag"></i>Управление миграции РТ</div>
+        <div class="pg"><i class="fas fa-hands-helping"></i>Агентство по контролю за наркотиками</div>
+        <div class="pg"><i class="fas fa-hands-helping"></i>ОО «Фонд развития общества»</div>
+        <div class="pg"><i class="fas fa-hands-helping"></i>ТРРК «Тироз»</div>
+        <div class="pg"><i class="fas fa-hands-helping"></i>МО «Фидокор»</div>
+      </div>
+      <div class="assoc-sec">
+        <h4><i class="fas fa-network-wired"></i> <span data-i18n="assoc_title">Членство в ассоциациях и сетях</span>
+        </h4>
+        <div class="assoc-list">
+          <span class="atag" data-i18n="as1">Соучредитель МФ «Шарк аёли» (2004)</span>
+          <span class="atag" data-i18n="as2">Соучредитель ассоциации «Хамкории боздошти сил» (2018)</span>
+          <span class="atag" data-i18n="as3">Соучредитель ассоциации «Миграция и туберкулёз» (2019)</span>
+          <span class="atag" data-i18n="as4">Член сети «Умед» против ТЛ (с 2004)</span>
+          <span class="atag" data-i18n="as5">Стипендиальный фонд «Орзу» (2016–2021)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ 6-WAY PLAN ══════ -->
+  <section class="plan-sec" aria-labelledby="plan-title">
+    <div class="container">
+      <div class="plan-inner">
+        <div>
+          <div class="sec-label" data-i18n="label_plan">Государственное партнёрство</div>
+          <div class="sec-divider" style="background:var(--gold)"></div>
+          <h2 class="sec-title" id="plan-title" data-i18n="plan_title">Шестисторонний план согласованных мероприятий
+          </h2>
+          <p class="sec-desc" data-i18n="plan_desc">2023–2025 гг. — профилактика торговли людьми, домашнего насилия,
+            безопасная миграция и борьба с наркозависимостью</p>
+          <p class="plan-body" data-i18n="plan_body">ОО «Чашмаи Хаёт» тесно сотрудничает с государственными структурами
+            в рамках официально подписанного шестистороннего плана. Сейчас разрабатывается расширенный план на 2026–2030
+            годы с привлечением новых партнёров.</p>
+          <div class="plan-badge"><i class="fas fa-calendar-alt"></i><span data-i18n="plan_upd">Обновлённый план на
+              2026–2030 годы: в процессе согласования</span></div>
+        </div>
+        <div>
+          <div class="plan-orgs" role="list">
+            <div class="plan-org" role="listitem">
+              <div class="plan-org-num">1</div>
+              <div class="plan-org-name" data-i18n="po1">Административно-хозяйственный отдел аппарата Главы Согдийской
+                области</div>
+            </div>
+            <div class="plan-org" role="listitem">
+              <div class="plan-org-num">2</div>
+              <div class="plan-org-name" data-i18n="po2">Управление службы миграции Министерства труда, миграции и
+                занятости РТ</div>
+            </div>
+            <div class="plan-org" role="listitem">
+              <div class="plan-org-num">3</div>
+              <div class="plan-org-name" data-i18n="po3">Управление по делам женщин и семьи Согдийской области</div>
+            </div>
+            <div class="plan-org" role="listitem">
+              <div class="plan-org-num">4</div>
+              <div class="plan-org-name" data-i18n="po4">Агентство по контролю за наркотиками при Президенте РТ</div>
+            </div>
+            <div class="plan-org" role="listitem">
+              <div class="plan-org-num">5</div>
+              <div class="plan-org-name" data-i18n="po5">Общественная организация «Чашмаи Хаёт»</div>
+            </div>
+            <div class="plan-org" role="listitem">
+              <div class="plan-org-num">6</div>
+              <div class="plan-org-name" data-i18n="po6">Общественная организация «Фонд развития общества»</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ FAQ ══════ -->
+  <section class="faq-sec" id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="faq-hd">
+        <div class="sec-label">FAQ</div>
+        <div class="sec-divider"></div>
+        <h2 class="sec-title" id="faq-title" data-i18n="faq_title">Часто задаваемые вопросы</h2>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text" data-i18n="fq1q">Как получить бесплатную
+              юридическую помощь?</span><i class="fas fa-chevron-down faq-chevron"></i></div>
+          <div class="faq-a">
+            <div class="faq-a-inner" data-i18n="fq1a">Обратитесь по телефону +992 92 825 32 66 или лично: г. Худжанд,
+              ул. Фирдоуси, 120. Юридическая и психологическая помощь оказывается бесплатно с 1998 года.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text" data-i18n="fq2q">Как стать
+              волонтёром?</span><i class="fas fa-chevron-down faq-chevron"></i></div>
+          <div class="faq-a">
+            <div class="faq-a-inner" data-i18n="fq2a">Заполните форму на сайте или напишите нам. Мы регулярно проводим
+              обучение волонтёров и рады всем, кто готов помогать.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text" data-i18n="fq3q">Какие районы вы
+              охватываете?</span><i class="fas fa-chevron-down faq-chevron"></i></div>
+          <div class="faq-a">
+            <div class="faq-a-inner" data-i18n="fq3a">Основная деятельность — Согдийская область (18+ городов и
+              районов). Через представителя также работаем в Зарафшанской долине: Кухистони Мастчох, Айни, Пенджикент.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text" data-i18n="fq4q">Как организация
+              финансируется?</span><i class="fas fa-chevron-down faq-chevron"></i></div>
+          <div class="faq-a">
+            <div class="faq-a-inner" data-i18n="fq4a">За счёт грантов международных организаций (МОМ, ОБСЕ, ООН, ЕС),
+              президентских грантов и социального заказа от государственных структур.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text" data-i18n="fq5q">Как сообщить о случае
+              торговли людьми?</span><i class="fas fa-chevron-down faq-chevron"></i></div>
+          <div class="faq-a">
+            <div class="faq-a-inner" data-i18n="fq5a">Позвоните на наш телефон. Вся информация строго конфиденциальна.
+              Мы окажем профессиональную помощь и направим к нужным специалистам.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text" data-i18n="fq6q">Можно ли подать
+              грантовую заявку?</span><i class="fas fa-chevron-down faq-chevron"></i></div>
+          <div class="faq-a">
+            <div class="faq-a-inner" data-i18n="fq6a">Да. Свяжитесь с нами для обсуждения возможного партнёрства и
+              совместных проектов. Мы открыты для сотрудничества с НКО, государственными и международными организациями.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hotline-card" role="region" aria-label="Телефон доверия">
+        <div class="hotline-icon" aria-hidden="true"><i class="fas fa-phone-volume"></i></div>
+        <div class="hotline-text">
+          <h3 data-i18n="hl_title">Нужна помощь прямо сейчас?</h3>
+          <p data-i18n="hl_desc">Наши специалисты готовы помочь — юридически, психологически, по вопросам миграции и
+            безопасности.</p>
+          <div class="hotline-nums">
+            <a href="tel:+992928253266" aria-label="Позвонить по номеру +992 92 825 32 66"><i class="fas fa-phone-alt"
+                aria-hidden="true"></i>+992 92 825 32 66</a>
+            <a href="tel:+992921179991" aria-label="Позвонить по номеру +992 92 117 99 91"><i class="fas fa-phone-alt"
+                aria-hidden="true"></i>+992 92 117 99 91</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ CONTACT ══════ -->
+  <section class="contact-sec" id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-info">
+          <div class="sec-label" data-i18n="label_contact">Контакты</div>
+          <div class="sec-divider"></div>
+          <h2 id="contact-title" data-i18n="contact_title">Свяжитесь с нами</h2>
+          <p data-i18n="contact_desc">Мы готовы ответить на вопросы, рассмотреть предложения о партнёрстве и оказать
+            необходимую помощь.</p>
+          <div class="c-rows">
+            <div class="c-row">
+              <div class="c-ico-wrap" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="c-row-text">
+                <h5 data-i18n="c_addr_lbl">Адрес</h5>
+                <p data-i18n="c_addr">г. Худжанд, ул. Фирдоуси, 120<br>Согдийская область, Таджикистан</p>
+              </div>
+            </div>
+            <div class="c-row">
+              <div class="c-ico-wrap" aria-hidden="true"><i class="fas fa-phone-alt"></i></div>
+              <div class="c-row-text">
+                <h5 data-i18n="c_phone_lbl">Телефон</h5><a href="tel:+992928253266">+992 92 825 32 66</a><br><a
+                  href="tel:+992921179991" style="font-size:14px;color:var(--gray)">+992 92 117 99 91</a>
+              </div>
+            </div>
+            <div class="c-row">
+              <div class="c-ico-wrap" aria-hidden="true"><i class="fas fa-envelope"></i></div>
+              <div class="c-row-text">
+                <h5 data-i18n="c_email_lbl">Email</h5><a href="mailto:rboboeva@gmail.com">rboboeva@gmail.com</a><br><a
+                  href="mailto:marhabohon72@mail.ru" style="font-size:14px;color:var(--gray)">marhabohon72@mail.ru</a>
+              </div>
+            </div>
+            <div class="c-row">
+              <div class="c-ico-wrap" aria-hidden="true"><i class="fas fa-clock"></i></div>
+              <div class="c-row-text">
+                <h5 data-i18n="c_hours_lbl">Рабочие часы</h5>
+                <p data-i18n="c_hours">Пн–Пт: 9:00–18:00 · Сб: 9:00–13:00</p>
+              </div>
+            </div>
+          </div>
+          <div class="map-embed">
+            <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=69.59,40.27,69.67,40.31&layer=mapnik"
+              title="Карта расположения офиса" loading="lazy"></iframe>
+          </div>
+        </div>
+        <div class="contact-form-box">
+          <h3 data-i18n="form_title">Написать нам</h3>
+          <p data-i18n="form_desc">Мы ответим в течение 1–2 рабочих дней</p>
+          <form id="contactForm" novalidate aria-label="Форма обратной связи">
+            <div class="form-row-2">
+              <div class="fld"><label for="fname" data-i18n="fl_name">Имя *</label><input type="text" id="fname"
+                  name="name" placeholder="Ваше имя" required autocomplete="given-name"></div>
+              <div class="fld"><label for="fphone" data-i18n="fl_phone">Телефон</label><input type="tel" id="fphone"
+                  name="phone" placeholder="+992..." autocomplete="tel"></div>
+            </div>
+            <div class="fld"><label for="femail" data-i18n="fl_email">Email *</label><input type="email" id="femail"
+                name="email" placeholder="example@mail.com" required autocomplete="email"></div>
+            <div class="fld"><label for="fsubject" data-i18n="fl_subject">Тема обращения</label>
+              <select id="fsubject" name="subject">
+                <option value="" data-i18n="fso">— Выберите тему —</option>
+                <option data-i18n="fs1">Юридическая / психологическая помощь</option>
+                <option data-i18n="fs2">Партнёрство и сотрудничество</option>
+                <option data-i18n="fs3">Волонтёрство</option>
+                <option data-i18n="fs4">Грант / финансирование проекта</option>
+                <option data-i18n="fs5">Торговля людьми / домашнее насилие</option>
+                <option data-i18n="fs6">Вопросы миграции</option>
+                <option data-i18n="fs7">СМИ и пресса</option>
+                <option data-i18n="fs8">Другое</option>
+              </select>
+            </div>
+            <div class="fld"><label for="fmsg" data-i18n="fl_msg">Сообщение *</label><textarea id="fmsg" name="message"
+                placeholder="Опишите ваш вопрос или предложение..." required></textarea></div>
+            <button type="submit" class="form-submit" id="formBtn" data-i18n="btn_send">
+              <i class="fas fa-paper-plane" aria-hidden="true"></i> Отправить сообщение
+            </button>
+            <p class="form-note" data-i18n="form_note">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ FOOTER ══════ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="fl-logo">
+            <div class="logo-emblem" style="width:40px;height:40px;font-size:18px"><i
+                class="fas fa-hand-holding-droplet"></i></div>
+            <div>
+              <div class="fl-logo-name" data-i18n="logo_name">Чашмаи Хаёт</div>
+              <div class="fl-logo-sub" data-i18n="logo_tag">Родник жизни · НПО Таджикистан</div>
+            </div>
+          </div>
+          <p data-i18n="footer_about">Общественная организация, работающая ради равных прав, защиты достоинства и
+            справедливого общества в Таджикистане с 1998 года.</p>
+          <div class="footer-reg"><i class="fas fa-shield-alt"></i><span data-i18n="reg">Рег. № 004-2075 «А» ·
+              Управление юстиции Согдийской области</span></div>
+          <div class="socials">
+            <a href="#" class="soc-a" aria-label="Facebook" rel="noopener noreferrer"><i
+                class="fab fa-facebook-f"></i></a>
+            <a href="#" class="soc-a" aria-label="Instagram" rel="noopener noreferrer"><i
+                class="fab fa-instagram"></i></a>
+            <a href="#" class="soc-a" aria-label="Telegram" rel="noopener noreferrer"><i
+                class="fab fa-telegram-plane"></i></a>
+            <a href="#" class="soc-a" aria-label="LinkedIn" rel="noopener noreferrer"><i
+                class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="soc-a" aria-label="YouTube" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5 data-i18n="ft_nav">Навигация</h5>
+          <nav class="fl" aria-label="Навигация в подвале">
+            <a href="#about"><i class="fas fa-chevron-right"></i><span data-i18n="nav_about">О нас</span></a>
+            <a href="#directions"><i class="fas fa-chevron-right"></i><span data-i18n="nav_dir">Направления</span></a>
+            <a href="#impact"><i class="fas fa-chevron-right"></i><span data-i18n="nav_impact">Результаты</span></a>
+            <a href="#timeline"><i class="fas fa-chevron-right"></i><span data-i18n="nav_history">История</span></a>
+            <a href="#team"><i class="fas fa-chevron-right"></i><span data-i18n="nav_team">Команда</span></a>
+            <a href="#publications"><i class="fas fa-chevron-right"></i><span data-i18n="nav_pub">Публикации</span></a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <h5 data-i18n="ft_dir">Направления</h5>
+          <nav class="fl" aria-label="Направления деятельности">
+            <a href="#directions"><i class="fas fa-chevron-right"></i><span data-i18n="d1_h">Права женщин</span></a>
+            <a href="#directions"><i class="fas fa-chevron-right"></i><span data-i18n="d2_h">Безопасная
+                миграция</span></a>
+            <a href="#directions"><i class="fas fa-chevron-right"></i><span data-i18n="d3_h">Противодействие
+                ТЛ</span></a>
+            <a href="#directions"><i class="fas fa-chevron-right"></i><span data-i18n="d4_h">Здоровье и ВИЧ</span></a>
+            <a href="#directions"><i class="fas fa-chevron-right"></i><span data-i18n="d5_h">Семья и молодёжь</span></a>
+            <a href="#directions"><i class="fas fa-chevron-right"></i><span data-i18n="d6_h">Юридическая
+                помощь</span></a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <h5 data-i18n="ft_nl">Подписка</h5>
+          <p data-i18n="ft_nl_desc">Получайте новости о проектах и мероприятиях.</p>
+          <div class="nl-form" role="search">
+            <input type="email" class="nl-input" placeholder="Ваш email..." aria-label="Email для подписки">
+            <button class="nl-btn" aria-label="Подписаться"><i class="fas fa-arrow-right"></i></button>
+          </div>
+          <div style="margin-top:24px">
+            <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:1px;margin-bottom:8px"
+              data-i18n="c_phone_lbl">ТЕЛЕФОН</div>
+            <a href="tel:+992928253266" style="color:var(--aqua);font-size:16px;font-weight:700"><i
+                class="fas fa-phone-alt" style="margin-right:8px"></i>+992 92 825 32 66</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="copyright">© 1998–2026 ОО «Чашмаи Хаёт». Все права защищены.</span>
+        <div class="footer-legal">
+          <a href="javascript:void(0)" onclick="openLegalModal('privacy')" data-i18n="privacy"
+            id="link-privacy">Политика конфиденциальности</a>
+          <a href="javascript:void(0)" onclick="openLegalModal('terms')" data-i18n="terms"
+            id="link-terms">Пользовательское соглашение</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button id="btt" aria-label="Наверх"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
+
+  <!-- COOKIE -->
+  <div id="cookie" role="dialog" aria-modal="true" aria-labelledby="cookie-title">
+    <div style="display:flex;gap:14px;align-items:flex-start">
+      <i class="fas fa-cookie-bite" style="color:var(--aqua);font-size:22px;margin-top:3px;flex-shrink:0"
+        aria-hidden="true"></i>
+      <div>
+        <strong id="cookie-title" style="display:block;margin-bottom:6px;font-size:14px" data-i18n="ck_title">Мы
+          используем cookies</strong>
+        <p data-i18n="ck_text">Сайт использует файлы cookie для аналитики и улучшения работы. Продолжая, вы соглашаетесь
+          с нашей <a href="javascript:void(0)" onclick="openLegalModal('privacy')">политикой конфиденциальности</a>.</p>
+      </div>
+    </div>
+    <div class="cookie-row">
+      <button class="ck-btn ck-no" onclick="declineCookies()" data-i18n="ck_no">Отклонить</button>
+      <button class="ck-btn ck-ok" onclick="acceptCookies()" data-i18n="ck_ok">Принять</button>
+    </div>
+  </div>
+
+  <!-- PRIVACY MODAL -->
+  <div id="privacy-modal" class="legal-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
+    <div class="legal-content">
+      <button class="modal-close" onclick="closeLegalModal('privacy')" aria-label="Закрыть">
+        <i class="fas fa-times"></i>
+      </button>
+      <h3 id="privacy-title" data-i18n="priv_title" data-key="priv_title">Политика конфиденциальности</h3>
+      <p data-i18n="priv_p1" data-key="priv_p1">Общественная организация «Чашмаи Хаёт» гарантирует защиту ваших личных
+        данных в соответствии с международными стандартами и законодательством Республики Таджикистан.</p>
+      <p data-i18n="priv_p2" data-key="priv_p2">Вся информация, полученная через форму обратной связи, включая
+        телефонные номера и адреса электронной почты, используется исключительно для оказания помощи или обратной связи
+        и не передается третьим лицам без вашего согласия, за исключением случаев, предусмотренных законом.</p>
+      <p data-i18n="priv_p3" data-key="priv_p3">Мы не собираем персональные файлы cookie. Наш сайт использует только
+        базовые cookie-файлы для <strong>аналитики и улучшения работы сайта (анонимно)</strong>. Вы можете отключить их
+        использование в настройках вашего браузера.</p>
+    </div>
+  </div>
+
+  <!-- TERMS MODAL -->
+  <div id="terms-modal" class="legal-modal" role="dialog" aria-modal="true" aria-labelledby="terms-title">
+    <div class="legal-content">
+      <button class="modal-close" onclick="closeLegalModal('terms')" aria-label="Закрыть">
+        <i class="fas fa-times"></i>
+      </button>
+      <h3 id="terms-title" data-i18n="terms_title" data-key="terms_title">Пользовательское соглашение</h3>
+      <p data-i18n="terms_p1" data-key="terms_p1">Добро пожаловать на официальный сайт ОО «Чашмаи Хаёт». Использование
+        данного сайта означает ваше полное согласие с настоящими правилами.</p>
+      <p data-i18n="terms_p2" data-key="terms_p2">Все материалы, размещенные на сайте (тексты, публикации, руководства),
+        являются собственностью организации «Чашмаи Хаёт». Их использование в некоммерческих целях разрешено при условии
+        обязательной ссылки на источник и упоминания ОО «Чашмаи Хаёт».</p>
+      <p data-i18n="terms_p3" data-key="terms_p3">Мы стремимся предоставлять максимально точную правовую и социальную
+        информацию. Обращение за помощью через веб-сайт или по горячей линии является добровольным.</p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+     TRANSLATIONS + JS
+══════════════════════════════════════════ -->
+  <script>
+    // ═══════════════════════════════════════════
+    //  TRANSLATIONS DATABASE — 10 LANGUAGES
+    // ═══════════════════════════════════════════
+    const T = {
+      ru: { lang_label: "🌐 Язык / Language", logo_name: "Чашмаи Хаёт", logo_tag: "Родник жизни · НПО Таджикистан", nav_about: "О нас", nav_dir: "Направления", nav_impact: "Результаты", nav_history: "История", nav_team: "Команда", nav_pub: "Публикации", nav_contact: "Контакты", hero_since: "С 1998 года · Худжанд, Таджикистан", hero_h1a: "Защищаем права,", hero_h1b: "строим", hero_h1c: " справедливое", hero_h1d: "общество", hero_sub: "Общественная организация «Чашмаи Хаёт» — защита прав женщин, безопасная миграция и противодействие торговле людьми в Таджикистане.", btn_directions: "Наши направления", btn_contact_us: "Написать нам", hero_vis_h: "Согдийская область", hero_vis_p: "Работаем в 18+ городах и районах", hsc1: "Охвачено людей", hsc2: "Партнёров", stat1: "Лет работы", stat2: "Проектов", stat3: "Районов охвата", stat4: "Публикаций", label_about: "О нас", about_title: "Кто мы и ради чего работаем", about_lead: "ОО «Чашмаи Хаёт» — общественная, неправительственная организация, объединяющая женщин для повышения их роли в социальной, экономической и политической жизни Таджикистана.", about_p1: "Образована <strong>19 мая 1998 года</strong>, зарегистрирована в Управлении юстиции Согдийской области под № 80. Перерегистрирована 30 октября 2007 года под № 004-2075 «А».", about_p2: "Члены НПО активно участвуют в разработке программ, основанных на решениях Пекинской Всемирной конференции по положению женщин.", founded: "год основания", cert_title: "Сертифицирована", cert_sub: "Фонд Ага Хана, 2009", reg: "Рег. № 004-2075 «А» · Управление юстиции Согдийской области", label_dir: "Наша работа", dir_title: "Основные направления деятельности", dir_desc: "Мы работаем по ключевым направлениям, влияющим на жизнь женщин, семей и уязвимых групп населения.", d1_h: "Права женщин", d1_p: "Повышение правовой грамотности, защита имущественных прав, содействие участию женщин в общественно-политической жизни, гендерное равенство.", d2_h: "Безопасная миграция", d2_p: "Информирование о правах мигрантов, «горячая линия», реинтеграционная помощь уязвимым мигрантам и членам их семей (2002–2024 гг.).", d3_h: "Противодействие торговле людьми", d3_p: "Профилактика ТЛ, помощь жертвам, мобильные театры, молодёжные лагеря «Молодёжь против ТЛ!».", d4_h: "Здоровье и ВИЧ/СПИД", d4_p: "Профилактика ВИЧ/СПИДа среди трудовых мигрантов и членов их семей, информирование по вопросам репродуктивного здоровья.", d5_h: "Семья и молодёжь", d5_p: "Укрепление института семьи, лидерские тренинги, летние лагеря «Изучаем демократию», проект «Кошонаи саодат».", d6_h: "Юридическая и психологическая помощь", d6_p: "Бесплатная помощь населению с 1998 года. Поддержка жертв домашнего насилия и торговли людьми.", more: "Подробнее", label_impact: "Наши результаты", impact_title: "27 лет реального изменения жизней", impact_desc: "За годы работы реализовала десятки проектов, охватила тысячи людей и создала устойчивые сети поддержки.", il1: "Более 50 семинаров с Миссией ОБСЕ по правам женщин (1999–2001)", il2: "13 молодёжных лагерей по демократии и профилактике ТЛ (2001–2007)", il3: "«Горячая линия» МОМ по профилактике торговли людьми (2002–2009)", il4: "3 новые НПО основаны в Согдийской области (2008)", il5: "Реинтеграционная помощь уязвимым мигрантам (МОМ, 2017–2024)", il6: "Шестисторонний план партнёрства с государственными органами (2023–2025)", in1: "Семинаров ОБСЕ", in2: "Молодёжных лагерей", in3: "Районов охвата", in4: "Гос. партнёров", label_hist: "История", tl_title: "Путь от основания до сегодня", tl1h: "Основание организации", tl1p: "19 мая 1998 года зарегистрирована. Первые конференции о роли женщин при поддержке ТФ ИОО.", tl2h: "Партнёрство с ОБСЕ и ЮНИФЕМ", tl2p: "Более 50 семинаров по правам женщин. Зональные семинары о демократии в 17 городах.", tl3h: "Горячая линия МОМ", tl3p: "Запуск службы «горячей линии» по профилактике ТЛ совместно с МОМ. Акции «Стоп трафик!».", tl4h: "Профилактика ВИЧ/СПИД", tl4p: "Проект МОМ «Мобилизация общин в целях профилактики ВИЧ/СПИД» в Б. Гафуровском и Айнинском районах.", tl5h: "Сети женщин-лидеров", tl5p: "Проект ПРООН: созданы ОО «Гурдофарид», ОО «Нахли умед», ОО «Фарахбахш».", tl6h: "Кошонаи саодат", tl6p: "Многолетний проект поддержки семьи совместно с Комитетом по делам женщин.", tl7h: "Медиапроекты по миграции", tl7p: "ТВ и радиопередачи по безопасной миграции. Партнёрство с ТРРК «Тироз» и ЕС.", tl8h: "Шестисторонний план", tl8p: "Подписан план с 5 государственными и общественными организациями. Разрабатывается план на 2026–2030.", label_team: "Команда", team_title: "Люди, стоящие за нашей работой", t1n: "Рахимова Биходжал", t1r: "Председатель правления", t1d: "Руководит стратегическим развитием и координирует работу с государственными структурами.", t2n: "Бобоева Рафоат", t2r: "Учредитель, консультант", t2d: "Один из основателей организации. Эксперт по правам женщин и гендерному равенству.", t3n: "Рахимова Мархабо", t3r: "Исполнительный директор", t3d: "Управляет операционной деятельностью и взаимодействием с международными партнёрами.", t4n: "Садыкова Наргиза", t4r: "Главный бухгалтер", t4d: "Финансовое управление, отчётность и соответствие стандартам грантовой отчётности.", rep_name: "Шарифова Низоматмо — Представитель в Зарафшанской долине", rep_desc: "Кухистони Мастчох, Айни, Пенджикентский район", label_pub: "Публикации", pub_title: "Наши издания и материалы", pub_desc: "Практические руководства, исследования и правовые материалы.", p1h: "Женщины Центральной Азии за мир и стабильность", p1d: "Сборник материалов форума женских НПО стран Центральной Азии.", p1t: "Сборник", p2h: "Семья в новом тысячелетии", p2d: "Материалы тренингов по семейным ценностям и правам женщин.", p2t: "Методическое пособие", p3h: "Права женщин и семьи в Республике Таджикистан", p3d: "Правовые нормы защиты женщины и семьи.", p3t: "Правовой справочник", p4h: "Права женщин в международных законодательных документах", p4d: "Обзор международного права в области прав женщин.", p4t: "Справочник", p5h: "Проблемы торговли людьми и закон", p5d: "Правовые механизмы противодействия торговле людьми.", p5t: "Правовое руководство", p6h: "Кошонаи саодат (Очаг счастья)", p6d: "Руководство для комитетов по делам женщин и молодых семей.", p6t: "Практическое руководство", partners_title: "Наши партнёры и доноры", partners_desc: "Организации, с которыми мы работаем для достижения общих целей", assoc_title: "Членство в ассоциациях и сетях", as1: "Соучредитель МФ «Шарк аёли» (2004)", as2: "Соучредитель ассоциации «Хамкории боздошти сил» (2018)", as3: "Соучредитель ассоциации «Миграция и туберкулёз» (2019)", as4: "Член сети «Умед» против ТЛ (с 2004)", as5: "Стипендиальный фонд «Орзу» (2016–2021)", label_plan: "Государственное партнёрство", plan_title: "Шестисторонний план согласованных мероприятий", plan_desc: "2023–2025 гг. — профилактика торговли людьми, домашнего насилия, безопасная миграция", plan_body: "ОО «Чашмаи Хаёт» тесно сотрудничает с государственными структурами в рамках официально подписанного плана.", plan_upd: "Обновлённый план на 2026–2030: в процессе согласования", po1: "Административно-хозяйственный отдел аппарата Главы Согдийской области", po2: "Управление службы миграции Министерства труда, миграции и занятости РТ", po3: "Управление по делам женщин и семьи Согдийской области", po4: "Агентство по контролю за наркотиками при Президенте РТ", po5: "Общественная организация «Чашмаи Хаёт»", po6: "Общественная организация «Фонд развития общества»", faq_title: "Часто задаваемые вопросы", fq1q: "Как получить бесплатную юридическую помощь?", fq1a: "Обратитесь по телефону +992 92 825 32 66 или лично: г. Худжанд, ул. Фирдоуси, 120.", fq2q: "Как стать волонтёром?", fq2a: "Заполните форму на сайте или напишите нам. Мы рады всем, кто готов помогать.", fq3q: "Какие районы вы охватываете?", fq3a: "Согдийская область (18+ районов) и Зарафшанская долина через нашего представителя.", fq4q: "Как организация финансируется?", fq4a: "Гранты МОМ, ОБСЕ, ООН, ЕС, президентские гранты и социальный заказ государства.", fq5q: "Как сообщить о торговле людьми?", fq5a: "Позвоните нам. Вся информация строго конфиденциальна.", fq6q: "Можно ли подать грантовую заявку?", fq6a: "Да. Свяжитесь с нами для обсуждения возможного партнёрства и совместных проектов.", hl_title: "Нужна помощь прямо сейчас?", hl_desc: "Наши специалисты готовы помочь — юридически, психологически, по вопросам миграции.", label_contact: "Контакты", contact_title: "Свяжитесь с нами", contact_desc: "Мы готовы ответить на вопросы и оказать необходимую помощь.", c_addr_lbl: "Адрес", c_addr: "г. Худжанд, ул. Фирдоуси, 120<br>Согдийская область, Таджикистан", c_phone_lbl: "Телефон", c_email_lbl: "Email", c_hours_lbl: "Рабочие часы", c_hours: "Пн–Пт: 9:00–18:00 · Сб: 9:00–13:00", form_title: "Написать нам", form_desc: "Мы ответим в течение 1–2 рабочих дней", fl_name: "Имя *", fl_phone: "Телефон", fl_email: "Email *", fl_subject: "Тема обращения", fso: "— Выберите тему —", fs1: "Юридическая / психологическая помощь", fs2: "Партнёрство и сотрудничество", fs3: "Волонтёрство", fs4: "Грант / финансирование проекта", fs5: "Торговля людьми / домашнее насилие", fs6: "Вопросы миграции", fs7: "СМИ и пресса", fs8: "Другое", fl_msg: "Сообщение *", btn_send: "Отправить сообщение", form_note: "Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности", footer_about: "Общественная организация, работающая ради равных прав, защиты достоинства и справедливого общества в Таджикистане с 1998 года.", ft_nav: "Навигация", ft_dir: "Направления", ft_nl: "Подписка", ft_nl_desc: "Получайте новости о проектах и мероприятиях.", copyright: "© 1998–2026 ОО «Чашмаи Хаёт». Все права защищены.", privacy: "Политика конфиденциальности", terms: "Пользовательское соглашение", ck_title: "Мы используем cookies", ck_text: "Сайт использует файлы cookie для аналитики. Продолжая, вы соглашаетесь с нашей политикой.", ck_no: "Отклонить", ck_ok: "Принять" },
+
+      tg: { lang_label: "🌐 Забон / Language", logo_name: "Чашмаи Ҳаёт", logo_tag: "Чашмаи Ҳаёт · СҶТ Тоҷикистон", nav_about: "Дар бораи мо", nav_dir: "Самтҳо", nav_impact: "Натиҷаҳо", nav_history: "Таърих", nav_team: "Гурӯҳ", nav_pub: "Нашрия", nav_contact: "Тамос", hero_since: "Аз соли 1998 · Хуҷанд, Тоҷикистон", hero_h1a: "Ҳуқуқҳоро", hero_h1b: "ҳимоя мекунем,", hero_h1c: " ҷомеаи одилона", hero_h1d: "месозем", hero_sub: "СҶТ «Чашмаи Ҳаёт» — ҳимояи ҳуқуқи занон, муҳоҷирати бехатар ва мубориза бо савдои одамон дар Тоҷикистон.", btn_directions: "Самтҳои мо", btn_contact_us: "Бо мо тамос гиред", stat1: "Соли фаъолият", stat2: "Лоиҳаҳо", stat3: "Ноҳияҳои фарогирӣ", stat4: "Нашрияҳо", label_about: "Дар бораи мо", about_title: "Мо кӣ ҳастем", about_lead: "СҶТ «Чашмаи Ҳаёт» — ташкилоти ғайритижоратӣ, ки занонро барои баланд бардоштани нақши онҳо дар ҳаёти иҷтимоӣ, иқтисодӣ ва сиёсии Тоҷикистон муттаҳид мекунад.", label_dir: "Кори мо", dir_title: "Самтҳои асосии фаъолият", more: "Бештар", label_impact: "Натиҷаҳои мо", impact_title: "27 соли тағйироти воқеӣ", label_hist: "Таърих", tl_title: "Роҳ аз таъсис то имрӯз", label_team: "Гурӯҳ", team_title: "Одамони пушти кори мо", label_pub: "Нашрия", pub_title: "Нашрияҳо ва маводи мо", partners_title: "Шарикон ва донорҳои мо", label_plan: "Ҳамкорӣ бо давлат", plan_title: "Нақшаи шашҷониба", faq_title: "Саволҳои зуд-зуд додашаванда", hl_title: "Ба ёрӣ ниёз доред?", label_contact: "Тамос", contact_title: "Бо мо тамос гиред", form_title: "Ба мо нависед", btn_send: "Паём фиристодан", copyright: "© 1998–2026 СҶТ «Чашмаи Ҳаёт». Ҳамаи ҳуқуқҳо ҳифз шудаанд.", ck_ok: "Қабул кардан", ck_no: "Рад кардан" },
+
+      en: { lang_label: "🌐 Language", logo_name: "Chashmai Hayot", logo_tag: "Spring of Life · NGO Tajikistan", nav_about: "About Us", nav_dir: "Programs", nav_impact: "Impact", nav_history: "History", nav_team: "Team", nav_pub: "Publications", nav_contact: "Contact", hero_since: "Since 1998 · Khujand, Tajikistan", hero_h1a: "Defending rights,", hero_h1b: "building a", hero_h1c: " just", hero_h1d: "society", hero_sub: "Chashmai Hayot NGO — protecting women's rights, safe migration and combating trafficking in persons in Tajikistan since 1998.", btn_directions: "Our Programs", btn_contact_us: "Contact Us", hero_vis_h: "Sughd Region", hero_vis_p: "Working in 18+ cities and districts", hsc1: "People reached", hsc2: "Partners", stat1: "Years active", stat2: "Projects", stat3: "Districts covered", stat4: "Publications", label_about: "About Us", about_title: "Who we are and why we work", about_lead: "Chashmai Hayot is a non-profit, non-governmental organization uniting women of various professions to advance their role in Tajikistan's social, economic and political life.", about_p1: "Founded <strong>May 19, 1998</strong>, registered with the Sughd Regional Justice Department under No. 80. Re-registered October 30, 2007 under No. 004-2075 «A».", about_p2: "NGO members actively participate in designing programs based on the Beijing World Conference on Women Platform for Action.", founded: "year founded", cert_title: "Certified", cert_sub: "Aga Khan Foundation, 2009", reg: "Reg. No. 004-2075 «A» · Sughd Regional Justice Dept.", label_dir: "Our Work", dir_title: "Core Program Areas", dir_desc: "We work across key areas that directly impact women, families and vulnerable populations in Tajikistan.", d1_h: "Women's Rights", d1_p: "Legal literacy, property rights protection, women's political participation and gender equality advocacy.", d2_h: "Safe Migration", d2_p: "Migrant rights information, hotline services, reintegration support for vulnerable migrants and families (2002–2024).", d3_h: "Anti-Trafficking", d3_p: "TIP prevention, medical, psychological and legal assistance to survivors, mobile theatres, youth camps.", d4_h: "Health & HIV/AIDS", d4_p: "HIV/AIDS prevention among labour migrants and their families, reproductive health information campaigns.", d5_h: "Family & Youth", d5_p: "Strengthening the family institution, leadership training, summer camps, Koshonai Saodat project (2013–2021).", d6_h: "Legal & Psychosocial Support", d6_p: "Free legal and psychological support since 1998. Assistance to survivors of domestic violence and trafficking.", more: "Learn more", label_impact: "Our Impact", impact_title: "27 years of real change", impact_desc: "Over the years, Chashmai Hayot has implemented dozens of projects, reached thousands of people and built lasting support networks across Tajikistan.", il1: "50+ seminars with OSCE Mission on women's rights (1999–2001)", il2: "13 youth camps on democracy and TIP prevention (2001–2007)", il3: "IOM hotline on trafficking prevention (2002–2009)", il4: "3 new NGOs established with our support in Sughd region (2008)", il5: "Reintegration support for vulnerable migrants (IOM, 2017–2024)", il6: "Six-party partnership plan with government bodies (2023–2025)", in1: "OSCE Seminars", in2: "Youth Camps", in3: "Districts covered", in4: "Gov't partners", label_hist: "History", tl_title: "From founding to today", tl1h: "Organization founded", tl1p: "May 19, 1998 — registered in Sughd. First conferences on the role of women, supported by Soros Foundation.", tl2h: "OSCE & UNIFEM partnership", tl2p: "50+ seminars on women's rights with OSCE Mission. Zonal seminars on democracy in 17 cities.", tl3h: "IOM Hotline", tl3p: "Launch of anti-trafficking hotline with IOM. Annual Stop Trafficking! campaigns and mobile theatres.", tl4h: "HIV/AIDS Prevention", tl4p: "IOM project on community mobilisation for HIV/AIDS prevention among labour migrants.", tl5h: "Women Leaders Networks", tl5p: "UNDP project: three new NGOs established in Sughd region.", tl6h: "Koshonai Saodat", tl6p: "Multi-year family support project with the Sughd Women and Family Committee.", tl7h: "Migration media projects", tl7p: "TV and radio programs on safe migration. Partnership with TRTK Tiroz and EU.", tl8h: "Six-party plan", tl8p: "Signed plan with 5 government and civil society partners. New 2026–2030 plan in development.", label_team: "Team", team_title: "The people behind our work", t1n: "Rakhimova Bikhodjal", t1r: "Board Chair", t1d: "Leads strategic development and government liaison.", t2n: "Boboeva Rafоat", t2r: "Founder & Consultant", t2d: "Co-founder and expert in women's rights and gender equality since 1998.", t3n: "Rakhimova Marhabo", t3r: "Executive Director", t3d: "Manages operations and international partner relations.", t4n: "Sadykova Nargiza", t4r: "Chief Accountant", t4d: "Financial management and grant reporting compliance.", rep_name: "Sharifova Nizomtamo — Representative, Zarafshan Valley", rep_desc: "Kuhistoni Mastchoh, Ayni, Penjikent district", label_pub: "Publications", pub_title: "Our Publications", pub_desc: "Practical guides, research and legal materials in Russian and Tajik.", p1h: "Women of Central Asia for Peace and Stability", p1d: "Proceedings of the Central Asian Women's NGO Forum.", p1t: "Anthology", p2h: "Family in the New Millennium", p2d: "Training materials on family values and women's rights in 18 districts.", p2t: "Handbook", p3h: "Women's and Family Rights in the Republic of Tajikistan", p3d: "Legal norms protecting women and families.", p3t: "Legal Reference", p4h: "Women's Rights in International Legal Instruments", p4d: "Overview of international law on women's rights.", p4t: "Reference Guide", p5h: "Trafficking in Persons and the Law", p5d: "Legal mechanisms to combat human trafficking.", p5t: "Legal Guide", p6h: "Koshonai Saodat (Happy Hearth)", p6d: "Handbook for women's committees, civil registry and young families.", p6t: "Practical Guide", partners_title: "Our Partners & Donors", partners_desc: "Organisations we collaborate with to achieve shared goals", assoc_title: "Memberships and Networks", as1: "Co-founder, Int'l Fund «Shark Ayoli» (2004)", as2: "Co-founder, anti-TB association (2018)", as3: "Co-founder, Migration & TB association (2019)", as4: "Member, UMED anti-TIP network (since 2004)", as5: "Orzu Scholarship Fund (2016–2021)", label_plan: "Government Partnership", plan_title: "Six-Party Coordinated Action Plan", plan_desc: "2023–2025 — TIP prevention, domestic violence, safe migration, drug prevention", plan_body: "Chashmai Hayot works closely with government partners under a formally signed six-party plan. A new 2026–2030 plan with expanded partners is under development.", plan_upd: "Updated 2026–2030 plan: under negotiation", po1: "Administrative Dept., Head of Sughd Region Office", po2: "Migration Service, Ministry of Labour, Migration and Employment", po3: "Women and Family Affairs Dept., Sughd Region", po4: "Drug Control Agency under the President of RT", po5: "Public Organisation Chashmai Hayot", po6: "Public Organisation «Social Development Fund»", faq_title: "Frequently Asked Questions", fq1q: "How can I receive free legal assistance?", fq1a: "Call +992 92 825 32 66 or visit us at 120 Firdavsi St., Khujand. Legal and psychological support is free.", fq2q: "How can I become a volunteer?", fq2a: "Fill out the contact form or write to us. We welcome everyone ready to help.", fq3q: "Which districts do you cover?", fq3a: "Sughd region (18+ districts) and the Zarafshan Valley through our representative.", fq4q: "How is the organisation funded?", fq4a: "Grants from IOM, OSCE, UN, EU, presidential grants and government social contracts.", fq5q: "How do I report human trafficking?", fq5a: "Call us. All information is strictly confidential.", fq6q: "Can I submit a grant partnership proposal?", fq6a: "Yes. Contact us to discuss partnership opportunities and joint projects.", hl_title: "Need help right now?", hl_desc: "Our specialists are ready to help — legally, psychologically, on migration and safety.", label_contact: "Contact", contact_title: "Get in touch", contact_desc: "We are ready to answer questions and provide the assistance you need.", c_addr_lbl: "Address", c_addr: "120 Firdavsi St., Khujand<br>Sughd Region, Tajikistan", c_phone_lbl: "Phone", c_email_lbl: "Email", c_hours_lbl: "Office Hours", c_hours: "Mon–Fri: 9:00–18:00 · Sat: 9:00–13:00", form_title: "Send us a message", form_desc: "We will respond within 1–2 business days", fl_name: "Name *", fl_phone: "Phone", fl_email: "Email *", fl_subject: "Subject", fso: "— Select a topic —", fs1: "Legal / psychological support", fs2: "Partnership and cooperation", fs3: "Volunteering", fs4: "Grant / project funding", fs5: "Human trafficking / domestic violence", fs6: "Migration questions", fs7: "Media and press", fs8: "Other", fl_msg: "Message *", btn_send: "Send Message", form_note: "By clicking, you agree to our privacy policy", footer_about: "Non-profit organisation working for equal rights, dignity and justice in Tajikistan since 1998.", ft_nav: "Navigation", ft_dir: "Programs", ft_nl: "Newsletter", ft_nl_desc: "Receive news about projects and events.", copyright: "© 1998–2026 Chashmai Hayot NGO. All rights reserved.", privacy: "Privacy Policy", terms: "Terms of Use", ck_title: "We use cookies", ck_text: "This site uses cookies for analytics. By continuing, you agree to our privacy policy.", ck_no: "Decline", ck_ok: "Accept" },
+
+      fr: { lang_label: "🌐 Langue", logo_name: "Chashmai Hayot", logo_tag: "Source de Vie · ONG Tadjikistan", nav_about: "À propos", nav_dir: "Programmes", nav_impact: "Impact", nav_history: "Histoire", nav_team: "Équipe", nav_pub: "Publications", nav_contact: "Contact", hero_since: "Depuis 1998 · Khoujand, Tadjikistan", hero_h1a: "Défendons les droits,", hero_h1b: "construisons une", hero_h1c: " société juste", hero_h1d: "ensemble", hero_sub: "L'ONG Chashmai Hayot — protection des droits des femmes, migration sûre et lutte contre la traite des êtres humains au Tadjikistan.", btn_directions: "Nos programmes", btn_contact_us: "Nous contacter", stat1: "Années d'activité", stat2: "Projets", stat3: "Districts couverts", stat4: "Publications", label_about: "À propos", about_title: "Qui sommes-nous", about_lead: "Chashmai Hayot est une organisation à but non lucratif réunissant des femmes pour renforcer leur rôle dans la vie sociale, économique et politique du Tadjikistan.", label_dir: "Notre travail", dir_title: "Domaines d'activité principaux", more: "En savoir plus", label_impact: "Notre impact", impact_title: "27 ans de changements réels", label_hist: "Histoire", tl_title: "De la fondation à aujourd'hui", label_team: "Équipe", team_title: "Les personnes derrière notre travail", label_pub: "Publications", pub_title: "Nos publications", partners_title: "Partenaires et donateurs", label_plan: "Partenariat gouvernemental", plan_title: "Plan d'action à six parties", faq_title: "Questions fréquentes", hl_title: "Besoin d'aide maintenant?", label_contact: "Contact", contact_title: "Contactez-nous", form_title: "Écrivez-nous", btn_send: "Envoyer", copyright: "© 1998–2026 ONG Chashmai Hayot. Tous droits réservés.", ck_ok: "Accepter", ck_no: "Refuser" },
+
+      de: { lang_label: "🌐 Sprache", logo_name: "Chashmai Hayot", logo_tag: "Lebensquelle · NGO Tadschikistan", nav_about: "Über uns", nav_dir: "Programme", nav_impact: "Wirkung", nav_history: "Geschichte", nav_team: "Team", nav_pub: "Publikationen", nav_contact: "Kontakt", hero_since: "Seit 1998 · Chudschand, Tadschikistan", hero_h1a: "Rechte schützen,", hero_h1b: "eine gerechte", hero_h1c: " Gesellschaft", hero_h1d: "aufbauen", hero_sub: "Die NGO Chashmai Hayot — Schutz der Frauenrechte, sichere Migration und Bekämpfung des Menschenhandels in Tadschikistan.", btn_directions: "Unsere Programme", btn_contact_us: "Kontakt aufnehmen", stat1: "Jahre tätig", stat2: "Projekte", stat3: "Bezirke", stat4: "Publikationen", label_about: "Über uns", about_title: "Wer wir sind", about_lead: "Chashmai Hayot ist eine gemeinnützige Organisation, die Frauen vereint, um ihre Rolle im sozialen, wirtschaftlichen und politischen Leben Tadschikistans zu stärken.", label_dir: "Unsere Arbeit", dir_title: "Schwerpunktbereiche", more: "Mehr erfahren", label_impact: "Unsere Wirkung", impact_title: "27 Jahre echte Veränderung", label_hist: "Geschichte", tl_title: "Von der Gründung bis heute", label_team: "Team", team_title: "Die Menschen hinter unserer Arbeit", label_pub: "Publikationen", pub_title: "Unsere Publikationen", partners_title: "Partner und Geldgeber", label_plan: "Regierungspartnerschaft", plan_title: "Sechsseitiger Aktionsplan", faq_title: "Häufige Fragen", hl_title: "Brauchen Sie jetzt Hilfe?", label_contact: "Kontakt", contact_title: "Kontakt aufnehmen", form_title: "Schreiben Sie uns", btn_send: "Nachricht senden", copyright: "© 1998–2026 NGO Chashmai Hayot. Alle Rechte vorbehalten.", ck_ok: "Akzeptieren", ck_no: "Ablehnen" },
+
+      ar: { lang_label: "🌐 اللغة", logo_name: "چشمای حیات", logo_tag: "نبع الحياة · منظمة غير حكومية طاجيكستان", nav_about: "من نحن", nav_dir: "البرامج", nav_impact: "الأثر", nav_history: "التاريخ", nav_team: "الفريق", nav_pub: "المنشورات", nav_contact: "اتصل بنا", hero_since: "منذ عام 1998 · خوجند، طاجيكستان", hero_h1a: "ندافع عن الحقوق،", hero_h1b: "نبني مجتمعاً", hero_h1c: " عادلاً", hero_h1d: "ومنصفاً", hero_sub: "منظمة «چشمای حیات» غير الحكومية — حماية حقوق المرأة والهجرة الآمنة ومكافحة الاتجار بالبشر في طاجيكستان.", btn_directions: "برامجنا", btn_contact_us: "اتصل بنا", stat1: "سنوات النشاط", stat2: "مشاريع", stat3: "مناطق التغطية", stat4: "منشورات", label_about: "من نحن", about_title: "من نحن ولماذا نعمل", about_lead: "«چشمای حیات» منظمة غير ربحية تجمع النساء للنهوض بدورهن في الحياة الاجتماعية والاقتصادية والسياسية.", label_dir: "عملنا", dir_title: "مجالات العمل الرئيسية", more: "اقرأ المزيد", label_impact: "أثرنا", impact_title: "27 عاماً من التغيير الحقيقي", label_hist: "التاريخ", tl_title: "من التأسيس حتى اليوم", label_team: "الفريق", team_title: "الأشخاص خلف عملنا", label_pub: "المنشورات", pub_title: "منشوراتنا", partners_title: "الشركاء والداعمون", label_plan: "الشراكة الحكومية", plan_title: "خطة العمل السداسية", faq_title: "أسئلة شائعة", hl_title: "تحتاج مساعدة الآن؟", label_contact: "اتصل", contact_title: "تواصل معنا", form_title: "أرسل لنا رسالة", btn_send: "إرسال", copyright: "© 1998–2026 منظمة «چشمای حیات». جميع الحقوق محفوظة.", ck_ok: "قبول", ck_no: "رفض" },
+
+      zh: { lang_label: "🌐 语言", logo_name: "恰什麦·哈约特", logo_tag: "生命之泉 · 塔吉克斯坦非政府组织", nav_about: "关于我们", nav_dir: "项目", nav_impact: "成果", nav_history: "历史", nav_team: "团队", nav_pub: "出版物", nav_contact: "联系我们", hero_since: "自1998年 · 胡占德，塔吉克斯坦", hero_h1a: "捍卫权利，", hero_h1b: "构建", hero_h1c: "公正", hero_h1d: "社会", hero_sub: "恰什麦·哈约特非政府组织 — 自1998年起保护妇女权利、安全移民和打击人口贩卖。", btn_directions: "我们的项目", btn_contact_us: "联系我们", stat1: "工作年限", stat2: "项目", stat3: "覆盖地区", stat4: "出版物", label_about: "关于我们", about_title: "我们是谁", about_lead: "恰什麦·哈约特是一个非营利性非政府组织，团结各界女性以提升她们在塔吉克斯坦社会、经济和政治生活中的作用。", label_dir: "我们的工作", dir_title: "主要工作领域", more: "了解更多", label_impact: "我们的成果", impact_title: "27年真实改变", label_hist: "历史", tl_title: "从创立到今天", label_team: "团队", team_title: "我们背后的人", label_pub: "出版物", pub_title: "我们的出版物", partners_title: "合作伙伴与捐助方", label_plan: "政府合作", plan_title: "六方协调行动计划", faq_title: "常见问题", hl_title: "现在需要帮助？", label_contact: "联系", contact_title: "联系我们", form_title: "给我们留言", btn_send: "发送消息", copyright: "© 1998–2026 恰什麦·哈约特非政府组织。版权所有。", ck_ok: "接受", ck_no: "拒绝" },
+
+      es: { lang_label: "🌐 Idioma", logo_name: "Chashmai Hayot", logo_tag: "Manantial de Vida · ONG Tayikistán", nav_about: "Sobre nosotros", nav_dir: "Programas", nav_impact: "Impacto", nav_history: "Historia", nav_team: "Equipo", nav_pub: "Publicaciones", nav_contact: "Contacto", hero_since: "Desde 1998 · Juyand, Tayikistán", hero_h1a: "Defendemos derechos,", hero_h1b: "construimos una", hero_h1c: " sociedad justa", hero_h1d: "juntos", hero_sub: "La ONG Chashmai Hayot — protección de los derechos de la mujer, migración segura y lucha contra la trata de personas en Tayikistán.", btn_directions: "Nuestros programas", btn_contact_us: "Contáctenos", stat1: "Años activos", stat2: "Proyectos", stat3: "Distritos", stat4: "Publicaciones", label_about: "Sobre nosotros", about_title: "Quiénes somos", about_lead: "Chashmai Hayot es una organización sin ánimo de lucro que une a mujeres para impulsar su papel en la vida social, económica y política de Tayikistán.", label_dir: "Nuestro trabajo", dir_title: "Áreas de trabajo principales", more: "Más información", label_impact: "Nuestro impacto", impact_title: "27 años de cambio real", label_hist: "Historia", tl_title: "Desde la fundación hasta hoy", label_team: "Equipo", team_title: "Las personas detrás de nuestro trabajo", label_pub: "Publicaciones", pub_title: "Nuestras publicaciones", partners_title: "Socios y donantes", label_plan: "Alianza gubernamental", plan_title: "Plan de acción de seis partes", faq_title: "Preguntas frecuentes", hl_title: "¿Necesita ayuda ahora?", label_contact: "Contacto", contact_title: "Póngase en contacto", form_title: "Escríbanos", btn_send: "Enviar mensaje", copyright: "© 1998–2026 ONG Chashmai Hayot. Todos los derechos reservados.", ck_ok: "Aceptar", ck_no: "Rechazar" },
+
+      fa: { lang_label: "🌐 زبان", logo_name: "چشمه‌ی حیات", logo_tag: "چشمه‌ی حیات · سازمان غیردولتی تاجیکستان", nav_about: "درباره ما", nav_dir: "برنامه‌ها", nav_impact: "دستاوردها", nav_history: "تاریخچه", nav_team: "تیم", nav_pub: "انتشارات", nav_contact: "تماس", hero_since: "از سال ۱۹۹۸ · خجند، تاجیکستان", hero_h1a: "از حقوق دفاع می‌کنیم،", hero_h1b: "جامعه‌ای", hero_h1c: " عادلانه", hero_h1d: "می‌سازیم", hero_sub: "سازمان غیردولتی «چشمه‌ی حیات» — حمایت از حقوق زنان، مهاجرت ایمن و مبارزه با قاچاق انسان در تاجیکستان.", btn_directions: "برنامه‌های ما", btn_contact_us: "تماس با ما", stat1: "سال فعالیت", stat2: "پروژه", stat3: "مناطق تحت پوشش", stat4: "انتشارات", label_about: "درباره ما", about_title: "ما چه کسانی هستیم", about_lead: "«چشمه‌ی حیات» سازمانی غیرانتفاعی است که زنان را برای ارتقای نقش آن‌ها در زندگی اجتماعی، اقتصادی و سیاسی تاجیکستان گرد هم می‌آورد.", label_dir: "کار ما", dir_title: "حوزه‌های اصلی فعالیت", more: "بیشتر بخوانید", label_impact: "دستاوردهای ما", impact_title: "۲۷ سال تغییر واقعی", label_hist: "تاریخچه", tl_title: "از تأسیس تا امروز", label_team: "تیم", team_title: "افراد پشت کار ما", label_pub: "انتشارات", pub_title: "انتشارات ما", partners_title: "شرکا و حامیان مالی", label_plan: "مشارکت دولتی", plan_title: "طرح هماهنگ شش‌جانبه", faq_title: "سؤالات متداول", hl_title: "الان به کمک نیاز دارید؟", label_contact: "تماس", contact_title: "با ما تماس بگیرید", form_title: "برای ما بنویسید", btn_send: "ارسال پیام", copyright: "© ۱۹۹۸–۲۰۲۶ سازمان «چشمه‌ی حیات». تمام حقوق محفوظ است.", ck_ok: "قبول", ck_no: "رد" },
+
+      uz: { lang_label: "🌐 Til", logo_name: "Chashmai Hayot", logo_tag: "Hayot Bulog'i · NNT Tojikiston", nav_about: "Biz haqimizda", nav_dir: "Dasturlar", nav_impact: "Natijalar", nav_history: "Tarix", nav_team: "Jamoa", nav_pub: "Nashrlar", nav_contact: "Aloqa", hero_since: "1998 yildan · Xo'jand, Tojikiston", hero_h1a: "Huquqlarni himoya qilamiz,", hero_h1b: "adolatli", hero_h1c: " jamiyat", hero_h1d: "quramiz", hero_sub: "«Chashmai Hayot» NNT — ayollar huquqlarini himoya qilish, xavfsiz migratsiya va odamlar savdosiga qarshi kurash.", btn_directions: "Dasturlarimiz", btn_contact_us: "Biz bilan bog'laning", stat1: "Yil faoliyat", stat2: "Loyihalar", stat3: "Tumanlar qamrovi", stat4: "Nashrlar", label_about: "Biz haqimizda", about_title: "Biz kimмиз", about_lead: "«Chashmai Hayot» — notijorat tashkilot bo'lib, Tojikistonda ayollarning ijtimoiy, iqtisodiy va siyosiy hayotdagi rolinи oshirish maqsadida faoliyat yuritadi.", label_dir: "Ishimiz", dir_title: "Asosiy faoliyat yo'nalishlari", more: "Batafsil", label_impact: "Natijalarimiz", impact_title: "27 yil haqiqiy o'zgarish", label_hist: "Tarix", tl_title: "Asosdan bugungi kungacha", label_team: "Jamoa", team_title: "Ishimiz ortidagi odamlar", label_pub: "Nashrlar", pub_title: "Nashrlarimiz", partners_title: "Hamkorlar va donorlar", label_plan: "Davlat hamkorligi", plan_title: "Olti tomonlama kelishilgan harakatlar rejasi", faq_title: "Ko'p so'raladigan savollar", hl_title: "Hozir yordamga muhtojmisiz?", label_contact: "Aloqa", contact_title: "Biz bilan bog'laning", form_title: "Bizga yozing", btn_send: "Xabar yuborish", copyright: "© 1998–2026 «Chashmai Hayot» NNT. Barcha huquqlar himoyalangan.", ck_ok: "Qabul qilish", ck_no: "Rad etish" }
+    };
+
+    // ═══════════════════════════════════════════
+    //  TRANSLATIONS PUBLIC API
+    // ═══════════════════════════════════════════
+
+    /**
+     * Global alias: window.translations gives access to the full T object.
+     * Usage: translations['ru']['logo_name'] → "Чашмаи Хаёт"
+     */
+    const translations = T;
+
+    // Dynamically inject translations for the legal modals to preserve code readability
+    const modalTranslations = {
+      ru: {
+        priv_title: "Политика конфиденциальности",
+        priv_p1: "Общественная организация «Чашмаи Хаёт» гарантирует защиту ваших личных данных в соответствии с международными стандартами и законодательством Республики Таджикистан.",
+        priv_p2: "Вся информация, полученная через форму обратной связи, включая телефонные номера и адреса электронной почты, используется исключительно для оказания помощи или обратной связи и не передается третьим лицам без вашего согласия, за исключением случаев, предусмотренных законом.",
+        priv_p3: "Мы не собираем персональные файлы cookie. Наш сайт использует только базовые cookie-файлы для <strong>аналитики и улучшения работы сайта (анонимно)</strong>. Вы можете отключить их использование в настройках вашего браузера.",
+        terms_title: "Пользовательское соглашение",
+        terms_p1: "Добро пожаловать на официальный сайт ОО «Чашмаи Хаёт». Использование данного сайта означает ваше полное согласие с настоящими правилами.",
+        terms_p2: "Все материалы, размещенные на сайте (тексты, публикации, руководства), являются собственностью организации «Чашмаи Хаёт». Их использование в некоммерческих целях разрешено при условии обязательной ссылки на источник и упоминания ОО «Чашмаи Хаёт».",
+        terms_p3: "Мы стремимся предоставлять максимально точную правовую и социальную информацию. Обращение за помощью через веб-сайт или по горячей линии является добровольным."
+      },
+      tg: {
+        priv_title: "Сиёсати махфият",
+        priv_p1: "Ташкилоти ҷамъиятии «Чашмаи Ҳаёт» ҳифзи маълумоти шахсии шуморо мутобиқи стандартҳои байналмилалӣ ва қонунгузории Ҷумҳурии Тоҷикистон кафолат медиҳад.",
+        priv_p2: "Тамоми маълумотҳои тавассути шакли тамос гирифташуда танҳо барои расонидани кӯмак истифода мешаванд ва бе розигии шумо ба шахсони сеюм дода намешаванд.",
+        priv_p3: "Сайт кукиҳои шахсиро ҷамъоварӣ намекунад. Мо кукиҳои асосиро танҳо барои <strong>таҳлил ва беҳтар кардани фаъолияти сайт (беном)</strong> истифода мебарем.",
+        terms_title: "Шартномаи корбар",
+        terms_p1: "Хуш омадед ба сайти расмии СҶТ «Чашмаи Ҳаёт». Истифодаи ин сайт маънои розигии пурраи шумо бо ин қоидаҳоро дорад.",
+        terms_p2: "Ҳама маводҳои дар сайт ҷойгиршуда моликияти СҶТ «Чашмаи Ҳаёт» мебошанд. Истифодаи онҳо бо мақсадҳои ғайритиҷоратӣ бо истинод ба манбаъ иҷозат дода шудааст.",
+        terms_p3: "Муроҷиат барои гирифтани кӯмак тавассути вебсайт ё телефони боварӣ ихтиёрӣ мебошад."
+      },
+      en: {
+        priv_title: "Privacy Policy",
+        priv_p1: "Chashmai Hayot NGO guarantees the protection of your personal data in accordance with international standards and the laws of the Republic of Tajikistan.",
+        priv_p2: "All information collected through the contact form is used solely for assistance or feedback and is not shared with third parties without your consent.",
+        priv_p3: "We do not collect personal cookies. Our site uses basic cookies for <strong>analytics and improving site functionality (anonymously)</strong>.",
+        terms_title: "Terms of Use",
+        terms_p1: "Welcome to the official Chashmai Hayot NGO website. Use of this site constitutes your full agreement with these rules.",
+        terms_p2: "All materials on the site are the property of Chashmai Hayot NGO. Their non-commercial use is permitted provided there is an active link to the source.",
+        terms_p3: "We strive to provide accurate information. Seeking assistance via the website or hotline is strictly voluntary."
+      },
+      fr: {
+        priv_title: "Politique de confidentialité",
+        priv_p1: "L'ONG Chashmai Hayot garantit la protection de vos données personnelles conformément aux normes internationales.",
+        priv_p2: "Les informations recueillies via le formulaire de contact ne sont pas partagées avec des tiers.",
+        priv_p3: "Ce site utilise des cookies de base pour <strong>des analyses anonymes</strong>.",
+        terms_title: "Conditions d'utilisation",
+        terms_p1: "Bienvenue sur le site de Chashmai Hayot. L'utilisation du site vaut acceptation des présentes conditions.",
+        terms_p2: "Tous les contenus appartiennent à Chashmai Hayot. Leur utilisation non commerciale est autorisée avec mention de la source.",
+        terms_p3: "Les demandes d'assistance sont strictement volontaires."
+      },
+      de: {
+        priv_title: "Datenschutzrichtlinie",
+        priv_p1: "Die NGO Chashmai Hayot garantiert den Schutz Ihrer personenbezogenen Daten gemäß internationalen Standards.",
+        priv_p2: "Informationen aus Kontaktformularen werden niemals ohne Ihre Zustimmung an Dritte weitergegeben.",
+        priv_p3: "Unsere Website verwendet grundlegende Cookies zur <strong>anonymen Analyse</strong>.",
+        terms_title: "Nutzungsbedingungen",
+        terms_p1: "Willkommen auf der Website von Chashmai Hayot. Durch die Nutzung stimmen Sie diesen Regeln zu.",
+        terms_p2: "Alle Materialien sind Eigentum der NGO Chashmai Hayot. Nichtkommerzielle Nutzung mit Quellenangabe ist gestattet.",
+        terms_p3: "Hilfsanfragen erfolgen auf rein freiwilliger Basis."
+      },
+      ar: {
+        priv_title: "سياسة الخصوصية",
+        priv_p1: "تضمن منظمة \"چشمای حیات\" حماية بياناتك الشخصية وفقًا للمعايير الدولية.",
+        priv_p2: "لا يتم مشاركة معلومات الاتصال الخاصة بك مع أطراف ثالثة بدون موافقتك.",
+        priv_p3: "نحن نستخدم ملفات تعريف الارتباط الأساسية من أجل <strong>التحليلات المجهولة</strong>.",
+        terms_title: "شروط الاستخدام",
+        terms_p1: "مرحبا بكم في موقعنا الرسمي. إن استخدامك لهذا الموقع يعني موافقتك الكاملة على هذه الشروط.",
+        terms_p2: "جميع المواد مملوكة للمنظمة. يُسمح بالاستخدام غير التجاري مع الإشارة إلى المصدر.",
+        terms_p3: "طلب المساعدة من خلال الموقع هو أمر طوعي تماما."
+      },
+      zh: {
+        priv_title: "隐私政策",
+        priv_p1: "恰什麦·哈约特非政府组织保证按照国际标准保护您的个人数据。",
+        priv_p2: "未经您的同意，您通过联系表单提供的信息不会与第三方共享。",
+        priv_p3: "我们的网站仅使用基本 Cookie 进行<strong>匿名分析</strong>。",
+        terms_title: "使用条款",
+        terms_p1: "欢迎访问恰什麦·哈约特非政府组织官方网站。使用此网站即表示您同意这些规则。",
+        terms_p2: "网站上的所有材料均为本组织所有。允许注明出处的非商业使用。",
+        terms_p3: "通过网站寻求帮助完全是出于自愿。"
+      },
+      es: {
+        priv_title: "Política de Privacidad",
+        priv_p1: "La ONG Chashmai Hayot garantiza la protección de sus datos personales bajo estándares internacionales.",
+        priv_p2: "La información recopilada mediante formularios nunca se comparte con terceros sin su consentimiento.",
+        priv_p3: "Solo usamos cookies básicas para <strong>análisis anónimo de tráfico</strong>.",
+        terms_title: "Términos de Uso",
+        terms_p1: "El uso de esta web implica la aceptación de estas normativas.",
+        terms_p2: "Todos los materiales son propiedad de la ONG Chashmai Hayot. El uso no comercial requiere mención de la fuente.",
+        terms_p3: "Las solicitudes de ayuda son acciones estrictamente voluntarias."
+      },
+      fa: {
+        priv_title: "سیاست حفظ حریم خصوصی",
+        priv_p1: "سازمان چشمه حیات حفاظت از داده‌های شخصی شما را بر اساس استانداردهای بین‌المللی تضمین می‌کند.",
+        priv_p2: "اطلاعات ارسالی شما هرگز بدون اجازه شما در اختیار شخص ثالثی قرار خواهد گرفت.",
+        priv_p3: "ما فقط از کوکی‌های پایه برای <strong>تحلیل ناشناس</strong> وب‌سایت استفاده می‌کنیم.",
+        terms_title: "شرایط استفاده",
+        terms_p1: "استفاده از این وب‌سایت به معنای پذیرش کامل این قوانین است.",
+        terms_p2: "کلیه حقوق مطالب متعلق به سازمان چشمه حیات است. استفاده غیرتجاری با ذکر منبع مجاز است.",
+        terms_p3: "ارسال درخواست کمک از طریق سایت کاملاً داوطلبانه است."
+      },
+      uz: {
+        priv_title: "Maxfiylik siyosati",
+        priv_p1: "\"Chashmai Hayot\" NNT sizning shaxsiy ma'lumotlaringizni xalqaro standartlarga muvofiq himoya qilishni kafolatlaydi.",
+        priv_p2: "Ushbu sayt orqali olingan ma'lumotlar uchinchi shaxslarga sizning ruxsatingizsiz berilmaydi.",
+        priv_p3: "Biz faqatgina saytni yaxshilash uchun <strong>anonim tahliliy cookie fayllardan</strong> foydalanamiz.",
+        terms_title: "Foydalanish shartlari",
+        terms_p1: "Ushbu saytdan foydalanish mazkur qoidalarga to'liq rozi ekanligingizni anglatadi.",
+        terms_p2: "Barcha materiallar \"Chashmai Hayot\" NNTning mulki hisoblanadi. Tijoriy bo'lmagan holda faqat manba ko'rsatilgan taqdirdagina ruxsat beriladi.",
+        terms_p3: "Sayt orqali yordam so'rab murojaat qilish ixtiyoriydir."
+      }
+    };
+
+    for (const lang in modalTranslations) {
+      if (translations[lang]) {
+        Object.assign(translations[lang], modalTranslations[lang]);
+      }
+    }
+
+    /**
+     * updateContent(lang)
+     * Iterates ALL elements with [data-key] or [data-i18n] and updates their
+     * innerHTML from the translations dictionary for the given language.
+     * Fully replaces setLang() for external callers.
+     *
+     * @param {string} lang - language code: 'ru'|'tg'|'en'|'uz'|'fr'|'de'|'ar'|'zh'|'es'|'fa'
+     */
+    function updateContent(lang) {
+      if (!translations[lang]) {
+        console.warn('[i18n] Unknown language: ' + lang +
+          '. Available: ' + Object.keys(translations).join(', '));
+        return;
+      }
+      const dict = translations[lang];
+      // Apply translations to all keyed elements (data-key takes priority)
+      document.querySelectorAll('[data-key], [data-i18n]').forEach(function (el) {
+        var key = el.getAttribute('data-key') || el.getAttribute('data-i18n');
+        if (key && dict[key] !== undefined) {
+          el.innerHTML = dict[key];
+        }
+      });
+      // Sync language engine state (RTL, aria, localStorage, active button)
+      var RTL = ['ar', 'fa'];
+      document.documentElement.lang = lang;
+      document.documentElement.dir = RTL.indexOf(lang) !== -1 ? 'rtl' : 'ltr';
+      document.querySelectorAll('.lang-btn').forEach(function (btn) {
+        var active = btn.dataset.lang === lang;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      currentLang = lang;
+      localStorage.setItem('ch_lang', lang);
+    }
+
+    // ───────────────────────────────────────────
+    //  AUTO-ASSIGN data-key FROM data-i18n
+    //  Runs once on DOMContentLoaded so every element
+    //  with data-i18n automatically gets a matching data-key.
+    // ───────────────────────────────────────────
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('[data-i18n]').forEach(function (el) {
+        if (!el.hasAttribute('data-key')) {
+          el.setAttribute('data-key', el.getAttribute('data-i18n'));
+        }
+      });
+    });
+
+    // ═══════════════════════════════════════════
+    //  LANGUAGE ENGINE
+    // ═══════════════════════════════════════════
+    let currentLang = localStorage.getItem('ch_lang') || 'ru';
+    const RTL_LANGS = ['ar', 'fa'];
+
+    function setLang(lang, initial = false) {
+      if (!T[lang]) return;
+      if (lang === currentLang && !initial) return;
+
+      const isRTL = RTL_LANGS.includes(lang);
+      document.documentElement.lang = lang;
+      document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+
+      // Show notice
+      if (!initial) {
+        const notice = document.getElementById('trans-notice');
+        notice.classList.add('show');
+        setTimeout(() => notice.classList.remove('show'), 1800);
+      }
+
+      // Apply translations
+      const d = T[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (d[key] !== undefined) {
+          el.innerHTML = d[key];
+        }
+      });
+
+      // Update lang buttons
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+        btn.setAttribute('aria-pressed', btn.dataset.lang === lang ? 'true' : 'false');
+      });
+
+      currentLang = lang;
+      localStorage.setItem('ch_lang', lang);
+    }
+
+    // ═══════════════════════════════════════════
+    //  HEADER SCROLL
+    // ═══════════════════════════════════════════
+    const header = document.getElementById('header');
+    let lastY = 0;
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      header.classList.toggle('scrolled', y > 60);
+      document.getElementById('btt').classList.toggle('show', y > 500);
+      lastY = y;
+    }, { passive: true });
+
+    // ═══════════════════════════════════════════
+    //  MOBILE MENU
+    // ═══════════════════════════════════════════
+    function openMob() {
+      document.getElementById('hbg').classList.add('open');
+      document.getElementById('mobileMenu').classList.add('open');
+      document.getElementById('mobOverlay').classList.add('open');
+      document.getElementById('hbg').setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMob() {
+      document.getElementById('hbg').classList.remove('open');
+      document.getElementById('mobileMenu').classList.remove('open');
+      document.getElementById('mobOverlay').classList.remove('open');
+      document.getElementById('hbg').setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('hbg').addEventListener('click', () => {
+      document.getElementById('hbg').classList.contains('open') ? closeMob() : openMob();
+    });
+
+    // ═══════════════════════════════════════════
+    //  COUNTERS
+    // ═══════════════════════════════════════════
+    function animateCounter(el) {
+      const target = +el.getAttribute('data-target');
+      let start = 0;
+      const dur = 2000;
+      const step = 16;
+      const inc = target / (dur / step);
+      const timer = setInterval(() => {
+        start = Math.min(start + inc, target);
+        el.textContent = Math.ceil(start) + (start >= target ? '+' : '');
+        if (start >= target) clearInterval(timer);
+      }, step);
+    }
+    const countObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { animateCounter(e.target); countObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.count').forEach(el => countObs.observe(el));
+
+    // ═══════════════════════════════════════════
+    //  FAQ
+    // ═══════════════════════════════════════════
+    function toggleFaq(q) {
+      const item = q.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    }
+
+    // ═══════════════════════════════════════════
+    //  FORM
+    // ═══════════════════════════════════════════
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const btn = document.getElementById('formBtn');
+      const name = document.getElementById('fname').value.trim();
+      const email = document.getElementById('femail').value.trim();
+      const msg = document.getElementById('fmsg').value.trim();
+      const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!name || !email || !msg || !emailRe.test(email)) {
+        btn.style.background = 'linear-gradient(135deg,#ef4444,#dc2626)';
+        btn.textContent = '⚠ Заполните обязательные поля';
+        setTimeout(() => {
+          btn.style.background = '';
+          btn.innerHTML = (T[currentLang]?.btn_send || 'Отправить') + ' <i class="fas fa-paper-plane"></i>';
+        }, 3000);
+        return;
+      }
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
+      setTimeout(() => {
+        btn.style.background = 'linear-gradient(135deg,#10b981,#059669)';
+        btn.innerHTML = '<i class="fas fa-check"></i> Сообщение отправлено!';
+        this.reset();
+        setTimeout(() => {
+          btn.disabled = false;
+          btn.style.background = '';
+          btn.innerHTML = (T[currentLang]?.btn_send || 'Отправить') + ' <i class="fas fa-paper-plane"></i>';
+        }, 4000);
+      }, 1800);
+    });
+
+    // ═══════════════════════════════════════════
+    //  ACCESSIBILITY
+    // ═══════════════════════════════════════════
+    let fontSize = 16;
+    function changeFontSize(delta) {
+      if (delta === 0) { fontSize = 16; }
+      else { fontSize = Math.max(13, Math.min(22, fontSize + delta * 2)); }
+      document.documentElement.style.fontSize = fontSize + 'px';
+    }
+    function toggleContrast() {
+      document.body.classList.toggle('hc');
+    }
+
+    // ═══════════════════════════════════════════
+    //  BACK TO TOP
+    // ═══════════════════════════════════════════
+    document.getElementById('btt').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ═══════════════════════════════════════════
+    //  COOKIE
+    // ═══════════════════════════════════════════
+    function acceptCookies() {
+      localStorage.setItem('ch_cookie', 'y');
+      document.getElementById('cookie').classList.remove('show');
+    }
+    function declineCookies() {
+      localStorage.setItem('ch_cookie', 'n');
+      document.getElementById('cookie').classList.remove('show');
+    }
+    if (!localStorage.getItem('ch_cookie')) {
+      setTimeout(() => document.getElementById('cookie').classList.add('show'), 2500);
+    }
+
+    // ═══════════════════════════════════════════
+    //  ACTIVE NAV HIGHLIGHT
+    // ═══════════════════════════════════════════
+    const sections = document.querySelectorAll('section[id]');
+    const navAs = document.querySelectorAll('.nav-a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+      navAs.forEach(a => {
+        const href = a.getAttribute('href');
+        a.classList.toggle('active', href === '#' + current);
+      });
+    }, { passive: true });
+
+    // ═══════════════════════════════════════════
+    //  LEGAL MODALS LOGIC
+    // ═══════════════════════════════════════════
+    function openLegalModal(doc) {
+      document.getElementById(doc + '-modal').classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLegalModal(doc) {
+      document.getElementById(doc + '-modal').classList.remove('show');
+      document.body.style.overflow = '';
+    }
+
+    // ═══════════════════════════════════════════
+    //  INIT
+    // ═══════════════════════════════════════════
+    window.addEventListener('DOMContentLoaded', () => {
+      setLang(currentLang, true);
+    });
+  </script>
+</body>
+
+</html>
