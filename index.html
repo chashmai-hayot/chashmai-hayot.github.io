@@ -4272,37 +4272,6 @@
     window.addEventListener('DOMContentLoaded', () => {
       setLang(currentLang, true);
     });
-
-
-
-    
-    // Функция для автоматического перевода элементов, которые не подхватил i18n
-async function autoTranslateMissing(targetLang) {
-  // Список селекторов, которые нужно проверить (например, параграфы и заголовки)
-  const elements = document.querySelectorAll('p, h1, h2, h3, li, span');
-
-  elements.forEach(el => {
-    // Если текст на русском (кириллица), а выбран не русский язык
-    if (/[а-яА-ЯёЁ]/.test(el.innerText) && targetLang !== 'ru') {
-      const text = el.innerText;
-      // Используем бесплатный прокси-запрос к Google Translate (только для небольших текстов)
-      const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=ru&tl=${targetLang}&dt=t&q=${encodeURI(text)}`;
-      
-      fetch(url)
-        .then(response => response.json())
-        .then(data => {
-          if (data && data[0] && data[0][0]) {
-            el.innerText = data[0][0][0]; // Заменяем текст на перевод
-          }
-        });
-    }
-  });
-}
-
-// Вызывай эту функцию сразу после смены языка в i18next
-// i18next.on('languageChanged', (lng) => {
-//    autoTranslateMissing(lng);
-// });
   </script>
 </body>
 
