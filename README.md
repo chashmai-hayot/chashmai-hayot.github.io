@@ -1,6 +1,6 @@
 ## Hi # Public Organization "Chashmai Hayot" — Official Website
 
-Digital platform for the Khujand-based NGO focused on social protection, women's rights, and safe migration.
+Digital platform for the Khujand-based NGO focused on , women's rights, and safe migration.
 
 ### 🛠 Technology Stack
 - **Architecture:** Clean HTML5 / CSS3 / JavaScript (Vanilla)
