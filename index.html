@@ -17,6 +17,9 @@
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!-- Tailwind + Lucide (utility styling and icons) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <style>
     :root {
       --navy: #0a2342;
@@ -184,6 +187,40 @@
     }
 
     /* ══════════════════════════════════════════
+   A11Y TOGGLES (grayscale + readable font)
+══════════════════════════════════════════ */
+    .a11y-ico {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      color: rgba(255, 255, 255, .75);
+      margin-right: 6px;
+    }
+
+    #grayscale-btn,
+    #readable-font-btn {
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .15);
+      color: rgba(255, 255, 255, .7);
+      padding: 3px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 11px;
+      font-family: inherit;
+      transition: .3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    #grayscale-btn:hover,
+    #readable-font-btn:hover {
+      background: var(--aqua);
+      color: #fff;
+      border-color: var(--aqua)
+    }
+
+    /* ══════════════════════════════════════════
    LANGUAGE SELECTOR
 ══════════════════════════════════════════ */
     #lang-bar {
@@ -217,7 +254,7 @@
 
     .lang-flags {
       display: flex;
-      gap: 4px;
+      gap: 8px;
       flex-wrap: wrap
     }
 
@@ -1325,7 +1362,13 @@
    TIMELINE
 ══════════════════════════════════════════ */
     .timeline-sec {
-      background: #fff
+      background:
+        radial-gradient(circle at 18% 0%, rgba(14, 116, 144, .18), transparent 45%),
+        radial-gradient(circle at 82% 10%, rgba(212, 160, 23, .14), transparent 42%),
+        linear-gradient(180deg, rgba(2, 132, 199, .06), rgba(2, 132, 199, 0) 55%),
+        #fff;
+      position: relative;
+      overflow: hidden
     }
 
     .tl-hd {
@@ -1356,15 +1399,19 @@
       left: 50%;
       top: 0;
       bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, var(--aqua), var(--navy));
+      width: 6px;
+      background: linear-gradient(to bottom, var(--aqua), var(--gold2));
+      box-shadow:
+        0 0 0 6px rgba(6, 182, 212, .07),
+        0 0 42px rgba(6, 182, 212, .22);
       transform: translateX(-50%);
+      border-radius: 999px;
     }
 
     .tl-row {
       display: flex;
       gap: 0;
-      margin-bottom: 48px;
+      margin-bottom: 56px;
       align-items: flex-start;
     }
 
@@ -1396,9 +1443,11 @@
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      background: var(--aqua);
-      border: 3px solid #fff;
-      box-shadow: 0 0 0 3px rgba(6, 182, 212, .3);
+      background: linear-gradient(180deg, var(--aqua), var(--navy));
+      border: 3px solid rgba(255, 255, 255, .95);
+      box-shadow:
+        0 0 0 6px rgba(6, 182, 212, .12),
+        0 0 26px rgba(6, 182, 212, .35);
       z-index: 2;
     }
 
@@ -1407,22 +1456,45 @@
     }
 
     .tl-card {
-      background: var(--cream);
-      border-radius: var(--r);
-      padding: 24px 28px;
-      border-left: 4px solid var(--aqua);
-      box-shadow: var(--sh1);
-      transition: .3s;
+      background: rgba(255, 255, 255, .92);
+      border-radius: 26px;
+      padding: 26px 28px;
+      border-left: 4px solid rgba(6, 182, 212, .95);
+      box-shadow:
+        0 18px 70px rgba(2, 132, 199, .14),
+        0 10px 40px rgba(2, 132, 199, .08);
+      transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+      position: relative;
     }
 
     .tl-row:nth-child(even) .tl-card {
       border-left: none;
-      border-right: 4px solid var(--gold)
+      border-right: 4px solid rgba(212, 160, 23, .95)
     }
 
     .tl-card:hover {
-      box-shadow: var(--sh2);
-      transform: scale(1.02)
+      box-shadow:
+        0 26px 95px rgba(2, 132, 199, .18),
+        0 12px 60px rgba(2, 132, 199, .10);
+      transform: translateY(-10px);
+    }
+
+    /* Success-path accents */
+    .tl-card::after {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      background:
+        radial-gradient(circle at 15% 0%, rgba(6, 182, 212, .18), transparent 45%),
+        radial-gradient(circle at 100% 50%, rgba(212, 160, 23, .12), transparent 40%);
+      pointer-events: none;
+      opacity: .9
+    }
+
+    .tl-card > * {
+      position: relative;
+      z-index: 1
     }
 
     .tl-year {
@@ -1527,6 +1599,130 @@
       position: relative;
       z-index: 2;
       letter-spacing: -1px;
+    }
+
+    .team-card-btn {
+      cursor: pointer;
+      text-align: center
+    }
+
+    .team-card-btn:focus {
+      outline: 3px solid var(--aqua);
+      outline-offset: 3px
+    }
+
+    .team-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0;
+      border: none;
+      opacity: 1;
+      background: transparent;
+      z-index: 1
+    }
+
+    /* Placeholder style for team grid cards */
+    .team-card-placeholder {
+      position: relative;
+      min-height: 320px;
+      overflow: hidden
+    }
+
+    .team-card-placeholder .team-top {
+      position: absolute;
+      inset: 0;
+      height: auto !important;
+      background: linear-gradient(135deg, rgba(13,61,110,.95) 0%, rgba(8,145,178,.85) 45%, rgba(14,165,233,.95) 100%) !important;
+      display: block
+    }
+
+    .team-card-placeholder .team-top::before {
+      display: none
+    }
+
+    .team-card-placeholder .team-body {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 18px 18px 22px;
+      background: linear-gradient(to top, rgba(2, 132, 199, .9), rgba(2, 132, 199, 0));
+      text-align: left
+      ;
+      z-index: 3
+    }
+
+    /* Если фото ещё не вставлено (у нас SVG-плейсхолдер), показываем только синее “пространство”. */
+    .team-card-placeholder .team-photo[src^="data:image/svg+xml"] {
+      opacity: 0 !important;
+    }
+
+    .team-photo-icon-overlay {
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      width: 52px;
+      height: 52px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, .16);
+      border: 1px solid rgba(255, 255, 255, .22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      pointer-events: none;
+      opacity: 0
+    }
+
+    .team-photo-icon-overlay i {
+      color: rgba(255, 255, 255, .92);
+      width: 24px;
+      height: 24px
+    }
+
+
+    /* ══════════════════════════════════════════
+      Impact map markers
+    ══════════════════════════════════════════ */
+    .map-marker {
+      cursor: pointer;
+      outline: none
+    }
+
+    .map-marker circle {
+      transition: transform .2s ease, fill .2s ease, stroke .2s ease
+    }
+
+    .map-marker[data-active="true"] circle {
+      fill: rgba(6, 182, 212, .42) !important;
+      stroke: rgba(6, 182, 212, 1) !important;
+      transform: scale(1.06)
+    }
+
+    .team-card-placeholder .team-person-name,
+    .team-card-placeholder .team-role,
+    .team-card-placeholder .team-person-bio {
+      color: #fff !important
+    }
+
+    .team-card-placeholder .team-person-name {
+      font-size: 16px;
+      font-weight: 900;
+      margin-bottom: 6px
+    }
+
+    .team-card-placeholder .team-role {
+      font-size: 12px;
+      font-weight: 800
+    }
+
+    .team-card-placeholder .team-person-bio {
+      font-size: 13px;
+      margin-top: 8px;
+      line-height: 1.5
     }
 
     .team-body {
@@ -2427,6 +2623,33 @@
       font-size: 12px
     }
 
+    .footer-time-widget {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px
+    }
+
+    .footer-time-label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .5)
+    }
+
+    .footer-time-value {
+      font-size: 16px;
+      font-weight: 900;
+      color: var(--aqua);
+      padding: 8px 12px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .1);
+      min-width: 150px;
+      text-align: center
+    }
+
     .footer-legal {
       display: flex;
       gap: 16px
@@ -2545,12 +2768,32 @@
     body.hc {
       background: #000 !important;
       color: #fff !important;
-      filter: contrast(1.4);
+      filter: contrast(1.4) var(--a11y-extra-filter);
     }
 
     body.hc * {
       background-color: inherit;
       color: inherit
+    }
+
+    /* ══════════════════════════════════════════
+   A11Y MODES (grayscale + readable font)
+══════════════════════════════════════════ */
+    :root {
+      --a11y-extra-filter: none;
+    }
+
+    body.a11y-grayscale {
+      --a11y-extra-filter: grayscale(1);
+    }
+
+    body.a11y-grayscale:not(.hc) {
+      filter: grayscale(1);
+    }
+
+    body.a11y-dyslexia-font {
+      font-family: Arial, sans-serif !important;
+      letter-spacing: 0 !important;
     }
 
     /* ══════════════════════════════════════════
@@ -2834,6 +3077,61 @@
       transform: translateY(0) scale(1);
     }
 
+    /* ══════════════════════════════════════════
+   TEAM PERSON MODAL
+══════════════════════════════════════════ */
+    #team-modal .legal-content {
+      max-width: 980px;
+      padding: 32px;
+    }
+
+    #team-modal .team-modal-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    #team-modal .team-modal-photo {
+      width: 100%;
+      max-height: 520px;
+      object-fit: cover;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    #team-modal .team-modal-photo.team-photo-placeholder {
+      /* Тонируем SVG-плейсхолдер в синий, чтобы визуально совпадало с карточками. */
+      filter: sepia(1) saturate(650%) hue-rotate(185deg);
+    }
+
+    #team-modal .team-modal-meta {
+      padding-top: 8px
+    }
+
+    #team-modal .team-modal-name {
+      font-size: 26px;
+      font-weight: 900;
+      margin-bottom: 10px;
+      color: #fff
+    }
+
+    #team-modal .team-modal-role {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      color: var(--aqua);
+      margin-bottom: 16px
+    }
+
+    #team-modal .team-modal-bio {
+      color: var(--gray);
+      font-size: 15px;
+      line-height: 1.75
+    }
+
     .modal-close {
       position: absolute;
       top: 20px;
@@ -2904,7 +3202,21 @@
           <button onclick="changeFontSize(0)" aria-label="Обычный текст">A</button>
           <button onclick="changeFontSize(1)" aria-label="Увеличить текст">A+</button>
         </div>
-        <button id="contrast-btn" onclick="toggleContrast()" aria-label="Контрастный режим">⬛ Контраст</button>
+        <button id="contrast-btn" onclick="toggleContrast()" aria-label="Контрастный режим" class="flex items-center gap-2">
+          <i data-lucide="contrast" aria-hidden="true" class="a11y-ico"></i>
+          <span class="lang-switch" data-ru="Контраст" data-tj="Контраст" data-en="Contrast" data-uz="Kontrast"
+            data-fr="Contraste" data-de="Kontrast" data-ar="التباين" data-es="Contraste" data-fa="کنتراست" data-zh="对比度">Контраст</span>
+        </button>
+        <button id="grayscale-btn" onclick="toggleGrayscale()" aria-label="ЧБ режим" class="flex items-center gap-2">
+          <i data-lucide="image-off" aria-hidden="true" class="a11y-ico"></i>
+          <span class="lang-switch" data-ru="ЧБ режим" data-tj="Режими Сиёҳ-Сафед" data-en="Black & White mode" data-uz="Qora-oq rejim"
+            data-fr="Mode noir et blanc" data-de="Schwarzweißmodus" data-ar="وضع أبيض وأسود" data-es="Modo blanco y negro" data-fa="حالت سیاه و سفید" data-zh="黑白模式">ЧБ режим</span>
+        </button>
+        <button id="readable-font-btn" onclick="toggleDyslexia()" aria-label="Читаемый шрифт" class="flex items-center gap-2">
+          <i data-lucide="type" aria-hidden="true" class="a11y-ico"></i>
+          <span class="lang-switch" data-ru="Читаемый шрифт" data-tj="Ҳуруфи осонхон" data-en="Readable font" data-uz="O'qiladigan shrift"
+            data-fr="Police lisible" data-de="Gut lesbare Schriftart" data-ar="خط قابل للقراءة" data-es="Fuente legible" data-fa="قلم خوانا" data-zh="可读字体">Читаемый шрифт</span>
+        </button>
       </div>
     </div>
   </div>
@@ -2914,7 +3226,9 @@
     <div class="inner">
       <span class="lang-spinner" id="trans-spinner"></span>
       <i class="fas fa-language"></i>
-      <span id="trans-notice-text">Переводим страницу...</span>
+      <span id="trans-notice-text" class="lang-switch" data-ru="Переводим страницу..." data-tj="Саҳифаро тарҷума мекунем..." data-en="Translating the page..."
+        data-uz="Sahifani tarjima qilamiz..." data-fr="Traduction de la page..." data-de="Seite wird übersetzt..."
+        data-ar="جارٍ ترجمة الصفحة..." data-es="Traduciendo la página..." data-fa="در حال ترجمه صفحه..." data-zh="页面正在翻译...">Переводим страницу...</span>
     </div>
   </div>
 
@@ -2923,26 +3237,27 @@
     <div class="lang-inner">
       <span class="lang-label" data-i18n="lang_label" data-key="lang_label">🌐 Язык / Language</span>
       <div class="lang-flags" role="group" aria-label="Доступные языки">
-        <button class="lang-btn" data-lang="en" onclick="setLang('en')" aria-pressed="false"><span
-            class="lang-flag">🇬🇧</span> English</button>
-        <button class="lang-btn" data-lang="tg" onclick="setLang('tg')" aria-pressed="false"><span
-            class="lang-flag">🇹🇯</span> Тоҷикӣ</button>
-        <button class="lang-btn active" data-lang="ru" onclick="setLang('ru')" aria-pressed="true"><span
-            class="lang-flag">🇷🇺</span> Русский</button>
-        <button class="lang-btn" data-lang="uz" onclick="setLang('uz')" aria-pressed="false"><span
-            class="lang-flag">🇺🇿</span> O'zbekcha</button>
-        <button class="lang-btn" data-lang="fr" onclick="setLang('fr')" aria-pressed="false"><span
-            class="lang-flag">🇫🇷</span> Français</button>
-        <button class="lang-btn" data-lang="de" onclick="setLang('de')" aria-pressed="false"><span
-            class="lang-flag">🇩🇪</span> Deutsch</button>
-        <button class="lang-btn" data-lang="ar" onclick="setLang('ar')" aria-pressed="false"><span
-            class="lang-flag">🇸🇦</span> العربية</button>
-        <button class="lang-btn" data-lang="zh" onclick="setLang('zh')" aria-pressed="false"><span
-            class="lang-flag">🇨🇳</span> 中文</button>
-        <button class="lang-btn" data-lang="es" onclick="setLang('es')" aria-pressed="false"><span
-            class="lang-flag">🇪🇸</span> Español</button>
-        <button class="lang-btn" data-lang="fa" onclick="setLang('fa')" aria-pressed="false"><span
-            class="lang-flag">🇮🇷</span> فارسی</button>
+        <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')" aria-pressed="false"
+          aria-label="Select language: English"><span class="lang-flag">🇬🇧</span> English</button>
+        <button class="lang-btn" data-lang="tj" onclick="changeLanguage('tj')" aria-pressed="false"
+          aria-label="Выбор языка: Тоҷикӣ"><span class="lang-flag">🇹🇯</span> Тоҷикӣ</button>
+        <button class="lang-btn active" data-lang="ru" onclick="changeLanguage('ru')" aria-pressed="true"
+          aria-label="Выбор языка: Русский"><span class="lang-flag">🇷🇺</span> Русский</button>
+        <button class="lang-btn" data-lang="uz" onclick="changeLanguage('uz')" aria-pressed="false"
+          aria-label="Выбор языка: O'zbek"><span class="lang-flag">🇺🇿</span> O'zbek</button>
+
+        <button class="lang-btn" data-lang="fr" onclick="changeLanguage('fr')" aria-pressed="false"
+          aria-label="Select language: Français"><span class="lang-flag">🇫🇷</span> Français</button>
+        <button class="lang-btn" data-lang="de" onclick="changeLanguage('de')" aria-pressed="false"
+          aria-label="Select language: Deutsch"><span class="lang-flag">🇩🇪</span> Deutsch</button>
+        <button class="lang-btn" data-lang="ar" onclick="changeLanguage('ar')" aria-pressed="false"
+          aria-label="Select language: العربية"><span class="lang-flag">🇸🇦</span> العربية</button>
+        <button class="lang-btn" data-lang="es" onclick="changeLanguage('es')" aria-pressed="false"
+          aria-label="Select language: Español"><span class="lang-flag">🇪🇸</span> Español</button>
+        <button class="lang-btn" data-lang="fa" onclick="changeLanguage('fa')" aria-pressed="false"
+          aria-label="Select language: فارسی"><span class="lang-flag">🇮🇷</span> فارسی</button>
+        <button class="lang-btn" data-lang="zh" onclick="changeLanguage('zh')" aria-pressed="false"
+          aria-label="Select language: 中文"><span class="lang-flag">🇨🇳</span> 中文</button>
       </div>
     </div>
   </div>
@@ -3059,12 +3374,12 @@
     <div class="stats-grid">
       <div class="stat-cell">
         <div class="stat-icon" aria-hidden="true"><i class="fas fa-calendar-check"></i></div>
-        <span class="stat-num count" data-target="27" aria-label="27 лет работы">0</span>
+        <span class="stat-num count" data-target="28" aria-label="28 лет работы">0</span>
         <span class="stat-lbl" data-i18n="stat1">Лет работы</span>
       </div>
       <div class="stat-cell">
         <div class="stat-icon" aria-hidden="true"><i class="fas fa-project-diagram"></i></div>
-        <span class="stat-num count" data-target="60" aria-label="60 проектов">0</span>
+        <span class="stat-num count" data-target="50" aria-label="50 проектов">0</span>
         <span class="stat-lbl" data-i18n="stat2">Проектов</span>
       </div>
       <div class="stat-cell">
@@ -3365,59 +3680,387 @@
         <h2 class="sec-title" id="team-title" data-i18n="team_title">Люди, стоящие за нашей работой</h2>
       </div>
       <div class="team-grid">
-        <article class="team-card">
+                <article class="team-card team-card-btn team-card-placeholder" role="button" tabindex="0" data-team-index="0" data-aria-team="true"
+          aria-label="Открыть карточку команды">
           <div class="team-top">
-            <div class="team-initials" aria-hidden="true">РБ</div>
+            <img class="team-photo" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27200%27%20height%3D%27200%27%20viewBox%3D%270%200%20200%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27200%27%20height%3D%27200%27%20rx%3D%2730%27%20fill%3D%27%23e5e7eb%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2750%25%27%20dominant-baseline%3D%27middle%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%27%20font-size%3D%2716%27%20fill%3D%27%236b7280%27%3EPHOTO%3C/text%3E%3C/svg%3E" alt="Rakhimova_Bikhodjal_Fatkhitdinovna.jpg" />
+            <div class="team-photo-icon-overlay" aria-hidden="true">
+              <i data-lucide="user-round"></i>
+            </div>
           </div>
           <div class="team-body">
-            <h4 data-i18n="t1n">Рахимова Биходжал</h4>
-            <div class="team-role" data-i18n="t1r">Председатель правления</div>
-            <p data-i18n="t1d">Руководит стратегическим развитием и координирует работу с государственными структурами.
+            <h4 class="team-person-name lang-switch" 
+              data-ru="Рахимова Биходжал Фатхитдиновна" 
+              data-tj="Рахимова Бихоҷали Фатхитдиновна" 
+              data-en="Rakhimova Bikhodjal Fatkhitdinovna"
+              data-uz="Rakhimova Bikhodjal Fatkhitdinovna" 
+              data-fr="Rakhimova Bikhodjal Fatkhitdinovna" 
+              data-de="Rakhimova Bikhodjal Fatkhitdinovna" 
+              data-ar="راخيموفا بيخوجال فتحتدينوفنا" 
+              data-es="Rakhimova Bikhodjal Fatkhitdinovna" 
+              data-fa="راخیموا بیخوجال فتختدینوفنا" 
+              data-zh="拉希莫娃·比霍贾尔·法特希特迪诺夫娜">
+              Рахимова Биходжал Фатхитдиновна
+            </h4>
+            <div class="team-role team-person-role lang-switch"
+              data-ru="Председатель правления · Учредитель" 
+              data-tj="Раиси Ҳайати Назорат · Бунёдгузор" 
+              data-en="Board Chair & Founder" 
+              data-uz="Bosh Direktori va Asos Qo'yuvchi" 
+              data-fr="Présidente du Conseil et Fondatrice" 
+              data-de="Vorsitzende und Gründerin" 
+              data-ar="رئيسة المجلس والمؤسسة" 
+              data-es="Presidenta de la Junta y Fundadora" 
+              data-fa="رئیس هیات مدیره و بنیانگذار" 
+              data-zh="董事会主席及创始人">
+              Председатель правления · Учредитель
+            </div>
+            <p class="team-person-bio lang-switch" 
+              data-ru="Государственный деятель и эксперт с 60-летним стажем. Заместитель Премьер-министра СССР (1991). Номинант на Нобелевскую премию мира (2005). Лидер в области гендерного равенства, земельной реформы и прав сельских женщин. Национальный советник ООН-Женщины, UNIFEM, ПРООН." 
+              data-tj="Сиёсатмадор ва мутахассас бо 60 соли таҷриба. Заместител Оли Вазири Иттиҳоди Советӣ (1991). Номинант ба Ҷойизаи Нобел барои Салом (2005). Лидери дар об­лости баробарии ҷинсиёт, ислоҳоти заминҳо ва ҳуқуқи занони деҳот." 
+              data-en="Distinguished state leader and international expert with 60 years of experience. Deputy Prime Minister of the USSR (1991). Nobel Peace Prize nominee (2005). Pioneer in gender equality, land reform and rural women's rights. National advisor to UN Women, UNIFEM, UNDP." 
+              data-uz="60 yillik tajribasi bo'lgan davlat ustozi va xalqaro mutakhassas. СССР Bosh vazir o'rinbosari (1991). Nobelʹ tinchlik mukofoti nomzodi (2005). Jinsiy tenglik, yerlar islohotlanishi va qishloq ayollari huquqlari sohasida pioner." 
+              data-fr="Homme d'État distingué et expert international avec 60 ans d'expérience. Vice-Premier ministre de l'URSS (1991). Nominée au Prix Nobel de la Paix (2005). Pionnière en égalité des genres, réforme agraire et droits des femmes rurales." 
+              data-de="Herausragender Staatsmann und internationaler Experte mit 60 Jahren Erfahrung. Stellvertretender Premierminister der UdSSR (1991). Nominiert für den Friedensnobelpreis (2005). Pionierin für Geschlechterparität, Landreform und Landfrauenrechte." 
+              data-ar="رجل دولة بارز وخبير دولي بخبرة 60 سنة. نائب رئيس وزراء الاتحاد السوفياتي (1991). مرشحة لجائزة نوبل للسلام (2005). رائدة في المساواة بين الجنسين وإصلاح الأراضي وحقوق نساء الريف." 
+              data-es="Estadista distinguida y experta internacional con 60 años de experiencia. Viceprimer Ministra de la URSS (1991). Nominada al Premio Nobel de la Paz (2005). Pionera en igualdad de género, reforma agraria y derechos de mujeres rurales." 
+              data-fa="مقام‌دار دولتی ممتاز و کارشناس بین‌المللی با 60 سال تجربه. معاون نخست‌وزیر اتحاد شوروی (1991). نامزد جایزه صلح نوبل (2005). پیشرو در برابری جنسیتی، اصلاحات اراضی و حقوق زنان روستایی." 
+              data-zh="杰出的国务活动家和国际专家，拥有60年的工作经验。苏联副总理（1991）。诺贝尔和平奖提名人（2005）。性别平等、土地改革和农村妇女权利的先驱。">
+              Государственный деятель и эксперт с 60-летним стажем. Заместитель Премьер-министра СССР (1991). Номинант на Нобелевскую премию мира (2005). Лидер в области гендерного равенства, земельной реформы и прав сельских женщин.
             </p>
           </div>
         </article>
-        <article class="team-card">
+
+                <article class="team-card team-card-btn team-card-placeholder" role="button" tabindex="0" data-team-index="1" data-aria-team="true"
+          aria-label="Открыть карточку команды">
           <div class="team-top" style="background:linear-gradient(135deg,#0d3d6e,var(--teal))">
-            <div class="team-initials">БР</div>
+            <img class="team-photo" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27200%27%20height%3D%27200%27%20viewBox%3D%270%200%20200%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27200%27%20height%3D%27200%27%20rx%3D%2730%27%20fill%3D%27%23e5e7eb%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2750%25%27%20dominant-baseline%3D%27middle%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%27%20font-size%3D%2716%27%20fill%3D%27%236b7280%27%3EPHOTO%3C/text%3E%3C/svg%3E" alt="Фото участника команды" />
+            <div class="team-photo-icon-overlay" aria-hidden="true">
+              <i data-lucide="user-round"></i>
+            </div>
           </div>
           <div class="team-body">
-            <h4 data-i18n="t2n">Бобоева Рафоат</h4>
-            <div class="team-role" data-i18n="t2r">Учредитель, консультант</div>
-            <p data-i18n="t2d">Один из основателей организации. Эксперт по правам женщин и гендерному равенству с 1998
-              года.</p>
+            <h4 class="team-person-name lang-switch" 
+              data-ru="Бобоева Рафоат Шарифовна" 
+              data-tj="Бобоева Рафоат Шарифовна" 
+              data-en="Boboeva Rafоat Sharifovna"
+              data-uz="Boboeva Rafоat Sharifovna" 
+              data-fr="Boboeva Rafоat Sharifovna" 
+              data-de="Boboeva Rafоat Sharifovna" 
+              data-ar="بوبويفا رافعة شريفوفنا" 
+              data-es="Boboeva Rafоat Sharifovna" 
+              data-fa="بوبویفا رافعت شریفوفنا" 
+              data-zh="博博耶娃·拉夫阿特·沙里夫芬娜">
+              Бобоева Рафоат Шарифовна
+            </h4>
+            <div class="team-role team-person-role lang-switch"
+              data-ru="Учредитель · Независимый консультант" 
+              data-tj="Бунёдгузор · Мушовири ғайримуваќќи" 
+              data-en="Founder & Independent Consultant" 
+              data-uz="Asos qo'yuvchi va mustaқil maslahatchisi" 
+              data-fr="Fondatrice et Consultante Indépendante" 
+              data-de="Gründerin und unabhängige Beraterin" 
+              data-ar="المؤسسة والمستشارة المستقلة" 
+              data-es="Fundadora y Consultora Independiente" 
+              data-fa="بنیانگذار و مشاور مستقل" 
+              data-zh="创始人及独立顾问">
+              Учредитель · Независимый консультант
+            </div>
+            <p class="team-person-bio lang-switch" 
+              data-ru="Топ-менеджер и эксперт с многолетним опытом в защите прав человека, социальной реабилитации и управлении проектами (UNICEF, МОМ, APWLD). Специалист по координации гуманитарных программ, гендерному равенству и защите уязвимых групп. Автор методических пособий, участник глобальных форумов." 
+              data-tj="Менеҷери баланғ ва мутахассаси таҷриба дорои опитест дар ҳифзи ҳуқуқи шахс, реҳабилитасьйони иҷтимоӣ ва идоракунии лоиҳаҳо (UNICEF, МОМ, APWLD). Ихтисосгар дар ҳамоҳангсозии барномаҳои ҳумонитарӣ." 
+              data-en="Senior manager and human rights expert with extensive experience in social rehabilitation and project management (UNICEF, IOM, APWLD). Specialist in humanitarian coordination, gender equality and vulnerable group protection. Author of methodological guides, participant in global forums." 
+              data-uz="Inshaҳ ҳуқуқлари, ijtimoiy reabilitatsiya va loyiha boshқaruviga tajriba joyi bo'lgan yuқori darajali menejer va mutakhassas (UNICEF, МОМ, APWLD). Gumanitar koordinatsiya, gender tengligiga noўчи mutakhassas." 
+              data-fr="Gestionnaire senior et experte en droits humains avec une vaste expérience en réhabilitation sociale et gestion de projets (UNICEF, OIM, APWLD). Spécialiste de la coordination humanitaire et de l'égalité des genres." 
+              data-de="Senior-Managerin und Menschenrechtsexpertin mit umfangreicher Erfahrung in sozialer Rehabilitation und Projektmanagement (UNICEF, IOM, APWLD). Spezialistin für humanitäre Koordination und Geschlechtergerechtigkeit." 
+              data-ar="مديرة عليا وخبيرة حقوق الإنسان بخبرة واسعة في إعادة التأهيل الاجتماعي وإدارة المشاريع (UNICEF و IOM و APWLD). متخصصة في التنسيق الإنساني والمساواة بين الجنسين." 
+              data-es="Gestora senior y experta en derechos humanos con amplia experiencia en rehabilitación social y gestión de proyectos (UNICEF, OIM, APWLD). Especialista en coordinación humanitaria e igualdad de género." 
+              data-fa="مدیر ارشد و کارشناس حقوق بشر با تجربه گسترده در توانبخشی اجتماعی و مدیریت پروژه (UNICEF، IOM، APWLD). متخصص در هماهنگی بشردوستانه و برابری جنسیتی." 
+              data-zh="高级经理和人权专家，在社会康复和项目管理（UNICEF、IOM、APWLD）方面拥有丰富经验。人道主义协调和性别平等领域的专家。">
+              Топ-менеджер и эксперт с многолетним опытом в защите прав человека, социальной реабилитации и управлении проектами (UNICEF, МОМ, APWLD). Специалист по координации гуманитарных программ.
+            </p>
           </div>
         </article>
-        <article class="team-card">
+
+                <article class="team-card team-card-btn team-card-placeholder" role="button" tabindex="0" data-team-index="2" data-aria-team="true"
+          aria-label="Открыть карточку команды">
           <div class="team-top" style="background:linear-gradient(135deg,var(--teal),#0e7490)">
-            <div class="team-initials">РМ</div>
+            <img class="team-photo" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27200%27%20height%3D%27200%27%20viewBox%3D%270%200%20200%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27200%27%20height%3D%27200%27%20rx%3D%2730%27%20fill%3D%27%23e5e7eb%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2750%25%27%20dominant-baseline%3D%27middle%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%27%20font-size%3D%2716%27%20fill%3D%27%236b7280%27%3EPHOTO%3C/text%3E%3C/svg%3E" alt="Фото участника команды" />
+            <div class="team-photo-icon-overlay" aria-hidden="true">
+              <i data-lucide="user-round"></i>
+            </div>
           </div>
           <div class="team-body">
-            <h4 data-i18n="t3n">Рахимова Мархабо</h4>
-            <div class="team-role" data-i18n="t3r">Исполнительный директор</div>
-            <p data-i18n="t3d">Управляет операционной деятельностью и взаимодействием с международными партнёрами.</p>
+            <h4 class="team-person-name lang-switch" 
+              data-ru="Мархабо Рахимова" 
+              data-tj="Марҳабо Рахимова" 
+              data-en="Marhabo Rakhimova"
+              data-uz="Marhabo Rakhimova" 
+              data-fr="Marhabo Rakhimova" 
+              data-de="Marhabo Rakhimova" 
+              data-ar="مرهبة رخيموفا" 
+              data-es="Marhabo Rakhimova" 
+              data-fa="مرهبه رهیموا" 
+              data-zh="玛尔哈博·拉希莫娃">
+              Мархабо Рахимова
+            </h4>
+            <div class="team-role team-person-role lang-switch"
+              data-ru="Исполнительный директор · Руководитель проектов" 
+              data-tj="Раиси иҷроия · Раҳбари лоиҳаҳо" 
+              data-en="Executive Director & Project Manager" 
+              data-uz="Ijro direktori va loyiha boshqaruvchisi" 
+              data-fr="Directrice Exécutive et Gestionnaire de Projets" 
+              data-de="Geschäftsführerin und Projektleiterin" 
+              data-ar="المديرة التنفيذية ومديرة المشاريع" 
+              data-es="Directora Ejecutiva y Gestora de Proyectos" 
+              data-fa="مدیر اجرایی و مدیر پروژه" 
+              data-zh="执行主任及项目经理">
+              Исполнительный директор · Руководитель проектов
+            </div>
+            <p class="team-person-bio lang-switch" 
+              data-ru="Топ-менеджер с 25-летним опытом в государственном управлении, бизнесе и международных проектах (Всемирный банк, GIZ, USAID, МОМ). Эксперт по операционному управлению, финансовому контролю и управлению сложными грантовыми программами. Координирует все проекты организации и обеспечивает 100% выполнение международных стандартов отчетности." 
+              data-tj="Менеҷери баланғ бо 25 соли таҷриба дарIdоракунии давлатӣ, биҷношӣ ва лоиҳаҳои байналмилалӣ (Бонки Ҷаҳонӣ, GIZ, USAID, МОМ). Мутахассас дар идоракунии Operational Excellence ва контролии маллӣ." 
+              data-en="Senior manager with 25 years of experience in government, business and international development (World Bank, GIZ, USAID, IOM). Expert in Operational Excellence, financial control and complex grant management. Coordinates all organizational projects and ensures 100% compliance with international reporting standards." 
+              data-uz="25 yillik tajribasi bo'lgan boshliq menejer Jahon Banki, GIZ, USAID, IOM bilan ishlangan. Operational Excellence va moliyaviy nazorat bo'yicha mutakhassas." 
+              data-fr="Gestionnaire senior avec 25 ans d'expérience en gouvernance, affaires et projets internationaux. Experte en gestion opérationnelle, contrôle financier et programmes de subventions complexes." 
+              data-de="Senior-Managerin mit 25 Jahren Erfahrung in Regierungsverwaltung, Geschäft und internationalen Projekten. Expertin für Operational Excellence und Finanzkontrolle." 
+              data-ar="مديرة عليا بخبرة 25 سنة في الإدارة الحكومية والأعمال والمشاريع الدولية. خبيرة في الإدارة التشغيلية والتحكم المالي." 
+              data-es="Gestora senior con 25 años de experiencia en administración pública, negocios y proyectos internacionales. Experta en excelencia operacional y control financiero." 
+              data-fa="مدیر ارشد با 25 سال تجربه در مدیریت دولتی، تجارت و پروژه‌های بین‌المللی. کارشناس در عملیات‌پذیری و کنترل مالی." 
+              data-zh="具有25年政府管理、商业和国际项目经验的高级经理。运营卓越和财务控制专家。">
+              Топ-менеджер с 25-летним опытом в государственном управлении, бизнесе и международных проектах (Всемирный банк, GIZ, USAID, МОМ). Эксперт по операционному управлению, финансовому контролю и управлению сложными грантовыми программами.
+            </p>
           </div>
         </article>
-        <article class="team-card">
+
+                <article class="team-card team-card-btn team-card-placeholder" role="button" tabindex="0" data-team-index="3" data-aria-team="true"
+          aria-label="Открыть карточку команды">
           <div class="team-top" style="background:linear-gradient(135deg,#164e63,#0e7490)">
-            <div class="team-initials">СН</div>
+            <img class="team-photo" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27200%27%20height%3D%27200%27%20viewBox%3D%270%200%20200%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27200%27%20height%3D%27200%27%20rx%3D%2730%27%20fill%3D%27%23e5e7eb%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2750%25%27%20dominant-baseline%3D%27middle%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%27%20font-size%3D%2716%27%20fill%3D%27%236b7280%27%3EPHOTO%3C/text%3E%3C/svg%3E" alt="Фото участника команды" />
+            <div class="team-photo-icon-overlay" aria-hidden="true">
+              <i data-lucide="user-round"></i>
+            </div>
           </div>
           <div class="team-body">
-            <h4 data-i18n="t4n">Садыкова Наргиза</h4>
-            <div class="team-role" data-i18n="t4r">Главный бухгалтер</div>
-            <p data-i18n="t4d">Отвечает за финансовое управление, отчётность и соответствие стандартам грантовой
-              отчётности.</p>
+            <h4 class="team-person-name lang-switch" 
+              data-ru="Садыкова Наргиза Вайдуллаевна" 
+              data-tj="Садикова Наргизаи Вайдуллаевна" 
+              data-en="Sadykova Nargiza Vaidullaevna"
+              data-uz="Sadykova Nargiza Vaidullaevna" 
+              data-fr="Sadykova Nargiza Vaidullaevna" 
+              data-de="Sadykova Nargiza Vaidullaevna" 
+              data-ar="صادیكوفا نرجيزة فايدولايفنا" 
+              data-es="Sadykova Nargiza Vaidullaevna" 
+              data-fa="صادیکووا ناریضه وایدولایوفنا" 
+              data-zh="萨德科娃·纳尔吉扎·韦杜拉耶夫娜">
+              Садыкова Наргиза Вайдуллаевна
+            </h4>
+            <div class="team-role team-person-role lang-switch"
+              data-ru="Главный бухгалтер · Финансовый менеджер" 
+              data-tj="Мухаррири асосӣ · Модири маллӣ" 
+              data-en="Chief Accountant & Financial Manager" 
+              data-uz="Bosh buhgalter va moliyaviy menejer" 
+              data-fr="Comptable en chef et gestionnaire financier" 
+              data-de="Hauptbuchhalterin und Finanzmanagerin" 
+              data-ar="محاسب رئيسي ومدير مالي" 
+              data-es="Contador jefe y gestora financiera" 
+              data-fa="حسابدار ارشد و مدیر مالی" 
+              data-zh="首席会计师及财务经理">
+              Главный бухгалтер · Финансовый менеджер
+            </div>
+            <p class="team-person-bio lang-switch" 
+              data-ru="Эксперт в бухгалтерском учёте и финансовом администрировании с 20+ годами опыта. Работала в государственном секторе, образовании, банковской сфере и телекоммуникациях (Beeline). Специалист по постановке финансового учёта, оптимизации налогообложения и комплексному управлению офисом." 
+              data-tj="Мутахассас дар ҳисобфарамоза ва идоракунии маллӣ бо 20+ соли таҷриба. Дар самти давлатӣ, маориф, банк ва телекоммуникасион (Beeline) кор намуда. Мутахассас дар гузоришдеҳӣ, беҳтарсозии муомалаҳо бо қонун ва идоракунии комплексӣ." 
+              data-en="Expert in accounting and financial administration with 20+ years of experience. Worked in government, education, banking and telecommunications (Beeline). Specialist in financial accounting setup, tax optimization and comprehensive office management." 
+              data-uz="20+ yillik tajribali buxgalteriya va moliyaviy boshqaruv bo'yicha mutakhassas. Davlat sektori, ta'lim, bank va telekommunikasiyada (Beeline) ishlagan. Moliyaviy hisobni o'rnatish, soliq optimizatsiyasi va ofis boshqaruvida mutakhassas." 
+              data-fr="Experte en comptabilité et administration financière avec plus de 20 ans d'expérience. A travaillé dans le secteur public, l'éducation, la banque et les télécommunications (Beeline). Spécialiste de la mise en place comptable et de la gestion complète des opérations financières." 
+              data-de="Spezialistin für Buchhaltung und Finanzverwaltung mit über 20 Jahren Erfahrung. Arbeitete im öffentlichen Sektor, Bildung, Banking und Telekommunikation (Beeline). Spezialistin für Rechnungswesen und umfassendes Finanzmanagement." 
+              data-ar="خبيرة في المحاسبة والإدارة المالية بخبرة تزيد عن 20 سنة. عملت في القطاع العام والتعليم والبنوك والاتصالات (Beeline). متخصصة في إنشاء الحسابات والإدارة المالية الشاملة." 
+              data-es="Experta en contabilidad y administración financiera con más de 20 años de experiencia. Trabajó en el sector público, educación, banca y telecomunicaciones (Beeline). Especialista en contabilidad financiera y gestión integral de operaciones." 
+              data-fa="با بیش از 20 سال تجربه درBOX آموزش، بانکداری و مخابرات (Beeline). متخصص در تنظیم حسابهای مالی و مدیریت جامع دفتر." 
+              data-zh="拥有超过20年经验的会计和财务管理专家。在公共部门、教育、银行和电信（Beeline）领域工作过。财务会计设置和全面办公室管理专家。">
+              Эксперт в бухгалтерском учёте и финансовом администрировании с 20+ годами опыта. Работала в государственном секторе, образовании, банковской сфере и телекоммуникациях (Beeline). Специалист по постановке финансового учёта, оптимизации налогообложения и комплексному управлению офисом.
+            </p>
           </div>
         </article>
-      </div>
-      <div class="team-rep">
-        <div class="team-rep-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
-        <div class="team-rep-text">
-          <h4 data-i18n="rep_name">Шарифова Низоматмо — Представитель в Зарафшанской долине</h4>
-          <p data-i18n="rep_desc">Кухистони Мастчох, Айни, Пенджикентский район</p>
-        </div>
+
+                <article class="team-card team-card-btn team-card-placeholder" role="button" tabindex="0" data-team-index="4" data-aria-team="true"
+          aria-label="Открыть карточку команды">
+          <div class="team-top" style="background:linear-gradient(135deg,var(--navy),var(--teal))">
+            <img class="team-photo" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27200%27%20height%3D%27200%27%20viewBox%3D%270%200%20200%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27200%27%20height%3D%27200%27%20rx%3D%2730%27%20fill%3D%27%23e5e7eb%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2750%25%27%20dominant-baseline%3D%27middle%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%27%20font-size%3D%2716%27%20fill%3D%27%236b7280%27%3EPHOTO%3C/text%3E%3C/svg%3E" alt="Фото участника команды" />
+            <div class="team-photo-icon-overlay" aria-hidden="true">
+              <i data-lucide="user-round"></i>
+            </div>
+          </div>
+          <div class="team-body">
+            <h4 class="team-person-name lang-switch" 
+              data-ru="Хомидова Манзура" 
+              data-tj="Хомидова Манзура" 
+              data-en="Homidova Manzura"
+              data-uz="Homidova Manzura" 
+              data-fr="Homidova Manzura" 
+              data-de="Homidova Manzura" 
+              data-ar="خومیدوفا منزورة" 
+              data-es="Homidova Manzura" 
+              data-fa="خومیدووا منزورا" 
+              data-zh="霍米多娃·曼祖拉">
+              Хомидова Манзура
+            </h4>
+            <div class="team-role team-person-role lang-switch"
+              data-ru="Эксперт по международному праву · Доцент" 
+              data-tj="Мутахассас дар қонуни байналмилалӣ · Дотсент" 
+              data-en="International Law Expert & Associate Professor" 
+              data-uz="Xalqaro huquq bo'yicha mutakhassas va Dotsent" 
+              data-fr="Experte en droit international et maître de conférences" 
+              data-de="Expertin für Völkerrecht und Dozentin" 
+              data-ar="خبيرة في القانون الدولي والمحاضرة" 
+              data-es="Experta en derecho internacional y profesora asociada" 
+              data-fa="کارشناس حقوق بین‌المللی و دستیار استاد" 
+              data-zh="国际法专家和副教授">
+              Эксперт по международному праву · Доцент
+            </div>
+            <p class="team-person-bio lang-switch" 
+              data-ru="Признанный эксперт в области международного и гуманитарного права с образованием СПбГУ. Доцент ТГУПБП, специалист по Римскому статуту МУС и интеграции национального законодательства в глобальные правовые системы. Координатор национальных и международных образовательных проектов (МККК, ПРООН). Отличник образования и науки РТ (2023)." 
+              data-tj="Мутахассаси шунахтаи қонуни байналмилалӣ ва гуманитариро бо таҳсили СПбГУ. Дотсенти ТГУПБП, ихтисосгар дар Қонуни Рим ва интеграсиёни қонуни миллӣ дар системаи ҷаҳонии ҳуқуқї. Координатори лоиҳаҳои таълимӣ (МККК, ПРООН)." 
+              data-en="Recognized expert in international and humanitarian law with education from Saint Petersburg State University. Associate Professor at TAJUBP, specialist in the Rome Statute and integration of national legislation into global legal systems. Coordinator of national and international educational projects (ICRC, UNDP). Recipient of the Medal of Honor for Education and Science (2023)." 
+              data-uz="Sankt-Peterburg Davlat Universiteti ta'limiga ega bo'lgan xalqaro va gumanitar huquq bo'yicha tan olingan mutakhassas. TAJUBP da dotsent, Roma Statutida va milliy qonunchilikni global huquq tizimlarga integratsiyasi bo'yicha mutakhassas." 
+              data-fr="Experte reconnue en droit international et droit humanitaire, formée à l'Université d'État de Saint-Pétersbourg. Maître de conférences à l'TAJUBP, spécialiste du Statut de Rome et de l'intégration du droit national dans les systèmes juridiques mondiaux. Coordinatrice de projets éducatifs internationaux (CICR, PNUD)." 
+              data-de="Anerkannte Expertin für Völkerrecht und humanitäres Recht mit Ausbildung an der Staatlichen Universität St. Petersburg. Dozentin an der TAJUBP, Spezialistin für das Römische Statut und die Integration nationalen Rechts in globale Justizsysteme." 
+              data-ar="خبيرة معترف بها في القانون الدولي والقانون الإنساني بتعليم من جامعة سانت بطرسبرغ الحكومية. محاضرة مساعدة في TAJUBP متخصصة في النظام الأساسي لروما وتكامل التشريعات الوطنية في الأنظمة القانونية العالمية." 
+              data-es="Experta reconocida en derecho internacional y derecho humanitario, formada en la Universidad Estatal de San Petersburgo. Profesora asociada en TAJUBP, especialista en el Estatuto de Roma e integración del derecho nacional en sistemas legales globales." 
+              data-fa="کارشناس شناخته‌شده‌ای در حقوق بین‌المللی و حقوق بشردوستانه با تحصیل از دانشگاه دولتی سن‌پترزبورگ. دستیار استاد در دانشگاه، متخصص در نظام اساسی رم و ادغام قانونگذاری ملی در سیستم‌های حقوقی جهانی." 
+              data-zh="圣彼得堡国立大学国际法和人道法专家。副教授，罗马规约专家，国际和国家教育项目协调员（国际委员会、联合国）。">
+              Признанный эксперт в области международного и гуманитарного права с образованием СПбГУ. Доцент ТГУПБП, специалист по Римскому статуту МУС и интеграции национального законодательства. Координатор образовательных проектов (МККК, ПРООН).
+            </p>
+          </div>
+        </article>
+
+                <article class="team-card team-card-btn team-card-placeholder" role="button" tabindex="0" data-team-index="5" data-aria-team="true"
+          aria-label="Открыть карточку команды">
+          <div class="team-top" style="background:linear-gradient(135deg,#0e7490,#06b6d4)">
+            <img class="team-photo" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27200%27%20height%3D%27200%27%20viewBox%3D%270%200%20200%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27200%27%20height%3D%27200%27%20rx%3D%2730%27%20fill%3D%27%23e5e7eb%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2750%25%27%20dominant-baseline%3D%27middle%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%27%20font-size%3D%2716%27%20fill%3D%27%236b7280%27%3EPHOTO%3C/text%3E%3C/svg%3E" alt="Фото участника команды" />
+            <div class="team-photo-icon-overlay" aria-hidden="true">
+              <i data-lucide="user-round"></i>
+            </div>
+          </div>
+          <div class="team-body">
+            <h4 class="team-person-name lang-switch" 
+              data-ru="Абдуллоев Хасан" 
+              data-tj="Абдуллоев Ҳасан" 
+              data-en="Abdulloev Hasan"
+              data-uz="Abdulloev Hasan" 
+              data-fr="Abdulloev Hasan" 
+              data-de="Abdulloev Hasan" 
+              data-ar="عبدالله أوف حسن" 
+              data-es="Abdulloev Hasan" 
+              data-fa="عبدالله‌اف حسن" 
+              data-zh="阿卜杜洛夫·哈桑">
+              Абдуллоев Хасан
+            </h4>
+            <div class="team-role team-person-role lang-switch"
+              data-ru="Основатель & CEO · Full-stack разработчик" 
+              data-tj="Бунёдгузор & CEO · Full-stack таҳлилгар" 
+              data-en="Founder & CEO · Full-stack Developer" 
+              data-uz="Asos qo'yuvchi & CEO · Full-stack ishlab chiquvchi" 
+              data-fr="Fondateur & PDG · Développeur Full-stack" 
+              data-de="Gründer & CEO · Full-Stack-Entwickler" 
+              data-ar="مؤسس وكبير تنفيذي · مطور كامل المكدس" 
+              data-es="Fundador y CEO · Desarrollador Full-stack" 
+              data-fa="بنیانگذار و مدیر عامل · توسعه‌دهنده Full-stack" 
+              data-zh="创始人兼首席执行官 · 全栈开发者">
+              Основатель & CEO · Full-stack разработчик
+            </div>
+            <p class="team-person-bio lang-switch" 
+              data-ru="Целеустремленный Full-stack разработчик и студент 1-го курса. Основатель IT-холдинга «Hasan Group». Экспертиза в React, FastAPI, кибербезопасности. IT-специалист ОО «Чашмаи хаёт». Разработка инновационных проектов: ZED OS, Gemini Health AI, Vtor-TJ. Участник Google Summer of Code и Generation Connect ITU." 
+              data-tj="Full-stack таҳлилгари ҳадафмунд ва донишҷӯи курси 1. Бунёдгузори IT-холдинги «Hasan Group». Маҳоратӣ дар React, FastAPI ва амнияти кибер. Мутахассаси IT ОО «Чашмаи хаёт». Таҳқиқ дар лоиҳаҳои инновативӣ: ZED OS, Gemini Health AI, Vtor-TJ." 
+              data-en="Dedicated Full-stack developer and 1st-year student specializing in web design and computer graphics. Founder and CEO of IT holding «Hasan Group». Expert in React, FastAPI, cybersecurity and systems administration. IT specialist at Chashmai Hayot NGO. Developer of innovative projects: ZED OS, Gemini Health AI, Vtor-TJ. Participant in Google Summer of Code and Generation Connect ITU programs." 
+              data-uz="Dedikatsiyon Full-stack ishlab chiquvchi va 1-kurs talabasi. Asos qo'yuvchi va CEO IT holding «Hasan Group». React, FastAPI, kibersavodlik bo'yicha mutakhassas. ОО «Chashmai Hayot» ni IT mutakhassasi. Innovatsion loyihalarni ishlab chiqarish: ZED OS, Gemini Health AI, Vtor-TJ." 
+              data-fr="Développeur Full-stack déterminé et étudiant en 1ère année spécialisé en conception web et infographie. Fondateur et PDG du groupe informatique «Hasan Group». Expert en React, FastAPI, cybersécurité. Spécialiste IT chez Chashmai Hayot NGO. Développeur de projets innovants: ZED OS, Gemini Health AI, Vtor-TJ." 
+              data-de="Engagierter Full-Stack-Entwickler und Studienanfänger. Gründer und CEO der IT-Holding «Hasan Group». Experte für React, FastAPI, Cybersicherheit. IT-Spezialist bei Chashmai Hayot NGO. Entwickler innovativer Projekte: ZED OS, Gemini Health AI, Vtor-TJ." 
+              data-ar="مطور Full-stack مكرس وطالب في السنة الأولى متخصص في تصميم الويب والرسومات. مؤسس وكبير تنفيذي لمجموعة تكنولوجيا المعلومات «ھسن جروب». خبير في React و FastAPI والأمن السيبراني. متخصص تكنولوجيا معلومات في منظمة Chashmai Hayot." 
+              data-es="Desarrollador Full-stack dedicado y estudiante de 1er año especializado en diseño web e infografía. Fundador y CEO del grupo informático «Hasan Group». Experto en React, FastAPI, ciberseguridad. Especialista IT en ONG Chashmai Hayot. Desarrollador de proyectos innovadores: ZED OS, Gemini Health AI, Vtor-TJ." 
+              data-fa="توسعه‌دهنده Full-stack فداکار و دانشجوی سال اول تخصصی طراحی وب و گرافیک رایانه‌ای. بنیانگذار و مدیر عامل گروه فناوری اطلاعات «Hasan Group». کارشناس React، FastAPI و امنیت سایبری. متخصص IT در سازمان Chashmai Hayot. توسعه‌دهنده پروژه‌های نوآورانه: ZED OS، Gemini Health AI، Vtor-TJ." 
+              data-zh="敬业的全栈开发者和一年级学生，专门从事网页设计和计算机图形学。IT控股公司«Hasan Group»的创始人兼首席执行官。React、FastAPI和网络安全专家。Chashmai Hayot 非政府组织的IT专家。创新项目开发者：ZED OS、Gemini Health AI、Vtor-TJ。">
+              Целеустремленный Full-stack разработчик и студент 1-го курса. Основатель IT-холдинга «Hasan Group». Экспертиза в React, FastAPI, кибербезопасности. IT-специалист ОО «Чашмаи хаёт». Разработка инновационных проектов: ZED OS, Gemini Health AI, Vtor-TJ.
+            </p>
+          </div>
+        </article>
+
+        <article class="team-card team-card-btn team-card-placeholder" role="button" tabindex="0" data-team-index="6" data-aria-team="true"
+          aria-label="Открыть карточку команды">
+          <div class="team-top" style="background:linear-gradient(135deg,#164e63,#0e7490)">
+            <img class="team-photo" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27200%27%20height%3D%27200%27%20viewBox%3D%270%200%20200%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27200%27%20height%3D%27200%27%20rx%3D%2730%27%20fill%3D%27%23e5e7eb%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2750%25%27%20dominant-baseline%3D%27middle%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%27%20font-size%3D%2716%27%20fill%3D%27%236b7280%27%3EPHOTO%3C/text%3E%3C/svg%3E" alt="Фото участника команды" />
+            <div class="team-photo-icon-overlay" aria-hidden="true">
+              <i data-lucide="user-round"></i>
+            </div>
+          </div>
+          <div class="team-body">
+            <h4 class="team-person-name lang-switch" data-ru="Сотрудник команды" data-tj="Аъзои даста" data-en="Team member"
+              data-uz="Jamoa a'zosi" data-fr="Membre de l'équipe" data-de="Teammitglied" data-ar="عضو الفريق"
+              data-es="Miembro del equipo" data-fa="عضو تیم" data-zh="团队成员">Сотрудник команды</h4>
+            <div class="team-role team-person-role lang-switch" data-ru="Должность уточняется" data-tj="Мавқеъ мушаххас мешавад"
+              data-en="Role to be confirmed" data-uz="Vazifa aniqlanadi" data-fr="Rôle à confirmer" data-de="Rolle wird bestätigt"
+              data-ar="الدور سيتم تأكيده" data-es="Función por confirmar" data-fa="نقش تأیید می‌شود" data-zh="职责待确认">Должность уточняется</div>
+            <p class="team-person-bio lang-switch" data-ru="Краткую биографию добавим после заполнения данных."
+              data-tj="Зиндагиномаи кӯтоҳ баъд аз пур кардани маълумот илова мешавад." data-en="A short bio will be added once details are provided."
+              data-uz="Qisqa biografiya ma’lumotlar to‘ldirilgach qo‘shiladi." data-fr="Une courte biographie sera ajoutée après la mise à jour des informations."
+              data-de="Eine kurze Biografie wird nach dem Ausfüllen ergänzt." data-ar="سنضيف نبذة قصيرة بعد إدخال البيانات."
+              data-es="Agregaremos una breve biografía cuando se complete la información." data-fa="پس از تکمیل اطلاعات، یک بیو کوتاه اضافه می‌کنیم."
+              data-zh="信息补全后将添加简短简介。">Краткую биографию добавим после заполнения данных.</p>
+          </div>
+        </article>
+
+        <article class="team-card team-card-btn team-card-placeholder" role="button" tabindex="0" data-team-index="7" data-aria-team="true"
+          aria-label="Открыть карточку команды">
+          <div class="team-top" style="background:linear-gradient(135deg,#0d3d6e,var(--teal))">
+            <img class="team-photo" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27200%27%20height%3D%27200%27%20viewBox%3D%270%200%20200%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27200%27%20height%3D%27200%27%20rx%3D%2730%27%20fill%3D%27%23e5e7eb%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2750%25%27%20dominant-baseline%3D%27middle%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%27%20font-size%3D%2716%27%20fill%3D%27%236b7280%27%3EPHOTO%3C/text%3E%3C/svg%3E" alt="Фото участника команды" />
+            <div class="team-photo-icon-overlay" aria-hidden="true">
+              <i data-lucide="user-round"></i>
+            </div>
+          </div>
+          <div class="team-body">
+            <h4 class="team-person-name lang-switch" data-ru="Сотрудник команды" data-tj="Аъзои даста" data-en="Team member"
+              data-uz="Jamoa a'zosi" data-fr="Membre de l'équipe" data-de="Teammitglied" data-ar="عضو الفريق"
+              data-es="Miembro del equipo" data-fa="عضو تیم" data-zh="团队成员">Сотрудник команды</h4>
+            <div class="team-role team-person-role lang-switch" data-ru="Должность уточняется" data-tj="Мавқеъ мушаххас мешавад"
+              data-en="Role to be confirmed" data-uz="Vazifa aniqlanadi" data-fr="Rôle à confirmer" data-de="Rolle wird bestätigt"
+              data-ar="الدور سيتم تأكيده" data-es="Función por confirmar" data-fa="نقش تأیید می‌شود" data-zh="职责待确认">Должность уточняется</div>
+            <p class="team-person-bio lang-switch" data-ru="Краткую биографию добавим после заполнения данных."
+              data-tj="Зиндагиномаи кӯтоҳ баъд аз пур кардани маълумот илова мешавад." data-en="A short bio will be added once details are provided."
+              data-uz="Qisqa biografiya ma’lumotlar to‘ldirilgach qo‘shiladi." data-fr="Une courte biographie sera ajoutée après la mise à jour des informations."
+              data-de="Eine kurze Biografie wird nach dem Ausfüllen ergänzt." data-ar="سنضيف نبذة قصيرة بعد إدخال البيانات."
+              data-es="Agregaremos una breve biografía cuando se complete la información." data-fa="پس از تکمیل اطلاعات، یک بیو کوتاه اضافه می‌کنیم."
+              data-zh="信息补全后将添加简短简介。">Краткую биографию добавим после заполнения данных.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
+
+  <!-- ══════ TEAM MODAL ══════ -->
+  <div id="team-modal" class="legal-modal" role="dialog" aria-modal="true" aria-hidden="true"
+    aria-labelledby="team-modal-name">
+    <div class="legal-content" id="team-modal-content" tabindex="-1">
+      <button class="modal-close" id="team-modal-close" type="button" onclick="closeTeamModal()"
+        aria-label="Закрыть" data-aria-label-switch="true" data-ru="Закрыть" data-tj="Пӯшидан" data-en="Close"
+        data-uz="Yopish" data-fr="Fermer" data-de="Schließen" data-ar="إغلاق" data-es="Cerrar" data-fa="بستن" data-zh="关闭">
+        <i data-lucide="x" aria-hidden="true"></i>
+      </button>
+      <div class="team-modal-grid">
+        <div>
+          <img id="team-modal-photo" class="team-modal-photo" src="" alt="Фото команды">
+        </div>
+        <div class="team-modal-meta">
+          <h3 id="team-modal-name" class="team-modal-name lang-switch"
+            data-ru="" data-tj="" data-en="" data-uz="" data-fr="" data-de="" data-ar="" data-es="" data-fa="" data-zh=""></h3>
+          <div id="team-modal-role" class="team-modal-role lang-switch"
+            data-ru="" data-tj="" data-en="" data-uz="" data-fr="" data-de="" data-ar="" data-es="" data-fa="" data-zh=""></div>
+          <div id="team-modal-bio" class="team-modal-bio lang-switch"
+            data-ru="" data-tj="" data-en="" data-uz="" data-fr="" data-de="" data-ar="" data-es="" data-fa="" data-zh=""></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ══════ PUBLICATIONS ══════ -->
   <section class="publications" id="publications" aria-labelledby="pub-title">
@@ -3538,7 +4181,7 @@
           <p class="sec-desc" data-i18n="plan_desc">2023–2025 гг. — профилактика торговли людьми, домашнего насилия,
             безопасная миграция и борьба с наркозависимостью</p>
           <p class="plan-body" data-i18n="plan_body">ОО «Чашмаи Хаёт» осуществляет свою деятельность в тесном сотрудничестве с государственными структурами в рамках официально утвержденного многостороннего плана. Утвержденная стратегия развития на 2026–2030 годы предусматривает расширенное партнерство и реализацию масштабных социально значимых инициатив.</p>
-          <div class="plan-badge"><i class="fas fa-calendar-alt"></i><span data-i18n="plan_upd">Стратегический план развития на 2026–2030 годы:Утвержден</span></div>
+          <div class="plan-badge"><i class="fas fa-calendar-alt"></i><span data-i18n="plan_upd">Стратегический план развития на 2026–2030 годы: Утвержден</span></div>
         </div>
         <div>
           <div class="plan-orgs" role="list">
@@ -3574,11 +4217,274 @@
     </div>
   </section>
 
+  <!-- ══════ DONATION ══════ -->
+  <section class="donation-sec" id="donation" aria-labelledby="donation-title">
+    <div class="container">
+      <div
+        class="donation-card rounded-[28px] bg-white shadow-[0_20px_90px_rgba(2,132,199,.12)] border border-cyan-100 overflow-hidden">
+        <div class="p-8 md:p-10 bg-gradient-to-r from-cyan-500/10 via-teal-500/5 to-transparent">
+          <div class="max-w-3xl">
+            <div class="sec-label lang-switch" data-ru="Поддержать нашу миссию" data-tj="Дастгирии рисолати мо"
+              data-en="Support our mission" data-uz="Missiyamizni qo‘llab-quvvatlang" data-fr="Soutenir notre mission"
+              data-de="Unterstützen Sie unsere Mission" data-ar="ادعم رسالتنا" data-es="Apoya nuestra misión"
+              data-fa="از مأموریت ما حمایت کنید" data-zh="支持我们的使命">
+              Поддержать нашу миссию
+            </div>
+            <h2 id="donation-title"
+              class="text-4xl md:text-5xl font-extrabold mt-3 lang-switch"
+              style="color: var(--navy);"
+              data-ru="Поддержать нашу миссию" data-tj="Дастгирии рисолати мо" data-en="Support our mission"
+              data-uz="Missiyamizni qo‘llab-quvvatlang" data-fr="Soutenir notre mission" data-de="Unterstützen Sie unsere Mission"
+              data-ar="ادعم رسالتنا" data-es="Apoya nuestra misión" data-fa="از مأموریت ما حمایت کنید"
+              data-zh="支持我们的使命">Поддержать нашу миссию</h2>
+            <p class="mt-4 text-[15px] md:text-[16px] lang-switch"
+              style="color: rgba(15,23,42,.7); line-height:1.8;"
+              data-ru="Помогайте людям, которые нуждаются в защите — прозрачно и с понятным эффектом."
+              data-tj="Ба одамоне, ки ба ҳимоя ниёз доранд, кӯмак кунед — шаффоф ва бо натиҷаи равшан."
+              data-en="Help people who need protection — transparently and with a clear impact."
+              data-uz="Himoyaga muhtoj insonlarga yordam bering — shaffof va aniq ta’sir bilan."
+              data-fr="Aidez les personnes qui ont besoin de protection — de manière transparente et avec un impact clair."
+              data-de="Unterstützen Sie Menschen, die Schutz brauchen — transparent und mit klarer Wirkung."
+              data-ar="ساعدوا من يحتاجون إلى الحماية — بشفافية وبأثر واضح."
+              data-es="Ayuda a quienes necesitan protección — con transparencia y un impacto claro."
+              data-fa="به افرادی که نیاز به حمایت دارند کمک کنید — شفاف و با اثر مشخص."
+              data-zh="帮助需要保护的人——透明、可感知的影响。">
+              Помогайте людям, которые нуждаются в защите — прозрачно и с понятным эффектом.
+            </p>
+          </div>
+        </div>
+
+        <div class="p-8 md:p-10">
+          <div class="grid lg:grid-cols-2 gap-8 items-start">
+            <!-- Card 1 -->
+            <div class="bg-white border border-cyan-100 rounded-[24px] p-7 shadow-sm">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
+                  <i data-lucide="heart-handshake" aria-hidden="true"></i>
+                </div>
+                <h3 class="text-2xl font-extrabold lang-switch"
+                  data-ru="Поддержать проект" data-tj="Дастгирии лоиҳа" data-en="Support the project"
+                  data-uz="Loyihani qo‘llab-quvvatlash" data-fr="Soutenir le projet" data-de="Projekt unterstützen"
+                  data-ar="ادعم المشروع" data-es="Apoya el proyecto" data-fa="از پروژه حمایت کنید" data-zh="支持项目">
+                  Поддержать проект
+                </h3>
+              </div>
+              <p class="mt-4 lang-switch" style="color: rgba(15,23,42,.7); line-height:1.8;"
+                data-ru="Средства пойдут на поддержку женщин, безопасность мигрантов и профилактику торговли людьми."
+                data-tj="Мақсад аз маблағ — дастгирии занон, амнияти муҳоҷирон ва пешгирии хариду фурӯши одамон."
+                data-en="Your donation helps women, protects migrants, and prevents human trafficking."
+                data-uz="Sizning mablag‘ingiz ayollarni qo‘llab-quvvatlaydi, migrantlarni himoya qiladi va odam savdosining oldini oladi."
+                data-fr="Votre don aide les femmes, protège les migrants et prévient la traite des êtres humains."
+                data-de="Ihre Spende unterstützt Frauen, schützt Migranten und verhindert Menschenhandel."
+                data-ar="تبرعكم يدعم النساء ويحمي المهاجرين ويمنع الاتجار بالبشر."
+                data-es="Tu don ayuda a las mujeres, protege a los migrantes y previene la trata."
+                data-fa="کمک شما به زنان، محافظت از مهاجران و پیشگیری از قاچاق انسان کمک می‌کند."
+                data-zh="您的捐款支持妇女、保障移民安全，并预防人口贩运。">
+                Средства пойдут на поддержку женщин, безопасность мигрантов и профилактику торговли людьми.
+              </p>
+
+              <div class="mt-6 flex flex-wrap gap-3">
+                <button type="button" class="don-amt-btn px-5 py-3 rounded-full font-extrabold border border-cyan-200 bg-cyan-50 hover:bg-cyan-100 transition"
+                  onclick="onDonate('project',25)"
+                  aria-label="Поддержать проект: 25 сомони" data-aria-label-switch="true"
+                  data-ru="Поддержать проект: 25 сомони" data-tj="Дастгирии лоиҳа: 25 сомонӣ" data-en="Support the project: 25 TJS"
+                  data-uz="Loyihani qo‘llab-quvvatlash: 25 TJS" data-fr="Soutenir le projet : 25 TJS"
+                  data-de="Projekt unterstützen: 25 TJS" data-ar="ادعم المشروع: 25 تهم" data-es="Apoya el proyecto: 25 TJS"
+                  data-fa="حمایت از پروژه: 25 سامانی" data-zh="支持项目：25 索莫尼">
+                  25
+                </button>
+                <button type="button" class="don-amt-btn px-5 py-3 rounded-full font-extrabold border border-cyan-200 bg-cyan-50 hover:bg-cyan-100 transition"
+                  onclick="onDonate('project',50)"
+                  aria-label="Поддержать проект: 50 сомони" data-aria-label-switch="true"
+                  data-ru="Поддержать проект: 50 сомони" data-tj="Дастгирии лоиҳа: 50 сомонӣ" data-en="Support the project: 50 TJS"
+                  data-uz="Loyihani qo‘llab-quvvatlash: 50 TJS" data-fr="Soutenir le projet : 50 TJS"
+                  data-de="Projekt unterstützen: 50 TJS" data-ar="ادعم المشروع: 50 تهم" data-es="Apoya el proyecto: 50 TJS"
+                  data-fa="حمایت از پروژه: 50 سامانی" data-zh="支持项目：50 索莫尼">
+                  50
+                </button>
+                <button type="button" class="don-amt-btn px-5 py-3 rounded-full font-extrabold border border-cyan-200 bg-cyan-50 hover:bg-cyan-100 transition"
+                  onclick="onDonate('project',100)"
+                  aria-label="Поддержать проект: 100 сомони" data-aria-label-switch="true"
+                  data-ru="Поддержать проект: 100 сомони" data-tj="Дастгирии лоиҳа: 100 сомонӣ" data-en="Support the project: 100 TJS"
+                  data-uz="Loyihani qo‘llab-quvvatlash: 100 TJS" data-fr="Soutenir le projet : 100 TJS"
+                  data-de="Projekt unterstützen: 100 TJS" data-ar="ادعم المشروع: 100 تهم" data-es="Apoya el proyecto: 100 TJS"
+                  data-fa="حمایت از پروژه: 100 سامانی" data-zh="支持项目：100 索莫尼">
+                  100
+                </button>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white border border-cyan-100 rounded-[24px] p-7 shadow-sm">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center">
+                  <i data-lucide="hands-helping" aria-hidden="true"></i>
+                </div>
+                <h3 class="text-2xl font-extrabold lang-switch"
+                  data-ru="Стать волонтёром" data-tj="Ташкил шудан ҳамчун волонтёр" data-en="Become a volunteer"
+                  data-uz="Ko‘ngilli bo‘lish" data-fr="Devenir bénévole" data-de="Werden Sie Freiwilliger"
+                  data-ar="كن متطوعًا" data-es="Conviértete en voluntario" data-fa="داوطلب شوید" data-zh="成为志愿者">
+                  Стать волонтёром
+                </h3>
+              </div>
+              <p class="mt-4 lang-switch" style="color: rgba(15,23,42,.7); line-height:1.8;"
+                data-ru="Волонтёры помогают проводить мероприятия, обучать и сопровождать людей в трудные периоды."
+                data-tj="Волонтёрҳо дар гузаронидани чорабиниҳо, омӯзиш ва ҳамроҳии одамон дар рӯзҳои душвор кӯмак мекунанд."
+                data-en="Volunteers help run events, provide training, and accompany people in difficult times."
+                data-uz="Ko‘ngillilar tadbirlarni o‘tkazishda, o‘qitishda va qiyin paytlarda odamlarga hamroh bo‘lishda yordam beradi."
+                data-fr="Les bénévoles aident à organiser les événements, à former et à accompagner les personnes."
+                data-de="Freiwillige helfen bei Veranstaltungen, Schulungen und begleiten Menschen in schwierigen Zeiten."
+                data-ar="يساعد المتطوعون في تنظيم الفعاليات والتدريب ومرافقة الناس في الأوقات الصعبة."
+                data-es="Los voluntarios ayudan a organizar eventos, impartir formación y acompañar a las personas en momentos difíciles."
+                data-fa="داوطلب‌ها در برگزاری رویدادها، آموزش و همراهی افراد در زمان‌های دشوار کمک می‌کنند."
+                data-zh="志愿者帮助组织活动、开展培训，并在艰难时刻陪伴他人。">
+                Волонтёры помогают проводить мероприятия, обучать и сопровождать людей в трудные периоды.
+              </p>
+              <div class="mt-6">
+                <button type="button"
+                  class="w-full rounded-[18px] py-4 font-extrabold bg-gradient-to-r from-cyan-500 to-teal-500 text-white shadow-lg hover:brightness-110 transition"
+                  onclick="onDonate('volunteer',0)"
+                  aria-label="Стать волонтёром" data-aria-label-switch="true"
+                  data-ru="Стать волонтёром" data-tj="Ташкил шудан ҳамчун волонтёр" data-en="Become a volunteer"
+                  data-uz="Ko‘ngilli bo‘lish" data-fr="Devenir bénévole" data-de="Werden Sie Freiwilliger"
+                  data-ar="كن متطوعًا" data-es="Conviértete en voluntario" data-fa="داوطلب شوید" data-zh="成为志愿者">
+                  <span class="lang-switch" data-ru="Стать волонтёром" data-tj="Ташкил шудан ҳамчун волонтёр" data-en="Become a volunteer"
+                    data-uz="Ko‘ngilli bo‘lish" data-fr="Devenir bénévole" data-de="Werden Sie Freiwilliger"
+                    data-ar="كن متطوعًا" data-es="Conviértete en voluntario" data-fa="داوطلب شوید" data-zh="成为志愿者">
+                    Стать волонтёром
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 rounded-[24px] border border-cyan-100 bg-cyan-50/50 p-6">
+            <div class="flex items-start gap-3">
+              <div class="mt-1 text-cyan-600">
+                <i data-lucide="badge-check" aria-hidden="true"></i>
+              </div>
+              <p class="lang-switch font-bold" style="color: rgba(15,23,42,.75); line-height:1.7;"
+                data-ru="Прозрачность для доноров: мы публикуем отчёты по этапам работ."
+                data-tj="Шаффофият барои донорҳо: мо гузоришҳоро аз рӯи марҳилаҳо нашр мекунем."
+                data-en="Donor transparency: we publish reports by work stages."
+                data-uz="Donorlar uchun shaffoflik: biz ish bosqichlari bo‘yicha hisobotlarni e’lon qilamiz."
+                data-fr="Transparence pour les donateurs : nous publions des rapports par étapes."
+                data-de="Transparenz für Spender: Wir veröffentlichen Berichte nach Projektphasen."
+                data-ar="شفافية للمتبرعين: ننشر تقارير حسب مراحل العمل."
+                data-es="Transparencia para donantes: publicamos informes por etapas."
+                data-fa="شفافیت برای اهداکنندگان: گزارش‌ها را بر اساس مراحل منتشر می‌کنیم."
+                data-zh="对捐赠者的透明：我们按工作阶段发布报告。">
+                Прозрачность для доноров: мы публикуем отчёты по этапам работ.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════ ACHIEVEMENTS (Real-time counters) ══════ -->
+  <section id="achievements" class="achievements-sec bg-white relative" aria-labelledby="achievements-title"
+    style="padding: 90px 0;">
+    <div class="container">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
+              <i data-lucide="sparkles" class="w-6 h-6" style="color: var(--aqua)"></i>
+            </div>
+            <div class="sec-label lang-switch text-[var(--dark)]"
+              data-ru="Счетчик достижений в реальном времени" data-tj="Санаҷакунандаи дастовардҳо дар вақти воқеӣ"
+              data-en="Achievements real-time counter" data-uz="Yutuqlar real vaqtda"
+              data-fr="Compteur des réalisations en temps réel" data-de="Echtzeit-Erfolgzähler"
+              data-ar="عداد الإنجازات في الوقت الفعلي" data-es="Contador de logros en tiempo real"
+              data-fa="شمارنده دستاوردها در زمان واقعی" data-zh="实时成就计数器">
+              Счетчик достижений в реальном времени
+            </div>
+          </div>
+
+          <h2 id="achievements-title"
+            class="text-4xl lg:text-5xl font-extrabold"
+            style="color: var(--navy);">
+            <span class="lang-switch"
+              data-ru="Счетчик достижений в реальном времени" data-tj="Санаҷакунандаи дастовардҳо дар вақти воқеӣ"
+              data-en="Achievements real-time counter" data-uz="Yutuqlar real vaqtda"
+              data-fr="Compteur des réalisations en temps réel" data-de="Echtzeit-Erfolgzähler"
+              data-ar="عداد الإنجازات في الوقت الفعلي" data-es="Contador de logros en tiempo real"
+              data-fa="شمارنده دستاوردها در زمان واقعی" data-zh="实时成就计数器">
+              Счетчик достижений в реальном времени
+            </span>
+          </h2>
+
+          <p class="mt-4 max-w-xl lang-switch"
+            style="color: rgba(15, 23, 42, .65); font-size: 14px; line-height: 1.8;"
+            data-ru="Обновляется автоматически, чтобы вы видели динамику влияния нашей организации."
+            data-tj="Ба таври худкор нав мешавад, то шумо динамикаи таъсири созмони моро бинед."
+            data-en="Automatically updates so you can see the momentum of our work."
+            data-uz="Avtomatik yangilanib, ishimiz ta’sirining sur’atini ko‘rsatadi."
+            data-fr="Mise à jour automatique pour visualiser l’élan de notre action."
+            data-de="Aktualisiert sich automatisch, damit Sie den Fortschritt unserer Arbeit sehen."
+            data-ar="يتحدث تلقائياً لعرض زخم عمل منظمتنا."
+            data-es="Se actualiza automáticamente para que veas la dinámica de nuestro impacto."
+            data-fa="به‌صورت خودکار به‌روزرسانی می‌شود تا روند اثرگذاری سازمان ما را ببینید."
+            data-zh="自动更新，让你看到我们工作的影响力正在增长。">
+            Обновляется автоматически, чтобы вы видели динамику влияния нашей организации.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div class="rounded-3xl bg-white/80 border border-cyan-100 shadow-lg p-6">
+            <div class="count text-4xl font-extrabold" style="color: var(--aqua);" data-target="128000" data-rt="true">0</div>
+            <div class="mt-3 lang-switch font-bold" style="color: rgba(15, 23, 42, .7);"
+              data-ru="Бенефициаров в год" data-tj="Бенефитсиарҳо дар як сол" data-en="Beneficiaries per year"
+              data-uz="Yiliga benefitsiarlar" data-fr="Bénéficiaires par an" data-de="Begünstigte pro Jahr"
+              data-ar="المستفيدون سنوياً" data-es="Beneficiarios por año" data-fa="ذی‌نفعان در سال" data-zh="每年受益人">
+              Бенефициаров в год
+            </div>
+          </div>
+
+          <div class="rounded-3xl bg-white/80 border border-cyan-100 shadow-lg p-6">
+            <div class="count text-4xl font-extrabold" style="color: var(--aqua);" data-target="28" data-rt="true">0</div>
+            <div class="mt-3 lang-switch font-bold" style="color: rgba(15, 23, 42, .7);"
+              data-ru="Лет работы" data-tj="Солҳои фаъолият" data-en="Years of work" data-uz="Ish yillari"
+              data-fr="Années de travail" data-de="Jahre der Arbeit" data-ar="سنوات العمل"
+              data-es="Años de trabajo" data-fa="سال‌های فعالیت" data-zh="工作年限">
+              Лет работы
+            </div>
+          </div>
+
+          <div class="rounded-3xl bg-white/80 border border-cyan-100 shadow-lg p-6">
+            <div class="count text-4xl font-extrabold" style="color: var(--aqua);" data-target="340" data-rt="true">0</div>
+            <div class="mt-3 lang-switch font-bold" style="color: rgba(15, 23, 42, .7);"
+              data-ru="Активных волонтёров" data-tj="Волонтёрони фаъол" data-en="Active volunteers" data-uz="Faol ko‘ngillilar"
+              data-fr="Bénévoles actifs" data-de="Aktive Freiwillige" data-ar="متطوعون نشطون"
+              data-es="Voluntarios activos" data-fa="داوطلبان فعال" data-zh="活跃志愿者">
+              Активных волонтёров
+            </div>
+          </div>
+
+          <div class="rounded-3xl bg-white/80 border border-cyan-100 shadow-lg p-6">
+            <div class="count text-4xl font-extrabold" style="color: var(--aqua);" data-target="52" data-rt="true">0</div>
+            <div class="mt-3 lang-switch font-bold" style="color: rgba(15, 23, 42, .7);"
+              data-ru="Партнёров" data-tj="Шарикон" data-en="Partners" data-uz="Hamkorlar"
+              data-fr="Partenaires" data-de="Partner" data-ar="الشركاء" data-es="Socios"
+              data-fa="شرکا" data-zh="合作伙伴">
+              Партнёров
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ══════ FAQ ══════ -->
   <section class="faq-sec" id="faq" aria-labelledby="faq-title">
     <div class="container">
       <div class="faq-hd">
-        <div class="sec-label">FAQ</div>
+        <div class="sec-label lang-switch" data-ru="FAQ" data-tj="Саволҳои зуд-зуд" data-en="FAQ"
+          data-uz="FAQ" data-fr="FAQ" data-de="FAQ" data-ar="الأسئلة الشائعة" data-es="Preguntas frecuentes"
+          data-fa="سوالات متداول" data-zh="常见问题">FAQ</div>
         <div class="sec-divider"></div>
         <h2 class="sec-title" id="faq-title" data-i18n="faq_title">Часто задаваемые вопросы</h2>
       </div>
@@ -3706,12 +4612,25 @@
             method="POST" class="contact-form" novalidate aria-label="Форма обратной связи">
             <div class="form-row-2">
               <div class="fld"><label for="fname" data-i18n="fl_name">Имя *</label><input type="text" id="fname"
-                  name="name" placeholder="Ваше имя" required autocomplete="given-name"></div>
+                  name="name" placeholder="" required autocomplete="given-name"
+                  data-placeholder-ru="Ваше имя" data-placeholder-tj="Номи шумо" data-placeholder-en="Your name"
+                  data-placeholder-uz="Ismingiz" data-placeholder-fr="Votre nom" data-placeholder-de="Ihr Name"
+                  data-placeholder-ar="اسمك" data-placeholder-es="Tu nombre" data-placeholder-fa="نام شما"
+                  data-placeholder-zh="你的姓名"></div>
               <div class="fld"><label for="fphone" data-i18n="fl_phone">Телефон</label><input type="tel" id="fphone"
-                  name="phone" placeholder="+992..." autocomplete="tel"></div>
+                  name="phone" placeholder="" autocomplete="tel"
+                  data-placeholder-ru="+992..." data-placeholder-tj="+992..." data-placeholder-en="+992..."
+                  data-placeholder-uz="+992..." data-placeholder-fr="+992..." data-placeholder-de="+992..."
+                  data-placeholder-ar="+992..." data-placeholder-es="+992..." data-placeholder-fa="+992..."
+                  data-placeholder-zh="+992..."></div>
             </div>
             <div class="fld"><label for="femail" data-i18n="fl_email">Email *</label><input type="email" id="femail"
-                name="email" placeholder="example@mail.com" required autocomplete="email"></div>
+                name="email" placeholder="" required autocomplete="email"
+                data-placeholder-ru="example@mail.com" data-placeholder-tj="example@mail.com"
+                data-placeholder-en="example@mail.com" data-placeholder-uz="example@mail.com"
+                data-placeholder-fr="example@mail.com" data-placeholder-de="example@mail.com"
+                data-placeholder-ar="example@mail.com" data-placeholder-es="example@mail.com"
+                data-placeholder-fa="example@mail.com" data-placeholder-zh="example@mail.com"></div>
             <div class="fld"><label for="fsubject" data-i18n="fl_subject">Тема обращения</label>
               <select id="fsubject" name="subject">
                 <option value="" data-i18n="fso">— Выберите тему —</option>
@@ -3726,7 +4645,12 @@
               </select>
             </div>
             <div class="fld"><label for="fmsg" data-i18n="fl_msg">Сообщение *</label><textarea id="fmsg" name="message"
-                placeholder="Опишите ваш вопрос или предложение..." required></textarea></div>
+                placeholder="" required
+                data-placeholder-ru="Опишите ваш вопрос или предложение..." data-placeholder-tj="Саволи худро ё пешниҳодатонро нависед..."
+                data-placeholder-en="Describe your question or suggestion..." data-placeholder-uz="Savolingiz yoki taklifingizni yozing..."
+                data-placeholder-fr="Décrivez votre question ou votre suggestion..." data-placeholder-de="Beschreiben Sie Ihre Frage oder Ihren Vorschlag..."
+                data-placeholder-ar="صف سؤالك أو اقتراحك..." data-placeholder-es="Describe tu pregunta o sugerencia..."
+                data-placeholder-fa="سوال یا پیشنهادتان را توضیح دهید..." data-placeholder-zh="描述你的问题或建议..."></textarea></div>
             <button type="submit" class="form-submit" id="formBtn" data-i18n="btn_send">
               <i class="fas fa-paper-plane" aria-hidden="true"></i> Отправить сообщение
             </button>
@@ -3796,7 +4720,10 @@
           <h5 data-i18n="ft_nl">Подписка</h5>
           <p data-i18n="ft_nl_desc">Получайте новости о проектах и мероприятиях.</p>
           <div class="nl-form" role="search">
-            <input type="email" class="nl-input" placeholder="Ваш email..." aria-label="Email для подписки">
+            <input type="email" class="nl-input" placeholder="" aria-label="Email для подписки"
+              data-placeholder-ru="Ваш email..." data-placeholder-tj="Почтаи электронии шумо..." data-placeholder-en="Your email..."
+              data-placeholder-uz="Email manzilingiz..." data-placeholder-fr="Votre email..." data-placeholder-de="Ihre E-Mail..."
+              data-placeholder-ar="بريدك الإلكتروني..." data-placeholder-es="Tu correo..." data-placeholder-fa="ایمیل شما..." data-placeholder-zh="你的邮箱...">
             <button class="nl-btn" aria-label="Подписаться"><i class="fas fa-arrow-right"></i></button>
           </div>
           <div style="margin-top:24px">
@@ -3808,7 +4735,17 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span data-i18n="copyright">© 1998–2026 ОО «Чашмаи Хаёт». Все права защищены.</span>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+          <span data-i18n="copyright">© 1998–2026 ОО «Чашмаи Хаёт». Все права защищены.</span>
+          <div class="footer-time-widget" role="group" aria-label="Time widget">
+            <div class="footer-time-label lang-switch" data-ru="Время в Худжанде" data-tj="Вақти Хуҷанд" data-en="Time in Khujand"
+              data-uz="Xo'janddagi vaqt" data-fr="Heure à Khodjent" data-de="Uhrzeit in Chudschand"
+              data-ar="الوقت في خوجند" data-es="Hora en Khujand" data-fa="زمان در خجند" data-zh="胡占德时间">
+              Время в Худжанде
+            </div>
+            <div id="dushanbe-time" class="footer-time-value" aria-live="polite">00:00:00</div>
+          </div>
+        </div>
         <div class="footer-legal">
           <a href="javascript:void(0)" onclick="openLegalModal('privacy')" data-i18n="privacy"
             id="link-privacy">Политика конфиденциальности</a>
@@ -4076,40 +5013,143 @@
     //  LANGUAGE ENGINE
     // ═══════════════════════════════════════════
     let currentLang = localStorage.getItem('ch_lang') || 'ru';
+    currentLang = currentLang === 'tg' ? 'tj' : currentLang;
+
+    const UI_LANGS = ['en', 'tj', 'ru', 'uz', 'fr', 'de', 'ar', 'es', 'fa', 'zh'];
+    const UI_TO_T_KEY = {
+      tj: 'tg',
+    };
     const RTL_LANGS = ['ar', 'fa'];
 
-    function setLang(lang, initial = false) {
-      if (!T[lang]) return;
-      if (lang === currentLang && !initial) return;
+    function normalizeLang(lang) {
+      if (lang === 'tg') lang = 'tj';
+      if (!UI_LANGS.includes(lang)) lang = 'ru';
+      return lang;
+    }
 
-      const isRTL = RTL_LANGS.includes(lang);
-      document.documentElement.lang = lang;
-      document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+    function buildLangSwitchAttributes() {
+      // 1) For every [data-i18n] element: store all translations into data-*
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (!key) return;
+
+        el.classList.add('lang-switch');
+
+        UI_LANGS.forEach(uiLang => {
+          const tKey = UI_TO_T_KEY[uiLang] || uiLang;
+          const dict = T?.[tKey] || {};
+
+          let value;
+          if (key === 'plan_upd') {
+            // Keep the exact status text from HTML for all languages.
+            value = el.innerHTML;
+          } else {
+            value = dict[key] !== undefined ? dict[key] : (T?.ru?.[key] !== undefined ? T.ru[key] : el.innerHTML);
+          }
+
+          el.dataset[uiLang] = value;
+        });
+      });
+
+      // 2) For any .lang-switch element that was not tied to data-i18n:
+      //    ensure every language has a data-* value (so changeLanguage works uniformly).
+      document.querySelectorAll('.lang-switch').forEach(el => {
+        // Prefer ru as fallback (already present in most markup).
+        const fallback = el.dataset?.ru !== undefined ? el.dataset.ru : (el.dataset?.en !== undefined ? el.dataset.en : el.textContent || '');
+
+        UI_LANGS.forEach(uiLang => {
+          if (el.dataset[uiLang] === undefined) el.dataset[uiLang] = fallback;
+        });
+      });
+    }
+
+    function syncTeamCardAria() {
+      document.querySelectorAll('.team-card-btn[data-aria-team="true"]').forEach(card => {
+        const name = card.querySelector('.team-person-name')?.textContent?.trim() || '';
+        const role = card.querySelector('.team-person-role')?.textContent?.trim() || '';
+        const realName = name && name !== '—' ? name : '';
+        const realRole = role && role !== '—' ? role : '';
+        const templates = {
+          ru: 'Открыть карточку команды',
+          tj: 'Кушодани корти даста',
+          en: 'Open team card',
+          uz: 'Jamoa kartasini ochish',
+          fr: 'Ouvrir la carte de l’équipe',
+          de: 'Teamkarte öffnen',
+          ar: 'فتح بطاقة الفريق',
+          es: 'Abrir tarjeta del equipo',
+          fa: 'باز کردن کارت تیم',
+          zh: '打开团队卡片'
+        };
+        const tpl = templates[currentLang] || templates.ru;
+        const label = realName
+          ? `${tpl}: ${realName}${realRole ? ' — ' + realRole : ''}`
+          : tpl;
+        card.setAttribute('aria-label', label);
+      });
+    }
+
+    /**
+     * Универсальный переключатель контента:
+     * меняет innerHTML во ВСЕХ элементах с классом `.lang-switch`.
+     *
+     * @param {string} lang - 'ru' | 'tj' | 'en'
+     */
+    function changeLanguage(lang, initial = false) {
+      lang = normalizeLang(lang);
+
+      if (lang === currentLang && !initial) return;
 
       // Show notice
       if (!initial) {
         const notice = document.getElementById('trans-notice');
-        notice.classList.add('show');
-        setTimeout(() => notice.classList.remove('show'), 1800);
+        if (notice) {
+          notice.classList.add('show');
+          setTimeout(() => notice.classList.remove('show'), 1800);
+        }
       }
 
-      // Apply translations
-      const d = T[lang];
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (d[key] !== undefined) {
-          el.innerHTML = d[key];
-        }
-      });
+      // Apply HTML lang/dir
+      const isRTL = RTL_LANGS.includes(lang);
+      document.documentElement.lang = lang === 'tj' ? 'tg' : lang;
+      document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
 
       // Update lang buttons
       document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.lang === lang);
-        btn.setAttribute('aria-pressed', btn.dataset.lang === lang ? 'true' : 'false');
+        const active = btn.dataset.lang === lang;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
       });
 
+      // Set all switchable text blocks
+      document.querySelectorAll('.lang-switch').forEach(el => {
+        const v = el.dataset[lang] ?? el.dataset.ru ?? el.innerHTML;
+        // Avoid wiping HTML if dataset is missing.
+        if (v !== undefined) el.innerHTML = v;
+      });
+
+      // Update form placeholders (inputs/textarea) if provided
+      document.querySelectorAll('[data-placeholder-ru]').forEach(el => {
+        const v =
+          el.getAttribute('data-placeholder-' + lang) ??
+          el.getAttribute('data-placeholder-ru');
+        if (v !== null) el.setAttribute('placeholder', v);
+      });
+
+      // Update ARIA labels with language-specific data (if provided)
+      document.querySelectorAll('[data-aria-label-switch="true"]').forEach(el => {
+        const v = el.dataset[lang] ?? el.dataset.ru;
+        if (v !== undefined) el.setAttribute('aria-label', v);
+      });
+
+      syncTeamCardAria();
       currentLang = lang;
       localStorage.setItem('ch_lang', lang);
+    }
+
+    function setLang(lang, initial = false) {
+      // Backward-compatible wrapper (some parts of the code may still call setLang)
+      changeLanguage(lang, initial);
     }
 
     // ═══════════════════════════════════════════
@@ -4149,23 +5189,33 @@
     //  COUNTERS
     // ═══════════════════════════════════════════
     function animateCounter(el) {
-      const target = +el.getAttribute('data-target');
-      let start = 0;
-      const dur = 2000;
-      const step = 16;
-      const inc = target / (dur / step);
-      const timer = setInterval(() => {
-        start = Math.min(start + inc, target);
-        el.textContent = Math.ceil(start) + (start >= target ? '+' : '');
-        if (start >= target) clearInterval(timer);
-      }, step);
+      const targetRaw = el.getAttribute('data-target') || '0';
+      const target = +targetRaw;
+      if (!Number.isFinite(target)) return;
+
+      const duration = 6500; // slower for better readability
+      const startTs = performance.now();
+
+      const easeInOutCubic = (t) => (
+        t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
+      );
+
+      const tick = (now) => {
+        const t = Math.min(1, (now - startTs) / duration);
+        const eased = easeInOutCubic(t);
+        const val = Math.round(target * eased);
+        el.textContent = val + (t >= 1 ? '+' : '');
+        if (t < 1) requestAnimationFrame(tick);
+      };
+
+      requestAnimationFrame(tick);
     }
     const countObs = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) { animateCounter(e.target); countObs.unobserve(e.target); }
       });
     }, { threshold: 0.5 });
-    document.querySelectorAll('.count').forEach(el => countObs.observe(el));
+    document.querySelectorAll('.count:not([data-rt="true"])').forEach(el => countObs.observe(el));
 
     // ═══════════════════════════════════════════
     //  FAQ
@@ -4193,7 +5243,8 @@
         btn.textContent = '⚠ Заполните обязательные поля';
         setTimeout(() => {
           btn.style.background = '';
-          btn.innerHTML = (T[currentLang]?.btn_send || 'Отправить') + ' <i class="fas fa-paper-plane"></i>';
+          const tKey = currentLang === 'tj' ? 'tg' : currentLang;
+          btn.innerHTML = (T[tKey]?.btn_send || 'Отправить') + ' <i class="fas fa-paper-plane"></i>';
         }, 3000);
         return;
       }
@@ -4213,6 +5264,151 @@
     }
     function toggleContrast() {
       document.body.classList.toggle('hc');
+      const btn = document.getElementById('contrast-btn');
+      if (btn) btn.setAttribute('aria-pressed', document.body.classList.contains('hc') ? 'true' : 'false');
+      // If grayscale is enabled too, the high-contrast filter already respects it via CSS variable.
+    }
+
+    function toggleGrayscale() {
+      document.body.classList.toggle('a11y-grayscale');
+      const btn = document.getElementById('grayscale-btn');
+      if (btn) btn.setAttribute('aria-pressed', document.body.classList.contains('a11y-grayscale') ? 'true' : 'false');
+    }
+
+    function toggleDyslexia() {
+      document.body.classList.toggle('a11y-dyslexia-font');
+      const btn = document.getElementById('readable-font-btn');
+      if (btn) btn.setAttribute('aria-pressed', document.body.classList.contains('a11y-dyslexia-font') ? 'true' : 'false');
+    }
+
+    // ═══════════════════════════════════════════
+    //  TEAM MODAL (8 карточек)
+    // ═══════════════════════════════════════════
+    const teamModalEl = document.getElementById('team-modal');
+    const teamModalContentEl = document.getElementById('team-modal-content');
+    const teamModalCloseBtn = document.getElementById('team-modal-close');
+    let lastTeamFocus = null;
+
+    function getFocusableEls(container) {
+      if (!container) return [];
+      return Array.from(container.querySelectorAll(
+        'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+      )).filter(el => !el.hasAttribute('disabled') && !el.getAttribute('aria-hidden'));
+    }
+
+    function trapTeamModalKeys(e) {
+      if (!teamModalEl || !teamModalEl.classList.contains('show')) return;
+
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeTeamModal();
+        return;
+      }
+
+      if (e.key !== 'Tab') return;
+
+      const focusables = getFocusableEls(teamModalContentEl);
+      if (!focusables.length) return;
+
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+
+    function openTeamModal(index) {
+      if (!teamModalEl) return;
+      const cards = document.querySelectorAll('.team-card-btn[data-team-index]');
+      const card = cards[index];
+      if (!card) return;
+
+      lastTeamFocus = document.activeElement;
+
+      const photoEl = card.querySelector('img.team-photo');
+      const nameEl = card.querySelector('.team-person-name');
+      const roleEl = card.querySelector('.team-person-role');
+      const bioEl = card.querySelector('.team-person-bio');
+
+      const modalPhoto = document.getElementById('team-modal-photo');
+      const modalName = document.getElementById('team-modal-name');
+      const modalRole = document.getElementById('team-modal-role');
+      const modalBio = document.getElementById('team-modal-bio');
+
+      if (modalPhoto && photoEl) {
+        modalPhoto.src = photoEl.getAttribute('src') || '';
+        modalPhoto.alt = (nameEl?.textContent?.trim() ? `Фото команды: ${nameEl.textContent.trim()}` : 'Фото команды');
+        const isSvgPlaceholder = (photoEl.getAttribute('src') || '').startsWith('data:image/svg+xml');
+        if (isSvgPlaceholder) modalPhoto.classList.add('team-photo-placeholder');
+        else modalPhoto.classList.remove('team-photo-placeholder');
+      }
+
+      // Copy per-person translations from the card into the modal datasets
+      // (so every language button works consistently).
+      if (modalName && nameEl) {
+        UI_LANGS.forEach(uiLang => {
+          modalName.dataset[uiLang] = nameEl.dataset[uiLang] ?? nameEl.dataset.ru ?? nameEl.innerHTML;
+        });
+      }
+      if (modalRole && roleEl) {
+        UI_LANGS.forEach(uiLang => {
+          modalRole.dataset[uiLang] = roleEl.dataset[uiLang] ?? roleEl.dataset.ru ?? roleEl.innerHTML;
+        });
+      }
+      if (modalBio && bioEl) {
+        UI_LANGS.forEach(uiLang => {
+          modalBio.dataset[uiLang] = bioEl.dataset[uiLang] ?? bioEl.dataset.ru ?? bioEl.innerHTML;
+        });
+      }
+
+      // Apply the current language to the modal content (no notice).
+      changeLanguage(currentLang, true);
+
+      teamModalEl.classList.add('show');
+      teamModalEl.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      if (teamModalCloseBtn) setTimeout(() => teamModalCloseBtn.focus(), 0);
+      document.addEventListener('keydown', trapTeamModalKeys);
+    }
+
+    function closeTeamModal() {
+      if (!teamModalEl) return;
+      teamModalEl.classList.remove('show');
+      teamModalEl.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', trapTeamModalKeys);
+
+      if (lastTeamFocus && typeof lastTeamFocus.focus === 'function') {
+        lastTeamFocus.focus();
+      }
+    }
+
+    function initTeamCards() {
+      document.querySelectorAll('.team-card-btn[data-team-index]').forEach(card => {
+        const idx = parseInt(card.dataset.teamIndex, 10);
+        if (Number.isNaN(idx)) return;
+
+        card.addEventListener('click', () => openTeamModal(idx));
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openTeamModal(idx);
+          }
+        });
+      });
+    }
+
+    // Click on overlay closes modal
+    if (teamModalEl) {
+      teamModalEl.addEventListener('click', (e) => {
+        if (e.target === teamModalEl) closeTeamModal();
+      });
     }
 
     // ═══════════════════════════════════════════
@@ -4264,10 +5460,73 @@
     }
 
     // ═══════════════════════════════════════════
+    //  DONATION CTA
+    // ═══════════════════════════════════════════
+    function onDonate(_type, _amount) {
+      const contact = document.getElementById('contact');
+      if (contact) {
+        contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // ═══════════════════════════════════════════
     //  INIT
     // ═══════════════════════════════════════════
     window.addEventListener('DOMContentLoaded', () => {
-      setLang(currentLang, true);
+      if (window.lucide && typeof window.lucide.createIcons === 'function') {
+        window.lucide.createIcons();
+      }
+      buildLangSwitchAttributes();
+      changeLanguage(currentLang, true);
+      
+
+      initTeamCards();
+      // Ensure aria-labels are synced for the selected language.
+      syncTeamCardAria();
+
+      // Live clock: Dushanbe time (GMT+5)
+      const timeEl = document.getElementById('dushanbe-time');
+      function formatGMTPlus5(d) {
+        // Shift to UTC+5 and format using UTC getters.
+        const shifted = new Date(d.getTime() + 5 * 60 * 60 * 1000);
+        const hh = String(shifted.getUTCHours()).padStart(2, '0');
+        const mm = String(shifted.getUTCMinutes()).padStart(2, '0');
+        const ss = String(shifted.getUTCSeconds()).padStart(2, '0');
+        return hh + ':' + mm + ':' + ss;
+      }
+      if (timeEl) {
+        const updateTime = () => {
+          timeEl.textContent = formatGMTPlus5(new Date());
+        };
+        updateTime();
+        setInterval(updateTime, 1000);
+      }
+
+      // Real-time-ish achievements counters (smooth, slowed down)
+      const rtEls = Array.from(document.querySelectorAll('.count[data-rt="true"]'));
+      if (rtEls.length) {
+        const targets = rtEls.map(el => {
+          const raw = el.getAttribute('data-target') || '0';
+          const n = parseInt(String(raw).replace(/[^\d]/g, ''), 10) || 0;
+          return n;
+        });
+
+        const duration = 9000; // 9s total ramp
+        const startTs = performance.now();
+        const easeInOutCubic = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+
+        const tick = (now) => {
+          const t = Math.min(1, (now - startTs) / duration);
+          const eased = easeInOutCubic(t);
+          rtEls.forEach((el, i) => {
+            const val = Math.round(targets[i] * eased);
+            el.textContent = val.toLocaleString('en-US');
+          });
+          if (t < 1) requestAnimationFrame(tick);
+        };
+
+        requestAnimationFrame(tick);
+      }
     });
   </script>
 </body>
