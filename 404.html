@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница не найдена | 404</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* --- НАСТРОЙКИ --- */
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            background: radial-gradient(circle at center, #003d52 0%, #001f2b 100%);
+            font-family: 'Manrope', sans-serif;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* --- АНИМИРОВАННЫЙ ФОН (ПУЗЫРИ) --- */
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(0, 212, 255, 0.1);
+            z-index: 1;
+            animation: float 10s infinite ease-in-out;
+        }
+        .b1 { width: 300px; height: 300px; top: -50px; left: -50px; animation-duration: 15s; }
+        .b2 { width: 500px; height: 500px; bottom: -100px; right: -100px; background: rgba(0, 61, 82, 0.4); animation-duration: 20s; animation-direction: reverse; }
+        .b3 { width: 100px; height: 100px; top: 20%; right: 20%; background: rgba(255, 255, 255, 0.05); animation-duration: 8s; }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, -30px); }
+        }
+
+        /* --- КОНТЕЙНЕР (СТЕКЛО) --- */
+        .container {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 60px 40px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            max-width: 500px;
+            width: 90%;
+            animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0.8) translateY(20px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        /* --- ТЕКСТ 404 --- */
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 120px;
+            margin: 0;
+            line-height: 1;
+            font-weight: 900;
+            background: linear-gradient(135deg, #fff 30%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+        
+        /* Глич-эффект (дрожание) */
+        h1::after {
+            content: '404';
+            position: absolute; left: 2px; top: 2px;
+            color: rgba(0, 212, 255, 0.3);
+            z-index: -1;
+            animation: glitch 2s infinite;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0, 0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        h2 { margin: 10px 0 20px; font-size: 24px; font-weight: 600; }
+        p { color: rgba(255, 255, 255, 0.7); margin-bottom: 40px; line-height: 1.6; }
+
+        /* --- КНОПКА --- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 35px;
+            background: linear-gradient(135deg, #00d4ff, #007cc7);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+        }
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.5);
+            background: white;
+            color: #003d52;
+        }
+        .btn i { transition: 0.3s; }
+        .btn:hover i { transform: translateX(-5px); }
+
+    </style>
+</head>
+<body>
+
+    <div class="bubble b1"></div>
+    <div class="bubble b2"></div>
+    <div class="bubble b3"></div>
+
+    <div class="container">
+        <i class="fas fa-compass" style="font-size: 50px; color: #00d4ff; margin-bottom: 20px; animation: spin 10s linear infinite;"></i>
+        
+        <h1>404</h1>
+        <h2>Страница потерялась</h2>
+        <p>К сожалению, страница, которую вы ищете, не существует или была перемещена. Но не волнуйтесь, мы поможем вам вернуться.</p>
+        
+        <a href="index2.html" class="btn">
+            <i class="fas fa-arrow-left"></i> На главную
+        </a>
+    </div>
+
+    <script>
+        // Легкое движение контейнера за мышкой (параллакс)
+        document.addEventListener('mousemove', (e) => {
+            const container = document.querySelector('.container');
+            const x = (window.innerWidth - e.pageX * 2) / 50;
+            const y = (window.innerHeight - e.pageY * 2) / 50;
+            container.style.transform = `translateX(${x}px) translateY(${y}px)`;
+        });
+    </script>
+    
+    <style>
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+    </style>
+
+</body>
+</html>
