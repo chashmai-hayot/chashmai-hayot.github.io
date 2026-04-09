@@ -3192,6 +3192,119 @@
       background: rgba(255, 255, 255, 0.2);
       border-radius: 10px;
     }
+
+    /* Золотой блок для документа */
+.official-certificate {
+  background: linear-gradient(135deg, #fffcf0 0%, #fff 100%); /* Светло-золотистый фон */
+  border: 2px solid #d4af37; /* Золотая рамка */
+  border-radius: 12px;
+  padding: 25px;
+  margin: 40px auto;
+  max-width: 800px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15); /* Мягкая золотая тень */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.official-certificate:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25);
+}
+
+/* Эффект блика на золоте при наведении */
+.official-certificate::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+  transition: all 0.6s ease;
+}
+
+.official-certificate:hover::after {
+  top: -50%;
+  left: -50%;
+}
+
+.certificate-title {
+  color: #a67c00; /* Темно-золотой текст */
+  font-family: 'Georgia', serif; /* Более классический шрифт */
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.certificate-text {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.certificate-preview {
+  margin-top: 20px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  max-width: 150px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.official-certificate:hover .certificate-preview {
+  opacity: 1;
+}
+
+/* Модальное окно "Вуаля" */
+.modal-certificate {
+  display: none; /* Скрыто по умолчанию */
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9); /* Почти черный фон */
+  backdrop-filter: blur(5px); /* Размытие фона */
+}
+
+.modal-content-cert {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 900px;
+  border: 4px solid #d4af37;
+  border-radius: 8px;
+  box-shadow: 0 0 50px rgba(212, 175, 55, 0.5);
+}
+
+.close-cert {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.close-cert:hover {
+  color: #d4af37;
+}
+
+/* Показываем модальное окно */
+.show-modal {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
   </style>
 </head>
 
@@ -4817,6 +4930,23 @@
         </div>
       </div>
     </div>
+
+
+    <div class="official-certificate" onclick="openCertificateModal()">
+  <div class="certificate-title">Официальный статус НПО</div>
+  <p class="certificate-text">
+    <strong>Ташкилоти ҷамъиятии «Чашмаи ҳаёт»-и вилояти Суғд</strong><br>
+    Действует на основании Свидетельства о государственной регистрации №004-2075, выданного Министерством юстиции Республики Таджикистан (г. Хуҷанд, ул. Фирдавсӣ 120/218).<br>
+    Организация основана в 1998 году.
+  </p>
+  <img src="Shahodatnoma.jpg" alt="Превью Свидетельства о регистрации ОО Чашмаи Хаёт" class="certificate-preview">
+  <p style="color: #a67c00; font-size: 0.8rem; margin-top: 5px;">[ Нажмите для просмотра оригинала ]</p>
+</div>
+
+<div id="certModal" class="modal-certificate" onclick="closeCertificateModal()">
+  <span class="close-cert" onclick="closeCertificateModal()">&times;</span>
+  <img class="modal-content-cert" src="Shahodatnoma.jpg" alt="Свидетельство о регистрации ОО Чашмаи Хаёт (Оригинал)">
+</div>
   </footer>
 
   <!-- BACK TO TOP -->
@@ -5591,6 +5721,28 @@
         requestAnimationFrame(tick);
       }
     });
+
+
+
+    function openCertificateModal() {
+  document.getElementById('certModal').classList.add('show-modal');
+  // Отключаем прокрутку страницы при открытом окне
+  document.body.style.overflow = 'hidden'; 
+}
+
+function closeCertificateModal() {
+  document.getElementById('certModal').classList.remove('show-modal');
+  // Включаем прокрутку обратно
+  document.body.style.overflow = 'auto';
+}
+
+// Закрытие по нажатию Esc
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeCertificateModal();
+    }
+});
+    
 
     <script type="application/ld+json">
       {
